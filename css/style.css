@@ -1,0 +1,59 @@
+
+body{
+	background-color: #A6B3BF;
+}
+nav{
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	background-color: #3B618E;
+	text-align: center;
+}
+
+nav ul li{
+	display: inline;
+	line-height: 50px;
+	float: left;
+}
+
+nav ul li a{
+	display: block;
+	text-decoration: none;
+	width: 300px;
+	/*background-color: blue;*/
+	margin-left: 120px;
+	color: white;
+}
+
+nav ul li a:hover{
+	background-color: white;
+	color: #3B618E;
+}
+
+h1{
+	color: #3B618E;
+}
+
+.clearfix{
+	clear: both;
+}
+
+.image{
+	padding-left: 30%;
+}
+.identite{
+	padding: 15px;
+}
+.etat_civil{
+	padding: 15px;	
+}
+
+table{
+	background-color: #8CB0D8;
+	border: 1px solid #3B618E;
+	border-spacing: 0;
+}
+
+thead{
+	background-color: #8CB0D8;
+}
