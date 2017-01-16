@@ -1,12 +1,64 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
+
+/************** FIN RESET *************/
 body{
-	background-color: #A6B3BF;
+	background-color:white;
+	color: #4F113A
+}
+.wrapper{
+	background-color: grey;
+	width: 1100px;
+	margin: 0 auto;
+
 }
 nav{
 	width: 100%;
 	margin-top: 20px;
-	margin-bottom: 50px;
-	background-color: #3B618E;
+	margin-bottom: -20px;
+	background-color: #4F113A;
 	text-align: center;
 }
 
@@ -19,19 +71,20 @@ nav ul li{
 nav ul li a{
 	display: block;
 	text-decoration: none;
-	width: 300px;
-	/*background-color: blue;*/
-	margin-left: 120px;
-	color: white;
+	width: 205px;
+	background-color: #4F113A;
+	margin-left: 0px;
+	color: black;
+	font-weight: bold
 }
 
 nav ul li a:hover{
 	background-color: white;
-	color: #3B618E;
+	color: #4F113A;
 }
 
-h1{
-	color: #3B618E;
+.hello{
+	color: black;
 }
 
 .clearfix{
@@ -39,21 +92,57 @@ h1{
 }
 
 .image{
-	padding-left: 30%;
+	margin-left: 5%;
+	border: 1px solid white;
 }
 .identite{
 	padding: 15px;
+	text-align: left;	
+	list-style-type: square;	
 }
 .etat_civil{
 	padding: 15px;	
+	text-align: left;	
+
 }
 
-table{
-	background-color: #8CB0D8;
-	border: 1px solid #3B618E;
-	border-spacing: 0;
+table {
+border: thin solid black;
+border-collapse: collapse;
+width: 550px;
+margin: 0 auto;
 }
 
-thead{
-	background-color: #8CB0D8;
+th {
+border: thin solid black;
+width: 50%;
+padding: 5px;
+
+}
+td {
+border: thin solid black;
+width: 50%;
+padding: 5px;
+text-align: center;
+}
+caption {
+font-family: sans-serif;
+}
+
+.formulaire1{
+	margin-top: 179px;
+	width: 433px;
+	height: 43px;
+	margin-left: 50%;
+
+}
+.formulaire2{
+	width: 433px;
+	height: 43px;
+	margin-left: 50%;
+
+}
+.bouton{
+	margin-left: 50%;
+	text-align: right;	
 }

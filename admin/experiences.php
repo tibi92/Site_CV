@@ -1,22 +1,37 @@
 <?php require("../connexion/connexion.php"); ?>
 
 <?php
-	if(isset($_POST['titre_exp'])){ // On vérifie si on insert une nouvelle compétence
-		if($_POST['titre_exp']!='' && $_POST['sous_titre_exp']!='' && $_POST['date']!='' && $_POST['description']!='' && $_POST['id_competence']!='' ){
-			$titre_exp = addslashes($_POST['titre_exp']);
-			$sous_titre_exp = addslashes($_POST['sous_titre_exp']);
-			$date = addslashes($_POST['date']);
-			$description = addslashes($_POST['description']);
-			$id_competence = addslashes($_POST['id_competence']);
+	if(isset($_POST['titre_e'])){ // On vérifie si on insert une nouvelle compétence
+		if($_POST['titre_e']!='' && $_POST['sous_titre_e']!='' && $_POST['date_e']!='' && $_POST['description_e']!='' && $_POST['id_experience']!='' ){
+			$titre_e = addslashes($_POST['titre_e']);
+			$sous_titre_e = addslashes($_POST['sous_titre_e']);
+			$date_e = addslashes($_POST['date_e']);
+			$description_e = addslashes($_POST['description_e']);
+			$id_experience = addslashes($_POST['id_experience']);
 
-		$pdo->exec("INSERT INTO experience VALUES (NULL, '$titre_exp', '$sous_titre_exp', '$date', '$description', '$id_competence')");
+		$pdo->exec("INSERT INTO experience VALUES (NULL, '$titre_e', '$sous_titre_e	', '$date_e', '$description_e', '$id_experience', '1')");
 			header('location: ../admin/experiences.php');
 			exit();
 
 	}// ferme le if
 		} // ferme le isset
 
+//on supprime experience
+
+if(isset($_GET['id_experience'])){
+	$suppression = $_GET['id_experience'];
+	$sql = "DELETE FROM experience WHERE id_experience =
+	 '$suppression'";
+	$pdo -> query($sql);
+}
+	
+
+//On modifie expérience
+		
 ?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,18 +39,18 @@
 	$sql = $pdo->query("SELECT * FROM utilisateur") ;
 	$ligne = $sql->fetch();
 ?>
-	<title >Site CV: Compétences:  <?php echo $ligne['nom'].''.$ligne['prenom']; ?></title>
+	<title > <?php echo 'Expériences | ' . $ligne['nom'].' '.$ligne['prenom']; ?></title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
-	<div id="contenu">
+	<div id="wrapper">
 		<header>
 			<?php require("../admin/admin_menu.php"); ?>
 		</header>
-		<h1> Les compétences</h1>
+		<h1> Les expériences</h1>
 		<div id="menu">
-			<h2>Connexion : déconnexion</h2>
+		
 		</div>
 
 		<div id="contenuPrincipal">
@@ -46,21 +61,21 @@
 							<th>Experience</th>
 							<th>Titre</th>
 							<th>Sous-titre</th>
-							<th>Date </th>
+							<th>Date </th>	
 							<th>Description</th>
-							<th>Compétence</th>
+						
 						</thead>
 						<tr>
-							<td><input type="text" name="experience"  size="25" required></td></td>
-							<td><input type="text" name="titre_exp"  size="25" required></td></td>
-							<td><input type="text" name="sous_titre_exp"  size="25" required></td></td>
-							<td><input type="text" name="date"  size="25" required></td></td>
-							<td><input type="text" name="description"  size="25" required></td></td>
-							<td><input type="text" name="id_competence"  size="25" required></td></td>
+							<td><input type="text" name="id_experience"  size="25" required></td>
+							<td><input type="text" name="titre_e"  size="25" required></td>
+							<td><input type="text" name="sous_titre_e"  size="25" required></td>
+							<td><input type="text" name="date_e"  size="25" required></td>
+							<td><input type="text" name="description_e"  size="25" required></td>
+					
 							
 						</tr>
 						<tr>
-							<td colspan="2"><input type="submit" value="Insérer une expériences"></td>
+							<td colspan="6"><input type="submit" value="Insérer une expérience"></td>
 						</tr>
 					</table>
 				</form>
@@ -70,19 +85,34 @@
 					$sql->execute(); // execute la 
 					$nbr_experience = $sql->rowCount(); // compte les lignes
 				?>
-				<p>Il y a <?php echo $nbr_experience; ?> expériences   </p>
+				<p>Vous avez <?php echo $nbr_experience; ?> expériences   </p>
 				<table border="2">
 					<caption>Liste des expériences</caption>
-					<thead>
-						<th>expériences</th>
-						<th>suppression</th>
-					</thead>
+						<thead>
+							<th>Titre de l'experience</th>
+							<th>Sous-titre</th>
+							<th>Date</th>
+							<th>Description</th>
+							<th>Modifier</th>
+							<th>Supprimer</th>
+						</thead>
 					<tr>
 						<?php while($ligne = $sql->fetch()){ ?>
-						<td><?php echo $ligne['titre_exp'].'<br>'.$ligne['sous_titre_exp'].'<br>'.$ligne['sous_titre_exp'].'<br>'.$ligne['date'].'<br>'.$ligne['description'].'<br>'.$ligne['id_competence'].'<br>'; ?> </td>
-						<td><a href="#">----</a></td>
-					</tr>
-					<?php } ?>
+						<td> <?= $ligne['titre_e'].'<br>' ?></td>
+						<td> <?= $ligne['sous_titre_e'].'<br>'?></td>
+						<td> <?= $ligne['date_e'].'<br>'?></td>
+						<td> <?= $ligne['description_e'].'<br>'?></td>	
+						<td><a href="modif_experience.php?id_experience=<?= $ligne['id_experience']; ?>"><img src="../img/edit.png"></a></td>
+						<td><a href="experiences.php?id_experience=<?= $ligne['id_experience']; ?>"><img src="../img/delete.png"></a></td>
+						
+                	</tr>	
+                <?php };?>
+
+						
+						
+
+					</tbody>	
+					
 				</table>
 		</div>
 

@@ -9,7 +9,7 @@
 	$sql = $pdo->query("SELECT nom, prenom, ville, avatar FROM utilisateur") ;
 	$ligne = $sql->fetch();
 ?>
-	<title >Site CV: <?php echo $ligne['prenom'].''.$ligne['prenom']; ?></title>
+	<title >Bienvenue <?php echo $ligne['prenom'].''.$ligne['prenom']; ?></title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body> </body>

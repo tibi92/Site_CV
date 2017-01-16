@@ -3,10 +3,11 @@
 <header>
 	<nav>
 		<ul>
-			<li><a href="#">Utilisateur</a></li>
-			<li><a href="#">Expériences</a></li>
-			<li><a href="#">Compétences</a></li>
-			<li><a href="#">A propos de moi</a></li>
+			<li><a href="utilisateur.php">Accueil</a></li>
+			<li><a href="experiences.php">Expériences</a></li>
+			<li><a href="formations.php">Formations</a></li>
+			<li><a href="competences.php">Compétences</a></li>
+			<li><a href="a_propos.php">A propos </a></li>
 		
 		</ul>
 		<div class="clearfix"></div>
