@@ -1,38 +1,53 @@
-<?php require("../connexion/connexion.php"); ?>
+<?php require '../connexion/connexion.php'; ?>
+<?php     
+session_start();//à mettre dans toutes les pages SESSION et identification
+if(isset($_POST['connexion'])){//['connexion'] du name du submit du form ci dessous
 
+    $email=addslashes($_POST['email']);
+    $mdp=addslashes($_POST['mdp']);
+
+    $sql = $pdo->prepare("SELECT * FROM utilisateur WHERE email='$email' AND mdp='$mdp'");//On vérifie le courriel et le mdp
+    $sql-> execute();
+    $nbr_utilisateur=$sql->rowCount();//on compte et s'il y est, le compte répond 1 sinon le compte répond 0 (est-ce le vra admin ou pas)
+
+        if($nbr_utilisateur==0){//on ne le trouve pas
+        $msg_connexion_err="Erreur d'authentification !";
+        }else{//on trouve l'email et le mdp c'estbien il est bien inscrit
+            $ligne = $sql->fetch();//pour retrouver son nom et prenom	
+
+        $_SESSION['connexion'] = 'connecté';
+        $_SESSION['id_utilisateur'] = $ligne['id_utilisateur'];
+        $_SESSION['prenom'] = $ligne['prenom'];
+        $_SESSION['nom'] = $ligne['nom'];
+
+        header('location:index.php');//vers la page d'accueil de l'admin
+    }
+} 
+	
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 	<meta charset="utf-8">
-	<?php
-	$sql = $pdo->query("SELECT nom, prenom, ville, avatar FROM utilisateur") ;
-	$ligne = $sql->fetch();
-	?>
-	<title >Bienvenue <?php echo $ligne['nom'].' '.$ligne['prenom']; ?></title>
+	<title >Bienvenue</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	</head>
 	<body> 
 		<header>
-
+ 
 		</header>
 		<div class="wrapper">
+		<h1 class="h1">Connexion</h1>
+			<form class="formulaire0" action="authentification.php" method="POST">
+				<fieldset>
+					<input class="formulaire1" type="email" name="email" placeholder="Email" required ></br></br>
 
-		<h1>Connexion</h1>
-		<img src="../img/login.png">
-
-			<form >
-			
-				<input class="formulaire1" type="text" name="pseudo" placeholder="pseudo"required width="433"></br></br>
-
-				<input class="formulaire2" placeholder="mot de passe" type="password" name="mdp" required></br></br>
-
-				<input class="bouton" type="submit" value="C'est parti !"></br></br>
-				<input class="bouton" type="submit" value="Effacer"></br></br>
-
-				<a href="#" class="bouton">Mot de passe oublié ?</a>
-
+					<input class="formulaire2" placeholder="Mot de passe" type="password" name="mdp" required></br></br>					
+				</fieldset>
+				<input class="bouton" name="connexion" type="submit" tabindex="4" value="C'est parti !"></br></br>
+				<input class="bouton" type="reset" tabindex="3" value="Effacer">
+				<p><a href="#" class="bouton" onClick="montrerform()">Mot de passe oublié ?</a></p>
 			</form>
 		</div>
-
 	</body>
 </html>

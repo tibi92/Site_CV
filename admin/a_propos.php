@@ -34,10 +34,11 @@ if(isset($_GET['id_loisir'])){
 </head>
 
 <body>
-	<div id="contenu">
-		<header>
-			<?php require("../admin/admin_menu.php"); ?>
-		</header>
+	<header>
+		<?php require("../admin/admin_menu.php"); ?>
+	</header>
+	
+	<div class="wrapper">
 		<h1> Les loisirs</h1>
 		<div id="menu">
 			

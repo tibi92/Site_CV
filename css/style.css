@@ -46,12 +46,18 @@ table {
 /************** FIN RESET *************/
 body{
 	background-color:white;
-	color: #4F113A
+	color: #4F113A;
+	font-family: 'Ubuntu', sans-serif;
 }
 .wrapper{
-	background-color: grey;
+	background-color: #BBA3B3;
 	width: 1100px;
 	margin: 0 auto;
+	padding-bottom: 20px;
+	padding-top: 40px;
+	margin-top: 20px;
+	border: 1px solid #4F113A;
+	border-radius: 0px 0px 7px 7px;
 
 }
 nav{
@@ -71,11 +77,13 @@ nav ul li{
 nav ul li a{
 	display: block;
 	text-decoration: none;
-	width: 205px;
+	width: 300px;
 	background-color: #4F113A;
 	margin-left: 0px;
-	color: black;
-	font-weight: bold
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: 'Indie Flower', cursive;
 }
 
 nav ul li a:hover{
@@ -107,20 +115,21 @@ nav ul li a:hover{
 }
 
 table {
-border: thin solid black;
+border: 2px solid #5E2F4D;
 border-collapse: collapse;
-width: 550px;
-margin: 0 auto;
+width: 750px;
+margin: 0 auto;	
+/*background-color: #66111F;*/
 }
 
 th {
-border: thin solid black;
+border: 2px solid #5E2F4D;
 width: 50%;
 padding: 5px;
 
 }
 td {
-border: thin solid black;
+border: 2px solid #5E2F4D;
 width: 50%;
 padding: 5px;
 text-align: center;
@@ -128,7 +137,10 @@ text-align: center;
 caption {
 font-family: sans-serif;
 }
-
+.formulaire0{
+	background-image: url("../img/login2.jpg");
+	padding-bottom: 40px;	
+}
 .formulaire1{
 	margin-top: 179px;
 	width: 433px;
@@ -140,9 +152,53 @@ font-family: sans-serif;
 	width: 433px;
 	height: 43px;
 	margin-left: 50%;
+	margin-top: 10px;
 
 }
 .bouton{
 	margin-left: 50%;
 	text-align: right;	
 }
+.h1{
+	font-size: 80px;
+	padding-left: 20px;
+	padding-top: 20px;
+	margin-left: 30px;	
+	margin-top: 50px;	
+}
+h1{
+	font-size: 40px;
+	padding-left: 20px;
+	padding-top: 10px;
+	margin-bottom: 40px;
+	font-family: 'Indie Flower', cursive;
+}
+input[type=submit]{
+	/*border-radius: 25px;*/
+	background-color: #4C4C4C;
+	font-family: 'Ubuntu', sans-serif;	
+	color: white;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: none;
+	padding: 5px;
+}
+input[type=text]{
+	background-color: transparent;
+	border: none;
+}
+textarea{
+	background-color: transparent;
+}
+
+/**COMPETENCES***/
+
+caption{
+	margin-top: 100px;
+	margin-bottom: 30px;	
+	font-weight: bold;	
+}
+
+
+/**EXPERIENCES***/
+

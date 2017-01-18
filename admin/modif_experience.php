@@ -47,7 +47,7 @@ $ligne_experience = $sql->fetch();
 		<div id="contenuPrincipal">
 			<div>
 					<form action="modif_experience.php" method="POST">
-					<label>Modification d'une compétences</label>
+					<label>Modification d'une formation</label>
 						<input type="text" name="titre_e" value="<?= $ligne_experience['titre_e']; ?>" required>
 						<input type="text" name="sous_titre_e" value="<?= $ligne_experience['sous_titre_e']; ?>" required>
 						<input type="text" name="date_e" value="<?= $ligne_experience['date_e']; ?>" required>
