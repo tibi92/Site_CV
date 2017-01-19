@@ -28,7 +28,7 @@ if(isset($_GET['deconnect'])){
 
 <?php
 	if(isset($_POST['titre_e'])){ // On vérifie si on insert une nouvelle compétence
-		if($_POST['titre_e']!='' && $_POST['sous_titre_e']!='' && $_POST['date_e']!='' && $_POST['description_e']!='' && $_POST['id_experience']!='' ){
+		if($_POST['titre_e']!='' && $_POST['sous_titre_e']!='' && $_POST['date_e']!='' && $_POST['description_e']!=''){
 			$titre_e = addslashes($_POST['titre_e']);
 			$sous_titre_e = addslashes($_POST['sous_titre_e']);
 			$date_e = addslashes($_POST['date_e']);
@@ -91,7 +91,7 @@ if(isset($_GET['id_experience'])){
 	                    </tr>
 	                    <tr>    
 	                        <td>Date</td> 
-	                        <td><input type="text" name="dates_e" value="" size="50"  required></td>                           
+	                        <td><input type="text" name="date_e" value="" size="50"  required></td>                           
 	                    </tr>
 	                    <tr>
 	                        <td>Description</td> 

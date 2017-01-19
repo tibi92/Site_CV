@@ -1,4 +1,34 @@
 <!DOCTYPE html>
+<?php require("connexion/connexion.php"); ?>
+
+<?php
+$sql = $pdo->query("SELECT * FROM utilisateur") ;
+$utilisateur = $sql->fetch();
+
+
+$sql = $pdo->query("SELECT * FROM competence") ;
+$competence = $sql->fetchAll();
+
+
+$sql = $pdo->query("SELECT * FROM experience") ;
+$experience = $sql->fetchAll();
+
+$sql = $pdo->query("SELECT * FROM formation") ;
+$formation = $sql->fetchAll();
+
+$sql = $pdo->query("SELECT * FROM loisir") ;
+$loisir = $sql->fetchAll();
+
+$sql = $pdo->query("SELECT * FROM titre") ;
+$titre = $sql->fetch();
+
+// print_r($utilisateur);
+// print_r($competence);
+// print_r($experience);
+// print_r($formation);
+// print_r($loisir);
+// print_r($titre);
+?>
 <html lang="en">
 
 <head>
@@ -16,6 +46,7 @@
 
     <!-- Custom CSS -->
     <link href="front/css/stylish-portfolio.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="front/css/style_front.css">
 
     <!-- Custom Fonts -->
     <link href="front/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -38,16 +69,19 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top" onclick=$("#menu-close").click();>Start Bootstrap</a>
+                <a href="#top" onclick=$("#menu-close").click();>   <?= $utilisateur['nom'].' '.$utilisateur['prenom'] ?></a>
             </li>
             <li>
-                <a href="#top" onclick=$("#menu-close").click();>Home</a>
+                <a href="#top" onclick=$("#menu-close").click();>Accueil</a>
             </li>
             <li>
-                <a href="#about" onclick=$("#menu-close").click();>About</a>
+                <a href="#about" onclick=$("#menu-close").click();>Expérience</a>
             </li>
             <li>
-                <a href="#services" onclick=$("#menu-close").click();>Services</a>
+                <a href="#about" onclick=$("#menu-close").click();>Compétences</a>
+            </li>
+            <li>
+                <a href="#services" onclick=$("#menu-close").click();>Formations</a>
             </li>
             <li>
                 <a href="#portfolio" onclick=$("#menu-close").click();>Portfolio</a>
@@ -60,11 +94,17 @@
 
     <!-- Header -->
     <header id="top" class="header">
+    <?php
+    $sql = $pdo->query("SELECT * FROM utilisateur") ;
+    $utilisateur = $sql->fetch();
+    ?>
         <div class="text-vertical-center">
-            <h1>Start Bootstrap</h1>
-            <h3>Free Bootstrap Themes &amp; Templates</h3>
+            <h1><?php echo $utilisateur['nom'].' '.$utilisateur['prenom']; ?></h1>
+            <h3><?= $titre['titre_cv'] ?></h3>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+            <a href="#about" class="btn btn-dark btn-lg">C'est parti !</a></br></br></br>
+
+            <p><?php echo $utilisateur['email'].' '.'<i class="fa fa-star " aria-hidden="true"></i>'.' '.$utilisateur['adresse'].' '.'<i class="fa fa-star" aria-hidden="true"></i>'.' '.$utilisateur['age'].' '.'<i class="fa fa-star" aria-hidden="true"></i>'.' '.$utilisateur['notes']; ?></p>
         </div>
     </header>
 
@@ -73,8 +113,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-                    <p class="lead">This theme features some wonderful photography courtesy of <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>
+                    <h2>Expériences</h2>
+                    
+                        <?php 
+                    $i = 0; 
+                    while($i < count($experience)){
+                        ?> <p class="lead"> <?php echo $experience[$i]['titre_e'].'   '.''.$experience[$i]['date_e'];?></p>
+                         <p><?php echo $experience[$i]['description_e'];?><p><?php 
+                        $i++;
+                    } ?>
                 </div>
             </div>
             <!-- /.row -->
@@ -88,61 +135,30 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <h2>Our Services</h2>
+                    <h2>Formations</h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
+                    <?php
+                    $i = 0;
+                    while( $i< count($formation) ){
+                        $nb = 12%count($formation);
+                        ?>
+                        <div class="col-md- <?php count($formation); ?> col-sm-6"> 
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong><?php echo $formation[$i]['titre_f'];?> </strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p><?php echo $formation[$i]['date_f'].' ' .$formation[$i]['description_f'] ?></p>
+                                <a href="#" class="btn btn-light">Lire plus</a>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-shield fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
+                    <?php $i++;
+                    }
+                    ?>
                     </div>
                     <!-- /.row (nested) -->
                 </div>
@@ -156,8 +172,16 @@
     <!-- Callout -->
     <aside class="callout">
         <div class="text-vertical-center">
-            <h1>Vertically Centered Text</h1>
-        </div>
+            <i class="fa fa-quote-left fa-4x fa-pull-left fa-border" aria-hidden="true"></i><br/><br/>
+            <?php 
+                $i = 0; 
+                while($i < count($loisir)){
+                    ?>
+                    <?php echo $loisir[$i]['titre_l']. '</br>';?>
+                    <?php 
+                    $i++;
+                } ?>
+    </div>
     </aside>
 
     <!-- Portfolio -->
@@ -165,13 +189,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Our Work</h2>
+                    <h2>Mes réalisations</h2>
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="front/img/portfolio-1.jpg">
+                                    <img class="img-portfolio img-responsive" src="front/img/mauritanie.jpg" width="638.372" height="425.139">
                                 </a>
                             </div>
                         </div>
@@ -198,7 +222,7 @@
                         </div>
                     </div>
                     <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">View More Items</a>
+                    <a href="#" class="btn btn-dark">Voir plus de réalisations !</a>
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
@@ -212,47 +236,51 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3>The buttons below are impossible to resist.</h3>
-                    <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
+                    <h3>Aptitudes professionelles</h3>
+                    <p>Rigoureuse, attraits pour les nouveautés,
+                        attentive, motivée, patiente</p>
                 </div>
             </div>
         </div>
     </aside>
 
     <!-- Map -->
-    <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+    <section>
+        <form id="contact">
+            <h4>Me contacter</h4>
+            <input type="text" name="nom" placeholder="Nom"><br/><br/>
+            <input type="text" name="prenom" placeholder="Prenom"><br/><br/>
+            <input type="email" name="email" placeholder="Email"><br/><br/>
+            <label>Votre message</label><br/>
+            <textarea  ></textarea> 
+        </form>
+        <!-- <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
         <br />
         <small>
             <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small>
-    </section>
+        </small> -->
+    </section> 
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Start Bootstrap</strong>
+                    <h4><strong>Tibilé Coulibaly</strong>
                     </h4>
-                    <p>3481 Melrose Place
-                        <br>Beverly Hills, CA 90210</p>
+                    <p>Intégratrice / Développeuse Website
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">name@example.com</a>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">tibile.coulibaly@lepoles.com</a>
                         </li>
                     </ul>
                     <br>
                     <ul class="list-inline">
                         <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
+                            <a href="https://www.facebook.com/profile.php?id=100009513039426"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>   
                         <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                            <a href="<i class="fa fa-instagram" aria-hidden="true"></i><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
@@ -264,10 +292,10 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="front/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="front/js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script>

@@ -28,7 +28,7 @@ if(isset($_GET['deconnect'])){
 
 <?php // On insère une compétence
 	if(isset($_POST['competence'])){ // On vérifie si on insert une nouvelle compétence
-		if($_POST['competence']!='' && $_POST['titre_c']!=''){
+		if($_POST['competence']!='' ){
 			$competence = addslashes($_POST['competence']);
 			$titre_c = addslashes($_POST['titre_c']);
 
@@ -53,11 +53,7 @@ if(isset($_GET['id_competence'])){
 <!DOCTYPE html>
 <html>
 <head>
-	<?php
-	$sql = $pdo->query("SELECT * FROM utilisateur") ;
-	$ligne = $sql->fetch();
-?>
-	<title ><?php echo 'Compétences | ' . $ligne['nom'].''.$ligne['prenom']; ?></title>
+	<title ><?php echo 'Compétences | ' . $utilisateur['nom'].''.$utilisateur['prenom']; ?></title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Raleway:300i,400,500|Ubuntu" rel="stylesheet"> 
 </head>
@@ -73,13 +69,10 @@ if(isset($_GET['id_competence'])){
 			<form action="competences.php" method="POST">
 				<table width="200px" border="1">
 				<thead>
-					<th></th>
-					<th>Titre </th>
+				
 					<th>Compétences</th>
 				</thead>
 					<tr>
-						<td>Compétences</td>
-						<td><input type="text" name="titre_c" id="titre_c" size="50" required></td>
 						<td><input type="text" name="competence" id="competence" size="50" required></td>
 					</tr>
 					<tr>
@@ -97,14 +90,12 @@ if(isset($_GET['id_competence'])){
 			<table class="liste_competence" border="2">
 				<caption >Liste des compétences</caption>
 				<thead>
-					<th>Titre de la compétences</th>
 					<th>Compétences</th>
 					<th>Suppression</th>
 					<th>Modifier</th>
 				</thead>
 				<tr>
 					<?php while($ligne = $sql->fetch()){ ?>
-					<td><?php echo $ligne['titre_c'].'<br>'; ?> </td>
 					<td><?php echo $ligne['competence'].'<br>'; ?> </td>
 					<td><a href="competences.php?id_competence=<?php echo $ligne['id_competence']; ?>"> <img src="../img/delete.png"></a></td>
 					<td><a href="modif_competence.php?id_competence=<?php echo $ligne['id_competence']; ?>"><img src="../img/edit.png">	</a></td>

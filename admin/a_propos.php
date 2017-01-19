@@ -24,33 +24,23 @@ if(isset($_GET['id_loisir'])){
 
 <!DOCTYPE html>
 <html>
-<head>
-	<?php
-	$sql = $pdo->query("SELECT * FROM utilisateur") ;
-	$ligne = $sql->fetch();
-?>
-	<title ><?php echo 'Loisirs | ' . $ligne['nom'].''.$ligne['prenom']; ?></title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
+	<head>
+		<?php
+		$sql = $pdo->query("SELECT * FROM utilisateur") ;
+		$ligne = $sql->fetch();
+		?>
+		<title ><?php echo 'Loisirs | ' . $ligne['nom'].''.$ligne['prenom']; ?></title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	</head>
 
-<body>
-	<header>
-		<?php require("../admin/admin_menu.php"); ?>
-	</header>
-	
-	<div class="wrapper">
-		<h1> Les loisirs</h1>
-		<div id="menu">
-			
-		</div>
-
-		<div id="contenuPrincipal">
-			<div>
-				<form action="loisir
-				..
-
-
-				.php" method="POST">
+	<body>
+		<header>
+			<?php require("../admin/admin_menu.php"); ?>
+		</header>
+		
+		<div class="wrapper">
+			<h1> Les loisirs</h1>
+				<form action="a_propos.php" method="POST">
 					<table width="200px" border="1">
 						<tr>
 							<td>Loisirs</td>
@@ -61,29 +51,24 @@ if(isset($_GET['id_loisir'])){
 						</tr>
 					</table>
 				</form>
-			</div>
 				<?php 
 					$sql = $pdo->prepare("SELECT * FROM loisir");
 					$sql->execute(); // execute la 
 					$nbr_loisir = $sql->rowCount(); // compte les lignes
 				?>
-				<p>Il y a <?php echo $nbr_loisir; ?> loisir(s)   </p>
 				<table border="2">
 					<caption>Liste des loisirs</caption>
 					<thead>
 						<th>loisirs</th>
-						<th>suppression</th>
-						<th>modifier</th>
+						<th>Supprimer</th>
 					</thead>
 					<tr>
 						<?php while($ligne = $sql->fetch()){ ?>
 						<td><?php echo $ligne['titre_l'].'<br>'; ?> </td>
-						<td><a href="a_propos.php?id_loisir=<?php echo $ligne['id_loisir']; ?>">Delete</a></td>
+						<td><a href="a_propos.php?id_loisir=<?php echo $ligne['id_loisir']; ?>"> <img src="../img/delete.png"></a></td>
 					</tr>
 					<?php } ?>
 				</table>
 		</div>
-
-	</div>
-</body>
+	</body>
 </html>

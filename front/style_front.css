@@ -1,0 +1,10 @@
+body{
+	background-color: red;
+}
+
+.img-portfolio img-responsive{
+	background-color: blue;
+}
+#contact{
+	margin-left: 20px;
+}

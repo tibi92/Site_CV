@@ -79,14 +79,12 @@ if(isset($_GET['id_formation'])){
 				<form action="formations.php" method="POST">
 					<table width="200px" border="1">
 						<thead>
-							<th>Formation</th>
 							<th>Titre</th>
 							<th>Sous-titre</th>
 							<th>Date </th>	
 							<th>Description</th>
 						</thead>
 						<tr>
-							<td><input type="text" name="formation"  size="25" required></td>
 							<td><input type="text" name="titre_f"  size="25" required></td>
 							<td><input type="text" name="sous_titre_f"  size="25" required></td>
 							<td><input type="text" name="date_f"  size="25" required></td>
