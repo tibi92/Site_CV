@@ -39,7 +39,7 @@ $titre = $sql->fetch();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stylish Portfolio - Start Bootstrap Theme</title>
+    <title>Site titre_cv <?=  $utilisateur['nom']. $utilisateur['prenom']; ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="front/css/bootstrap.min.css" rel="stylesheet">
@@ -75,16 +75,13 @@ $titre = $sql->fetch();
                 <a href="#top" onclick=$("#menu-close").click();>Accueil</a>
             </li>
             <li>
-                <a href="#about" onclick=$("#menu-close").click();>Expérience</a>
-            </li>
-            <li>
-                <a href="#about" onclick=$("#menu-close").click();>Compétences</a>
+                <a href="#about" onclick=$("#menu-close").click();>Mes projets</a>
             </li>
             <li>
                 <a href="#services" onclick=$("#menu-close").click();>Formations</a>
             </li>
             <li>
-                <a href="#portfolio" onclick=$("#menu-close").click();>Portfolio</a>
+                <a href="#portfolio" onclick=$("#menu-close").click();>Compétences</a>
             </li>
             <li>
                 <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
@@ -102,19 +99,34 @@ $titre = $sql->fetch();
             <h1><?php echo $utilisateur['nom'].' '.$utilisateur['prenom']; ?></h1>
             <h3><?= $titre['titre_cv'] ?></h3>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">C'est parti !</a></br></br></br>
+            <a href="#about" class="btn btn-dark btn-lg"><i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i></a></br></br></br>
 
-            <p><?php echo $utilisateur['email'].' '.'<i class="fa fa-star " aria-hidden="true"></i>'.' '.$utilisateur['adresse'].' '.'<i class="fa fa-star" aria-hidden="true"></i>'.' '.$utilisateur['age'].' '.'<i class="fa fa-star" aria-hidden="true"></i>'.' '.$utilisateur['notes']; ?></p>
+            <!-- <p><?php echo $utilisateur['email'].' '.$utilisateur['adresse'].' '.$utilisateur['age'].' '.$utilisateur['notes']; ?></p> -->
+
+            <div class="presentation">
+                <h4>Qui suis-je ?</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br/>
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br/>
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br/>
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br/>
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non<br/>
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <button class="contactez-moi"><a href="#">Contactez moi</a></button>
+            </div>
         </div>
     </header>
 
-    <!-- About -->
+<div id="wrapper">
+   
     <section id="about" class="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Expériences</h2>
-                    
+                    <h2>A propos</h2>
+                     <!-- Expérience -->
+                    <div>
+                    <h4>Expérience</h4>
                         <?php 
                     $i = 0; 
                     while($i < count($experience)){
@@ -122,6 +134,7 @@ $titre = $sql->fetch();
                          <p><?php echo $experience[$i]['description_e'];?><p><?php 
                         $i++;
                     } ?>
+                    </div>
                 </div>
             </div>
             <!-- /.row -->
@@ -143,7 +156,7 @@ $titre = $sql->fetch();
                     while( $i< count($formation) ){
                         $nb = 12%count($formation);
                         ?>
-                        <div class="col-md- <?php count($formation); ?> col-sm-6"> 
+                        <div class="col-md-<?php echo 12/count($formation); ?> col-sm-6"> 
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-graduation-cap" aria-hidden="true"></i>
@@ -184,8 +197,32 @@ $titre = $sql->fetch();
     </div>
     </aside>
 
+    <!-- Compétences -->
+        <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+        <h2>Compétences numériques</h2>
+        <?php 
+        $i = 0; 
+        while($i < count($competence)){
+            ?>  <?php echo $competence[$i]['competence']. '<br>';?>
+             <?php 
+            $i++;
+        } ?>
+
+        </div>
+            </div>
+                </div>
+        </section>
+
+
+
+
+
+
     <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
+   <!--  <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -220,16 +257,16 @@ $titre = $sql->fetch();
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">Voir plus de réalisations !</a>
-                </div>
+                    <!-- <a href="#" class="btn btn-dark">Voir plus de réalisations !</a>
+                </div> -->
                 <!-- /.col-lg-10 -->
-            </div>
+       <!--      </div> -->
             <!-- /.row -->
-        </div>
+        <!-- </div> -->
         <!-- /.container -->
-    </section>
+<!--     </section> -->
 
     <!-- Call to Action -->
     <aside class="call-to-action bg-primary">
@@ -238,22 +275,23 @@ $titre = $sql->fetch();
                 <div class="col-lg-12 text-center">
                     <h3>Aptitudes professionelles</h3>
                     <p>Rigoureuse, attraits pour les nouveautés,
-                        attentive, motivée, patiente</p>
+                    attentive, motivée, patiente</p>
                 </div>
             </div>
         </div>
     </aside>
+</div>
 
-    <!-- Map -->
-    <section>
-        <form id="contact">
-            <h4>Me contacter</h4>
-            <input type="text" name="nom" placeholder="Nom"><br/><br/>
-            <input type="text" name="prenom" placeholder="Prenom"><br/><br/>
-            <input type="email" name="email" placeholder="Email"><br/><br/>
-            <label>Votre message</label><br/>
-            <textarea  ></textarea> 
+    <!-- CONTACT -->
+    <section id="contact">
+        <form>
+            <h1 class="me_contacter">Me contacter</h1>
+            <input class="formulaire" type="text" name="nom" placeholder="Nom"><br/><br/>
+            <input class="formulaire" type="text" name="prenom" placeholder="Prenom"><br/><br/>
+            <input class="formulaire" type="email" name="email" placeholder="Email"><br/><br/>
+            <textarea class="message" placeholder="Votre message"></textarea> 
         </form>
+
         <!-- <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
         <br />
         <small>
@@ -288,7 +326,7 @@ $titre = $sql->fetch();
                 </div>
             </div>
         </div>
-        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-4x"></i></a>
     </footer>
 
     <!-- jQuery -->
