@@ -1,7 +1,4 @@
-<?php require("../connexion/connexion.php"); ?>
-
-<?php
-
+<?php require("../connexion/connexion.php");
 session_start();
 
 if(isset($_SESSION['connexion']) && $_SESSION['connexion'] == 'connecté'){//Si la personne est connecté et la valeur est bien celle de la page d'authentification
