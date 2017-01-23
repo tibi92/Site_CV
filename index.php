@@ -51,6 +51,7 @@ $titre = $sql->fetch();
     <!-- Custom Fonts -->
     <link href="front/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Arsenal:700|Roboto+Condensed" rel="stylesheet"> 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -88,7 +89,6 @@ $titre = $sql->fetch();
             </li>
         </ul>
     </nav>
-
     <!-- Header -->
     <header id="top" class="header">
     <?php
@@ -97,59 +97,72 @@ $titre = $sql->fetch();
     ?>
         <div class="text-vertical-center">
             <h1><?php echo $utilisateur['nom'].' '.$utilisateur['prenom']; ?></h1>
+            <span class="soustitre">Intégratrice / Developpeuse web junior</span>
             <h3><?= $titre['titre_cv'] ?></h3>
             <br>
             <a href="#about" class="btn btn-dark btn-lg"><i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i></a></br></br></br>
 
             <!-- <p><?php echo $utilisateur['email'].' '.$utilisateur['adresse'].' '.$utilisateur['age'].' '.$utilisateur['notes']; ?></p> -->
-
-            <div class="presentation">
-                <h4>Qui suis-je ?</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br/>
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br/>
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br/>
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br/>
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non<br/>
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                <button class="contactez-moi"><a href="#">Contactez moi</a></button>
-            </div>
         </div>
     </header>
 
 <div id="wrapper">
-   
+
+
+    
+    <!-- Compétences -->
+        <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-lg text-center">
+        <h2>Compétences numériques</h2>
+        <?php 
+        $i = 0; 
+        while($i < count($competence)){
+            ?>  <?php echo '<i class="fa fa-circle-o-notch fa-lg" aria-hidden="true">' .' '. $competence[$i]['competence']. '</i>'.'<br>';?>
+             <?php 
+            $i++;
+        } ?>
+
+        </div>
+            </div>
+                </div>
+        </section>
+
+   <!--  A PROPOS -->
     <section id="about" class="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>A propos</h2>
                      <!-- Expérience -->
-                    <div>
+                    <div class="col-md-<?php echo 12/count($experience); ?> col-sm-6">
                     <h4>Expérience</h4>
-                        <?php 
-                    $i = 0; 
-                    while($i < count($experience)){
-                        ?> <p class="lead"> <?php echo $experience[$i]['titre_e'].'   '.''.$experience[$i]['date_e'];?></p>
-                         <p><?php echo $experience[$i]['description_e'];?><p><?php 
-                        $i++;
-                    } ?>
+                    <?php
+                    $i = 0;
+                    while( $i< count($experience) ){
+                        $nb = 12%count($experience);
+                        ?>
+                        <div class="col-md-<?php echo 12/count($experience); ?> col-sm-6"> 
+                            <div class="service-item">
+                                <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
+                                
+                                <h5>
+                                    <strong><?php echo $experience[$i]['titre_e'];?> </strong>
+                                </h5>
+                                <p><?php echo '<span>'.$experience[$i]['date_e'].'<span>'.' ' .$experience[$i]['description_e'] ?></p>
+                            
+                            </div>
+                        </div>
+                    <?php $i++;
+                    }
+                    ?>
                     </div>
-                </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
-
-    <!-- Services -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="services bg-primary">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <h2>Formations</h2>
+                    <!-- Formations -->
+                     <div class="row">
+                <div class="col-lg-12 col-lg text-center">
                     <hr class="small">
+                    <h4>Formations</h4>                
                     <div class="row">
                     <?php
                     $i = 0;
@@ -173,15 +186,14 @@ $titre = $sql->fetch();
                     }
                     ?>
                     </div>
-                    <!-- /.row (nested) -->
+
                 </div>
-                <!-- /.col-lg-10 -->
+                </div>
             </div>
             <!-- /.row -->
         </div>
         <!-- /.container -->
     </section>
-
     <!-- Callout -->
     <aside class="callout">
         <div class="text-vertical-center">
@@ -257,19 +269,21 @@ $titre = $sql->fetch();
                                 </a>
                             </div>
                         </div>
+
                     </div> -->
                     <!-- /.row (nested) -->
-                    <!-- <a href="#" class="btn btn-dark">Voir plus de réalisations !</a>
-                </div> -->
+                    <a href="#" class="btn btn-dark">Voir plus de réalisations !</a>
+                </div>
                 <!-- /.col-lg-10 -->
        <!--      </div> -->
             <!-- /.row -->
-        <!-- </div> -->
+        </div>
         <!-- /.container -->
-<!--     </section> -->
+    </section>
 
     <!-- Call to Action -->
-    <aside class="call-to-action bg-primary">
+ <!--    <aside class="call-to-action bg-primary">
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -279,7 +293,7 @@ $titre = $sql->fetch();
                 </div>
             </div>
         </div>
-    </aside>
+    </aside> -->
 </div>
 
     <!-- CONTACT -->

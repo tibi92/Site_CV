@@ -1,5 +1,5 @@
 body{
-	/*background-color: red;*/
+	background-color: #F4F4F4;
 }
 
 /*/// HEADER ///*/
@@ -7,25 +7,78 @@ body{
 .text-vertical-center{
 	vertical-align: top;
 	padding-top: 20px;
-	text-align: left;
+	/*text-align: left;*/
 	padding-bottom: 50px;
+	background-color: #7C1652;
+	color: black;
+
 }
 
 .text-vertical-center h1{
-	font-size: 5.5em;
+	font-size: 4.5em;
 	text-align: center;
-	padding-top: 20px;
+	margin-bottom: 35px;
+	margin-top: 90px;
+	font-family: 'Arsenal', sans-serif;
+
+}
+.text-center{
+	text-align: left;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+.text-center h2{
+	color: #7C1652;
+	text-align: center;
+	margin-bottom: 23px;
+	padding: 5px;
+}
+.text-center span{
+	background-color: #7C1652;
+	color: white;
+	padding: 5px;
+}
+.soustitre{
+	border-top: 1px solid black;
+	text-align: center;
+	font-size: 30px;
+	padding-top: 17px;
+	font-family: 'Roboto Condensed', sans-serif;
 }
 .h3, h3{
 	margin-top: 40px;
 	font-size: 26px;
 	text-align: center;	
 }
+.h4, h4 {
+    font-size: 18px;
+    margin-bottom: 35px;
+   }
+
+hr.small {
+    max-width: 800px;
+    color: black;
+    margin-bottom: 85px;
+    margin-top: 65px;
+    border: 0.5px solid black;
+   }
+
 #top .btn{
 	float: right;
 	margin-right: 20px;
-	margin-top: 400px;
+	margin-top: 280px;
 	position: relative;
+}
+.btn-light {
+    border-radius: 0;
+    color: #333;
+    background-color: #F8F8F8;
+    border: 1px solid black;
+}
+.btn-light:hover{
+
+transition-duration: 0.8s;
+background-color: #7C1652;
+color: white;
 }
 .presentation{
 	float: left;
@@ -50,19 +103,27 @@ body{
 
 #wrapper{
 	width: 1100px;
-	background-color: red;
 	margin: 0 auto;
+	background-color: #F4F4F4;
 }
-/*//////CONTENU/////*/
 
 /*//// EXPERIENCE ///*/
 .col-lg-12 text-center
 
+/*////// A PROPOS //////*/
+.competence{
+	float: left;
+}
 
+/*/// COMPETENCE //*/
 
+.text-center {
+	font-size: 15px;
+}
 
-
-
+.fa-lg{
+	margin-bottom: 10px;
+}
 .img-portfolio img-responsive{
 	background-color: blue;
 }
