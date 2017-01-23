@@ -1,66 +1,4 @@
-body{
-	background-color: #F4F4F4;
-}
-
 /*/// HEADER ///*/
-
-.text-vertical-center{
-	vertical-align: top;
-	padding-top: 20px;
-	/*text-align: left;*/
-	padding-bottom: 50px;
-	background-color: #7C1652;
-	color: black;
-
-}
-
-.text-vertical-center h1{
-	font-size: 4.5em;
-	text-align: center;
-	margin-bottom: 35px;
-	margin-top: 90px;
-	font-family: 'Arsenal', sans-serif;
-
-}
-.text-center{
-	text-align: left;
-	font-family: 'Roboto Condensed', sans-serif;
-}
-.text-center h2{
-	color: #7C1652;
-	text-align: center;
-	margin-bottom: 23px;
-	padding: 5px;
-}
-.text-center span{
-	background-color: #7C1652;
-	color: white;
-	padding: 5px;
-}
-.soustitre{
-	border-top: 1px solid black;
-	text-align: center;
-	font-size: 30px;
-	padding-top: 17px;
-	font-family: 'Roboto Condensed', sans-serif;
-}
-.h3, h3{
-	margin-top: 40px;
-	font-size: 26px;
-	text-align: center;	
-}
-.h4, h4 {
-    font-size: 18px;
-    margin-bottom: 35px;
-   }
-
-hr.small {
-    max-width: 800px;
-    color: black;
-    margin-bottom: 85px;
-    margin-top: 65px;
-    border: 0.5px solid black;
-   }
 
 #top .btn{
 	float: right;
@@ -68,11 +6,103 @@ hr.small {
 	margin-top: 280px;
 	position: relative;
 }
+
+.text-vertical-center h1{
+	font-size: 6.5em;
+	text-align: center;
+	margin-bottom: 35px;
+	margin-top: 90px;
+	font-family: 'Arsenal', sans-serif;
+}
+	.soustitre{
+	border-top: 1px solid black;
+	text-align: center;
+	font-size: 30px;
+	padding-top: 17px;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+}
+
+/*/// WRAPPER ///*/
+
+.text-center{
+	text-align: left;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*//COMPETENCES NUMERIQUES //*/
+
+
+.text-center h2 {
+    font-size: 30px;
+    color: #7C1652;
+    text-align: center;	
+    margin-bottom: 83px;
+}
+.portfolio{
+	background-color: #F8F8F8;
+}
+h3{
+	margin-bottom: 70px;
+	text-align: left;
+	border-bottom: 1px solid black;
+	margin-top: 151px;
+
+}
+.fa-lg{
+	margin-top: 20px;
+	text-align: left;
+}
+
+
+/*// A PROPOS //*/
+
+p {
+    margin-top: 15px;
+}
+
+.about{
+	background-color: #F4F4F4;
+	margin: 0px 0 -22px 0;
+	padding-bottom: 95px;
+}
+
+h4{
+	margin-bottom: 40px;	
+}
+
+ h5{
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/*hr.small {
+    max-width: 800px;
+    margin-bottom: 250px;
+    margin-top: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  
+   }*/
+
+  /*// experience //*/
+.text-center span{
+	
+	background-color: #7C1652;
+	color: white;
+	padding: 5px;
+	margin-bottom: 50px;
+}
+
+	/*// formations //*/
 .btn-light {
     border-radius: 0;
     color: #333;
     background-color: #F8F8F8;
     border: 1px solid black;
+    margin-top: 10px;
 }
 .btn-light:hover{
 
@@ -80,69 +110,65 @@ transition-duration: 0.8s;
 background-color: #7C1652;
 color: white;
 }
-.presentation{
-	float: left;
-	margin-left: 10px;
-	margin-top: 50px;
-}
-.contactez-moi{
-	margin-top: 10px;
-	background-color: rgba(255, 255, 255, 0.2);
-	border: none;
-	padding: 10px;
-	border-radius: 5px;
-	border: 2px solid black;
-	background-color: black;
 
-}
-.contactez-moi a{
-	color: white;
-}
 
-/*//// CONTENU /////*/
 
-#wrapper{
-	width: 1100px;
-	margin: 0 auto;
-	background-color: #F4F4F4;
+/*// MES REALISATIONS //*/
+.img-portfolio {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.portfolio{
+	background-color: #F8F8F8;
+}
+.btn-dark {
+    border-radius: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+    margin-top: 27px;
 }
 
-/*//// EXPERIENCE ///*/
-.col-lg-12 text-center
-
-/*////// A PROPOS //////*/
-.competence{
-	float: left;
-}
-
-/*/// COMPETENCE //*/
-
-.text-center {
-	font-size: 15px;
-}
-
-.fa-lg{
-	margin-bottom: 10px;
-}
-.img-portfolio img-responsive{
-	background-color: blue;
-}
-#contact{
-padding-left: 50px;
-}
-.formulaire{
-	margin-top: 50px;
-	width: 433px;
-	height: 43px;
-	margin-left: 50px;
-}
-.message{
-	margin-top: 50px;
-	margin-left: 50px;
-	width: 433px;
-	height: 150px;
+/*// CONTACT //*/
+form{
+	text-align: right;
+	margin-right: 393px;
 }
 .me_contacter{
-	margin-left: 50px;
-	margin-top: 50px;
+	margin-bottom: 40px;
+	margin-top: 60px;
+	text-align: left;
+	margin-left: 890px;
+	color: #7C1652;
+}
+.formulaire{
+	width: 615px;
+	height: 35px;
+	border-radius: 3px;
+	background-color: #F4F4F4;
+}
+.message{
+	width: 615px;
+	border-radius: 3px;
+	height: 100px;
+	background-color: #F4F4F4;
+}
+#contact p{
+	text-align: left;
+	margin-left: 890px;
+	margin-bottom: 40px;
+}
+input[placeholder]{
+	color: #7C1652;
+	font-weight: bold
+}
+textarea[placeholder]{
+	color: #7C1652;
+	font-weight: bold
+}
+/* // font awesome //*/
+
+.fa-4x {
+    font-size: 4em;
+    color: #7C1652;
+
 }

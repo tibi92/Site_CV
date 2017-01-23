@@ -46,13 +46,14 @@ $titre = $sql->fetch();
 
     <!-- Custom CSS -->
     <link href="front/css/stylish-portfolio.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="front/css/style_front.css">
 
     <!-- Custom Fonts -->
     <link href="front/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Arsenal:700|Roboto+Condensed" rel="stylesheet"> 
 
+    <link rel="stylesheet" type="text/css" href="front/css/advences_barre.css">
+    <link rel="stylesheet" type="text/css" href="front/css/style_front.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -76,7 +77,7 @@ $titre = $sql->fetch();
                 <a href="#top" onclick=$("#menu-close").click();>Accueil</a>
             </li>
             <li>
-                <a href="#about" onclick=$("#menu-close").click();>Mes projets</a>
+                <a href="#about" onclick=$("#menu-close").click();>A ropos...</a>
             </li>
             <li>
                 <a href="#services" onclick=$("#menu-close").click();>Formations</a>
@@ -96,9 +97,8 @@ $titre = $sql->fetch();
     $utilisateur = $sql->fetch();
     ?>
         <div class="text-vertical-center">
-            <h1><?php echo $utilisateur['nom'].' '.$utilisateur['prenom']; ?></h1>
-            <span class="soustitre">Intégratrice / Developpeuse web junior</span>
-            <h3><?= $titre['titre_cv'] ?></h3>
+            <h1><?php echo $utilisateur['nom'].' '.$utilisateur['prenom']; ?></h1>  
+            <span class="soustitre"><?= $titre['titre_cv'] ?></span>
             <br>
             <a href="#about" class="btn btn-dark btn-lg"><i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i></a></br></br></br>
 
@@ -115,15 +115,21 @@ $titre = $sql->fetch();
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-lg text-center">
-        <h2>Compétences numériques</h2>
-        <?php 
-        $i = 0; 
-        while($i < count($competence)){
-            ?>  <?php echo '<i class="fa fa-circle-o-notch fa-lg" aria-hidden="true">' .' '. $competence[$i]['competence']. '</i>'.'<br>';?>
-             <?php 
-            $i++;
-        } ?>
 
+        <h2>Compétences numériques</h2>
+        <div>
+            <ul class="skills">
+                    <?php 
+                    //print_r($competence);
+                    $i = 0; 
+                    while($i < count($competence)){
+                        ?>  <?php echo '<li class="skill" aria-label="'.$competence[$i]['class_c'].'">'.$competence[$i]['competence'].'</li>'.'<br>';?>
+                         <?php 
+                        $i++;
+                    } ?>
+                
+            </ul>
+        </div>
         </div>
             </div>
                 </div>
@@ -136,8 +142,8 @@ $titre = $sql->fetch();
                 <div class="col-lg-12 text-center">
                     <h2>A propos</h2>
                      <!-- Expérience -->
-                    <div class="col-md-<?php echo 12/count($experience); ?> col-sm-6">
-                    <h4>Expérience</h4>
+                    <div class="col-md-col-sm-6 text-center">
+                    <h3>Expérience</h3>
                     <?php
                     $i = 0;
                     while( $i< count($experience) ){
@@ -160,9 +166,9 @@ $titre = $sql->fetch();
                     </div>
                     <!-- Formations -->
                      <div class="row">
-                <div class="col-lg-12 col-lg text-center">
+                <div class="col-lg-12 text-center">
                     <hr class="small">
-                    <h4>Formations</h4>                
+                    <h3>Formations</h3>                
                     <div class="row">
                     <?php
                     $i = 0;
@@ -170,14 +176,13 @@ $titre = $sql->fetch();
                         $nb = 12%count($formation);
                         ?>
                         <div class="col-md-<?php echo 12/count($formation); ?> col-sm-6"> 
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                         <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
 
-                            </span>
-                                <h4>
+                            <div class="service-item">
+
+                                <h5>
                                     <strong><?php echo $formation[$i]['titre_f'];?> </strong>
-                                </h4>
+                                </h5>   
                                 <p><?php echo $formation[$i]['date_f'].' ' .$formation[$i]['description_f'] ?></p>
                                 <a href="#" class="btn btn-light">Lire plus</a>
                             </div>
@@ -195,7 +200,7 @@ $titre = $sql->fetch();
         <!-- /.container -->
     </section>
     <!-- Callout -->
-    <aside class="callout">
+    <<!-- aside class="callout">
         <div class="text-vertical-center">
             <i class="fa fa-quote-left fa-4x fa-pull-left fa-border" aria-hidden="true"></i><br/><br/>
             <?php 
@@ -208,43 +213,20 @@ $titre = $sql->fetch();
                 } ?>
     </div>
     </aside>
-
-    <!-- Compétences -->
-        <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-        <h2>Compétences numériques</h2>
-        <?php 
-        $i = 0; 
-        while($i < count($competence)){
-            ?>  <?php echo $competence[$i]['competence']. '<br>';?>
-             <?php 
-            $i++;
-        } ?>
-
-        </div>
-            </div>
-                </div>
-        </section>
-
-
-
-
-
+ -->
 
     <!-- Portfolio -->
-   <!--  <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
+                <div class="col-lg-12 col-lg text-center">
                     <h2>Mes réalisations</h2>
-                    <hr class="small">
+                    
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="front/img/mauritanie.jpg" width="638.372" height="425.139">
+                                    <img class="img-portfolio img-responsive" src="front/img/portfolio-1.jpg" >
                                 </a>
                             </div>
                         </div>
@@ -270,7 +252,7 @@ $titre = $sql->fetch();
                             </div>
                         </div>
 
-                    </div> -->
+                    </div>
                     <!-- /.row (nested) -->
                     <a href="#" class="btn btn-dark">Voir plus de réalisations !</a>
                 </div>
@@ -294,12 +276,14 @@ $titre = $sql->fetch();
             </div>
         </div>
     </aside> -->
-</div>
+
 
     <!-- CONTACT -->
     <section id="contact">
         <form>
             <h1 class="me_contacter">Me contacter</h1>
+            <p>Une idée de projet, un besoin de conseil, de réponses en terme de production ou de délai ? Je vous invite<br/> à renseigner les champs ci-dessous et je m'engage à vous répondre dans les plus brefs délais.</p>
+
             <input class="formulaire" type="text" name="nom" placeholder="Nom"><br/><br/>
             <input class="formulaire" type="text" name="prenom" placeholder="Prenom"><br/><br/>
             <input class="formulaire" type="email" name="email" placeholder="Email"><br/><br/>
@@ -312,7 +296,7 @@ $titre = $sql->fetch();
             <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
         </small> -->
     </section> 
-
+</div>
     <!-- Footer -->
     <footer>
         <div class="container">
