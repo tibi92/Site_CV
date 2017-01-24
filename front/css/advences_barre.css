@@ -5,26 +5,31 @@
   list-style: none;
   font-size: 20px;
   padding: 0;
+
 }
 .skills .skill {
   display: block;
   position: relative;
-  height: 60px;
+  height: 70px;
   margin: 10px auto;
-  width: 90%;
+  width: 81%;
 }
 @media only screen and (min-width: 900px) {
   .skills .skill {
     display: inline-block;
-    width: 25%;
+    width: 80%;
     margin: 10px;
+    text-align: left; 
+    margin-top: 50px;
   }
+
 }
 .skills .skill:before, .skills .skill:after {
   content: "";
   position: absolute;
   border-radius: 20px;
   margin-top: 40px;
+
 }
 .skills .skill:before {
   top: 0;
@@ -36,7 +41,7 @@
 }
 .skills .skill:after {
   background-color: #7C1652;
-  background: repeating-linear-gradient(-45deg, #7C1652, #7C1652 10px, #31b59f 10px, #31b59f 20px);
+  background: repeating-linear-gradient(-45deg, #7C1652, #7C1652 10px, #CECECE 10px, #CECECE 20px);
   height: 16px;
   top: 2px;
   right: 95%;

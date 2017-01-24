@@ -39,7 +39,7 @@ $titre = $sql->fetch();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Site titre_cv <?=  $utilisateur['nom']. $utilisateur['prenom']; ?></title>
+    <title>Site CV <?=  $utilisateur['prenom'].' '. $utilisateur['nom']; ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="front/css/bootstrap.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@ $titre = $sql->fetch();
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top" onclick=$("#menu-close").click();>   <?= $utilisateur['nom'].' '.$utilisateur['prenom'] ?></a>
+                <a href="#top" onclick=$("#menu-close").click();>   <?= $utilisateur['prenom'].' '.$utilisateur['nom'] ?></a>
             </li>
             <li>
                 <a href="#top" onclick=$("#menu-close").click();>Accueil</a>
@@ -90,21 +90,23 @@ $titre = $sql->fetch();
             </li>
         </ul>
     </nav>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/cake.jpeg">
     <!-- Header -->
-    <header id="top" class="header">
-    <?php
-    $sql = $pdo->query("SELECT * FROM utilisateur") ;
-    $utilisateur = $sql->fetch();
-    ?>
-        <div class="text-vertical-center">
-            <h1><?php echo $utilisateur['nom'].' '.$utilisateur['prenom']; ?></h1>  
-            <span class="soustitre"><?= $titre['titre_cv'] ?></span>
-            <br>
-            <a href="#about" class="btn btn-dark btn-lg"><i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i></a></br></br></br>
+        <header id="top" class="header">
+        <?php
+        $sql = $pdo->query("SELECT * FROM utilisateur") ;
+        $utilisateur = $sql->fetch();
+        ?>
+            <div class="text-vertical-center">
+                <h1><?php echo $utilisateur['prenom'].' '.$utilisateur['nom']; ?></h1>  
+                <span class="soustitre"><?= $titre['titre_cv'] ?></span>
+                <br>
+                <a href="#about" class="btn btn-dark btn-lg"><i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i></a></br></br></br>
 
-            <!-- <p><?php echo $utilisateur['email'].' '.$utilisateur['adresse'].' '.$utilisateur['age'].' '.$utilisateur['notes']; ?></p> -->
-        </div>
-    </header>
+                <!-- <p><?php echo $utilisateur['email'].' '.$utilisateur['adresse'].' '.$utilisateur['age'].' '.$utilisateur['notes']; ?></p> -->
+            </div>
+        </header>
+    </div>
 
 <div id="wrapper">
 
@@ -134,7 +136,8 @@ $titre = $sql->fetch();
             </div>
                 </div>
         </section>
-
+ <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/cake.jpeg">
+ </div>
    <!--  A PROPOS -->
     <section id="about" class="about">
         <div class="container">
@@ -181,10 +184,11 @@ $titre = $sql->fetch();
                             <div class="service-item">
 
                                 <h5>
-                                    <strong><?php echo $formation[$i]['titre_f'];?> </strong>
+                                    <strong><?php echo $formation[$i]['titre_f'].'<br/>';?> </strong>
                                 </h5>   
-                                <p><?php echo $formation[$i]['date_f'].' ' .$formation[$i]['description_f'] ?></p>
-                                <a href="#" class="btn btn-light">Lire plus</a>
+                                
+                                    <span><?php echo $formation[$i]['date_f'] ?></span><br/>
+                                    <?php echo '<br/>'.$formation[$i]['description_f'] ?>
                             </div>
                         </div>
                     <?php $i++;
@@ -214,7 +218,8 @@ $titre = $sql->fetch();
     </div>
     </aside>
  -->
-
+ <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/cake.jpeg">
+ </div>
     <!-- Portfolio -->
     <section id="portfolio" class="portfolio">
         <div class="container">
@@ -226,28 +231,28 @@ $titre = $sql->fetch();
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="front/img/portfolio-1.jpg" >
+                                    <img class="img-portfolio img-responsive" src="front/img/projets.jpg" >
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="front/img/portfolio-2.jpg">
+                                    <!-- <img class="img-portfolio img-responsive" src="front/img/portfolio-2.jpg"> -->
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="front/img/portfolio-3.jpg">
+                                    <!-- <img class="img-portfolio img-responsive" src="front/img/portfolio-3.jpg"> -->
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="front/img/portfolio-4.jpg">
+                                    <!-- <img class="img-portfolio img-responsive" src="front/img/portfolio-4.jpg"> -->
                                 </a>
                             </div>
                         </div>
@@ -296,13 +301,12 @@ $titre = $sql->fetch();
             <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
         </small> -->
     </section> 
-</div>
     <!-- Footer -->
-    <footer>
+    <footer >
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Tibilé Coulibaly</strong>
+                <div class="col-lg-10 col-lg-offset-1 container">
+                    <h4><strong class="fin">Tibilé Coulibaly</strong>
                     </h4>
                     <p>Intégratrice / Développeuse Website
                     <ul class="list-unstyled">
@@ -316,7 +320,7 @@ $titre = $sql->fetch();
                             <a href="https://www.facebook.com/profile.php?id=100009513039426"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
                         </li>   
                         <li>
-                            <a href="<i class="fa fa-instagram" aria-hidden="true"></i><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
+                            <a href="<i class="fa fa-instagram" aria-hidden="true"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
@@ -326,6 +330,7 @@ $titre = $sql->fetch();
         </div>
         <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-4x"></i></a>
     </footer>
+</div>
 
     <!-- jQuery -->
     <script src="front/js/jquery.js"></script>
@@ -406,7 +411,12 @@ $titre = $sql->fetch();
         // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
     </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="front/parallax.js-1.4.2/parallax.js"></script>
+<script src="front/parallax.js-1.4.2/script.js"></script>
+
 
 </body>
+
 
 </html>

@@ -13,16 +13,35 @@
 	margin-bottom: 35px;
 	margin-top: 90px;
 	font-family: 'Arsenal', sans-serif;
+	color: #CECECE;
+	text-shadow: 2px 2px 3px #5C2545;
 }
-	.soustitre{
-	border-top: 1px solid black;
-	text-align: center;
-	font-size: 30px;
-	padding-top: 17px;
-	font-family: 'Roboto Condensed', sans-serif;
+.soustitre {
+    border-top: 1px solid white;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 17px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
 }
 
+
+/*.header{
+	background-image: url(../img/cake.jpeg);
+	position: relative;
+	z-index: 10;
+}*/
+
+.header {
+	background: none;
 }
+.parallax-window {
+    min-height: 400px;
+    background: rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.5);
+}
+
 
 /*/// WRAPPER ///*/
 
@@ -30,7 +49,16 @@
 	text-align: left;
 	font-family: 'Roboto Condensed', sans-serif;
 }
+.col-lg-12 {
+    width: 100%;
+    margin-bottom: 100px;
+    padding-top: 40px;
+}
 
+.fa-4x {
+    font-size: 4em;
+    color: black;
+}
 /*//COMPETENCES NUMERIQUES //*/
 
 
@@ -39,7 +67,9 @@
     color: #7C1652;
     text-align: center;	
     margin-bottom: 83px;
+    font-family: 'Arsenal', sans-serif;
 }
+
 .portfolio{
 	background-color: #F8F8F8;
 }
@@ -60,6 +90,7 @@ h3{
 
 p {
     margin-top: 15px;
+
 }
 
 .about{
@@ -108,10 +139,8 @@ h4{
 
 transition-duration: 0.8s;
 background-color: #7C1652;
-color: white;
+color:  #CECECE;
 }
-
-
 
 /*// MES REALISATIONS //*/
 .img-portfolio {
@@ -130,45 +159,98 @@ color: white;
 
 /*// CONTACT //*/
 form{
-	text-align: right;
+	text-align: center;
 	margin-right: 393px;
+	margin: 0 auto;
 }
 .me_contacter{
 	margin-bottom: 40px;
 	margin-top: 60px;
-	text-align: left;
-	margin-left: 890px;
+	text-align: center;
 	color: #7C1652;
 }
 .formulaire{
 	width: 615px;
-	height: 35px;
-	border-radius: 3px;
-	background-color: #F4F4F4;
+	height: 50px;
+	border-radius: 5px;
+	background-color: #7C1652;
+
+}
+.formulaire:focus{
+	width: 615px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: #F8F8F8;
+	border: 1px solid #7C1652 ;
+
 }
 .message{
 	width: 615px;
-	border-radius: 3px;
-	height: 100px;
-	background-color: #F4F4F4;
+	border-radius: 5px;
+	height: 200px;
+	background-color: #7C1652;
+}
+.message:focus{
+	width: 615px;
+	border-radius: 5px;
+	height: 200px;
+	background-color: #F8F8F8;
+	border: 1px solid #7C1652 ;
 }
 #contact p{
-	text-align: left;
-	margin-left: 890px;
+	text-align: center;
 	margin-bottom: 40px;
 }
 input[placeholder]{
-	color: #7C1652;
-	font-weight: bold
+	color: #F4F4F4;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-top: 3px;
+}
+input[placeholder]:focus{
+	color:#7C1652;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-top: 3px;
 }
 textarea[placeholder]{
+	color: #F4F4F4;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+textarea[placeholder]:focus{
 	color: #7C1652;
-	font-weight: bold
+	font-weight: bold;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+
+/*// FOOTER ///*/
+ footer .container{
+ 	text-align: center;
+ 	margin-top: 50px;
+
+ }
+ .fa-3x {
+    font-size: 3em;
+    color: #31B59F;
+}
+a {
+    color: #31B59F;
+    text-decoration: none;
+}
+.name{
+	color: :#7C1652;
 }
 /* // font awesome //*/
 
-.fa-4x {
-    font-size: 4em;
+.fin {
     color: #7C1652;
 
+}
+.date{
+
+	
 }
