@@ -80,7 +80,7 @@ $titre = $sql->fetch();
                 <a href="#about" onclick=$("#menu-close").click();>A propos...</a>
             </li>
             <li>
-                <a href="#services" onclick=$("#menu-close").click();>Formations</a>
+                <a href="#realisation" onclick=$("#menu-close").click();>Réalisations</a>
             </li>
             <li>
                 <a href="#portfolio" onclick=$("#menu-close").click();>Compétences</a>
@@ -90,7 +90,7 @@ $titre = $sql->fetch();
             </li>
         </ul>
     </nav>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/cake.jpeg">
+    <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg">
     <!-- Header -->
         <header id="top" class="header">
         <?php
@@ -108,7 +108,7 @@ $titre = $sql->fetch();
         </header>
     </div>
 
-<div id="wrapper">
+
 
 
     
@@ -136,17 +136,17 @@ $titre = $sql->fetch();
             </div>
                 </div>
         </section>
- <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/cake.jpeg">
+ <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg">
  </div>
    <!--  A PROPOS -->
     <section id="about" class="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>A propos</h2>
+                    <h2>À propos</h2>
                     <p class="a_propos">Passionée par les nouvelles technologies, j'ai à coeur de réaliser le travail qui m'est confié avec rigueur mais surtout par plaisir. Dynamique et motivée, je saurais menée à bien vos projets et être une partenaire de choix !</p>
                     <div class="button">
-                        <a href="CV_Tibile.pdf" target="blank">Download</a> 
+                        <a href="CV_Tibile.pdf" target="blank">Télécharger mon cv</a> 
                     </div>
                      <!-- Expérience -->
                     <div class="col-md-col-sm-6 text-center">
@@ -222,10 +222,10 @@ $titre = $sql->fetch();
     </div>
     </aside>
  -->
- <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/cake.jpeg">
+ <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg">
  </div>
     <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
+    <section id="realisation" class="realisation">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-lg text-center">
@@ -289,7 +289,7 @@ $titre = $sql->fetch();
 
     <!-- CONTACT -->
     <section id="contact">
-        <form>
+        <form method="POST" action="utilisateur.php">
             <h1 class="me_contacter">Me contacter</h1>
             <p>Une idée de projet, un besoin de conseil, de réponses en terme de production ou de délai ? Je vous invite<br/> à renseigner les champs ci-dessous et je m'engage à vous répondre dans les plus brefs délais.</p>
 
@@ -297,7 +297,7 @@ $titre = $sql->fetch();
             <input class="formulaire" type="text" name="prenom" placeholder="Prenom"><br/><br/>
             <input class="formulaire" type="email" name="email" placeholder="Email"><br/><br/>
             <textarea class="message" placeholder="Votre message"></textarea> <br/><br/>    
-            <input type="submit" name="bouton" class="envoyer">
+            <input type="submit" name="envoyer" class="envoyer" value="M'écrire">
         </form>
 
         <!-- <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
@@ -335,7 +335,7 @@ $titre = $sql->fetch();
         </div>
         <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-4x"></i></a>
     </footer>
-</div>
+
 
     <!-- jQuery -->
     <script src="front/js/jquery.js"></script>
@@ -419,7 +419,7 @@ $titre = $sql->fetch();
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="front/parallax.js-1.4.2/parallax.js"></script>
 <script src="front/parallax.js-1.4.2/script.js"></script>
-
+</div>
 
 </body>
 

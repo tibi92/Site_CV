@@ -1,3 +1,3 @@
 console.log('ftghtryhjryh');
 
-$('.parallax-window').parallax({imageSrc: 'front/img/cake.jpeg'});
+$('.parallax-window').parallax({imageSrc: 'front/img/ordi.jpg'});

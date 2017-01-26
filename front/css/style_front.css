@@ -14,7 +14,7 @@
 	margin-top: 90px;
 	font-family: 'Arsenal', sans-serif;
 	color: #CECECE;
-	text-shadow: 2px 2px 3px #5C2545;
+	text-shadow: 1px 1px 1px #FFDD00;
 }
 .soustitre {
     border-top: 1px solid white;
@@ -23,7 +23,7 @@
     padding-top: 17px;
     font-family: 'Roboto Condensed', sans-serif;
     color: white;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD00, 0 0 70px #FFDD00, 0 0 80px #FFDD00, 0 0 100px #FFDD00, 0 0 150px #FFDD00;
 }
 
 
@@ -45,6 +45,11 @@
 
 /*/// WRAPPER ///*/
 
+.fa-4x {
+    font-size: 4em;
+    color: #19114F;
+}
+
 .text-center{
 	text-align: left;
 	font-family: 'Roboto Condensed', sans-serif;
@@ -54,29 +59,29 @@
     margin-bottom: 100px;
     padding-top: 40px;
 }
-
-.fa-4x {
-    font-size: 4em;
-    color: black;
+.btn-dark:hover, .btn-dark:focus, .btn-dark:active {
+    color: #fff;
+    background-color: #E4E8A4;
 }
+
 /*//COMPETENCES NUMERIQUES //*/
 
 
 .text-center h2 {
     font-size: 30px;
-    color: #7C1652;
+    color: #19114F;
     text-align: center;	
     margin-bottom: 83px;
     font-family: 'Arsenal', sans-serif;
 }
 
 .portfolio{
-	background-color: #F8F8F8;
+	background-color: #EDEAEA;
 }
 h3{
 	margin-bottom: 70px;
 	text-align: left;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #D9B600;
 	margin-top: 151px;
 
 }
@@ -90,21 +95,21 @@ h3{
 
 .a_propos{
 	text-align: center;
+	font-size: 15px;
 }
 .button {
     width: 200px;
-    margin: 100px auto;
+    margin: 50px auto;
 }
 
 .button a {
     display: block;
     height: 50px;
     width: 200px;
-    color: #7C1652;
+    color: #19114F;
     font: 17px/50px sans-serif,Helvetica;
     text-decoration: none;
     text-align: center;
-    text-transform: uppercase;
     background: #CECECE; 
     border-radius: 8px;
 }
@@ -116,7 +121,7 @@ p {
 }
 
 .about{
-	background-color: #F4F4F4;
+	background-color: #EDEAEA;
 	margin: 0px 0 -22px 0;
 	padding-bottom: 95px;
 }
@@ -143,7 +148,7 @@ h4{
   /*// experience //*/
 .text-center span{
 	
-	background-color: #7C1652;
+	background-color: #19114F;
 	color: white;
 	padding: 5px;
 	margin-bottom: 50px;
@@ -160,7 +165,7 @@ h4{
 .btn-light:hover{
 
 transition-duration: 0.8s;
-background-color: #7C1652;
+background-color: #19114F;
 color:  #CECECE;
 }
 
@@ -171,6 +176,9 @@ color:  #CECECE;
 }
 .portfolio{
 	background-color: #F8F8F8;
+}
+.realisation{
+	background-color: #EDEAEA;
 }
 .btn-dark {
     border-radius: 0;
@@ -189,13 +197,13 @@ form{
 	margin-bottom: 40px;
 	margin-top: 60px;
 	text-align: center;
-	color: #7C1652;
+	color: #19114F;
 }
 .formulaire{
 	width: 615px;
 	height: 50px;
 	border-radius: 5px;
-	background-color: #7C1652;
+	background-color: #19114F;
 
 }
 .formulaire:focus{
@@ -203,51 +211,62 @@ form{
 	height: 50px;
 	border-radius: 5px;
 	background-color: #F8F8F8;
-	border: 1px solid #7C1652 ;
+	border: 1px solid #19114F ;
 
 }
 .message{
 	width: 615px;
 	border-radius: 5px;
 	height: 200px;
-	background-color: #7C1652;
+	background-color: #19114F;
 }
 .message:focus{
 	width: 615px;
 	border-radius: 5px;
 	height: 200px;
 	background-color: #F8F8F8;
-	border: 1px solid #7C1652 ;
+	border: 1px solid #19114F ;
 }
 #contact p{
 	text-align: center;
 	margin-bottom: 40px;
 }
 input[placeholder]{
-	color: #F4F4F4;
+	color: yellow;
 	font-weight: bold;
 	padding-left: 5px;
 	padding-top: 3px;
 }
 input[placeholder]:focus{
-	color:#7C1652;
+	color:#19114F;
 	font-weight: bold;
 	padding-left: 5px;
 	padding-top: 3px;
 }
 textarea[placeholder]{
-	color: #F4F4F4;
+	color: yellow;
 	font-weight: bold;
 	padding-left: 5px;
 	padding-top: 5px;
 }
 textarea[placeholder]:focus{
-	color: #7C1652;
+	color: #19114F;
 	font-weight: bold;
 	padding-left: 5px;
 	padding-top: 5px;
 }
-
+.envoyer{
+	height: 50px;
+	width: 200px;
+	color: #19114F;
+	font: 17px/50px sans-serif,Helvetica;
+	border: none;
+	text-align: center;
+	text-transform: uppercase;
+	background: #CECECE;
+	border-radius: 8px;
+	margin-top: 10px;
+}
 
 /*// FOOTER ///*/
  footer .container{
@@ -257,19 +276,19 @@ textarea[placeholder]:focus{
  }
  .fa-3x {
     font-size: 3em;
-    color: #31B59F;
+    color: #19114F;
 }
 a {
-    color: #31B59F;
+    color: #19114F;
     text-decoration: none;
 }
 .name{
-	color: :#7C1652;
+	color: :#19114F;
 }
 /* // font awesome //*/
 
 .fin {
-    color: #7C1652;
+    color: #19114F;
 
 }
 .date{

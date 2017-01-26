@@ -40,8 +40,8 @@
   background: #eeeeee;
 }
 .skills .skill:after {
-  background-color: #7C1652;
-  background: repeating-linear-gradient(-45deg, #7C1652, #7C1652 10px, #CECECE 10px, #CECECE 20px);
+  background-color: #19114F;
+  background: repeating-linear-gradient(-45deg, #19114F, #19114F 10px, #E4E8A4 10px, #E4E8A4 20px);
   height: 16px;
   top: 2px;
   right: 95%;
