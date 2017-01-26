@@ -77,7 +77,7 @@ $titre = $sql->fetch();
                 <a href="#top" onclick=$("#menu-close").click();>Accueil</a>
             </li>
             <li>
-                <a href="#about" onclick=$("#menu-close").click();>A ropos...</a>
+                <a href="#about" onclick=$("#menu-close").click();>A propos...</a>
             </li>
             <li>
                 <a href="#services" onclick=$("#menu-close").click();>Formations</a>
@@ -144,6 +144,10 @@ $titre = $sql->fetch();
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>A propos</h2>
+                    <p class="a_propos">Passionée par les nouvelles technologies, j'ai à coeur de réaliser le travail qui m'est confié avec rigueur mais surtout par plaisir. Dynamique et motivée, je saurais menée à bien vos projets et être une partenaire de choix !</p>
+                    <div class="button">
+                        <a href="CV_Tibile.pdf" target="blank">Download</a> 
+                    </div>
                      <!-- Expérience -->
                     <div class="col-md-col-sm-6 text-center">
                     <h3>Expérience</h3>

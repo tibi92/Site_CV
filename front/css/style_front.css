@@ -28,7 +28,7 @@
 
 
 /*.header{
-	background-image: url(../img/cake.jpeg);
+	background-image: url(../img/malteserois.jpeg);
 	position: relative;
 	z-index: 10;
 }*/
@@ -87,6 +87,28 @@ h3{
 
 
 /*// A PROPOS //*/
+
+.a_propos{
+	text-align: center;
+}
+.button {
+    width: 200px;
+    margin: 100px auto;
+}
+
+.button a {
+    display: block;
+    height: 50px;
+    width: 200px;
+    color: #7C1652;
+    font: 17px/50px sans-serif,Helvetica;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    background: #CECECE; 
+    border-radius: 8px;
+}
+
 
 p {
     margin-top: 15px;
