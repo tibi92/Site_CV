@@ -107,11 +107,7 @@ $titre = $sql->fetch();
             </div>
         </header>
     </div>
-
-
-
-
-    
+<div class="wrapper">
     <!-- Compétences -->
         <section id="portfolio" class="portfolio">
         <div class="container">
@@ -271,6 +267,7 @@ $titre = $sql->fetch();
         </div>
         <!-- /.container -->
     </section>
+</div>
 
     <!-- Call to Action -->
  <!--    <aside class="call-to-action bg-primary">
@@ -419,7 +416,6 @@ $titre = $sql->fetch();
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="front/parallax.js-1.4.2/parallax.js"></script>
 <script src="front/parallax.js-1.4.2/script.js"></script>
-</div>
 
 </body>
 

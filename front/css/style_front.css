@@ -35,6 +35,7 @@
 
 .header {
 	background: none;
+
 }
 .parallax-window {
     min-height: 400px;
@@ -44,6 +45,10 @@
 
 
 /*/// WRAPPER ///*/
+.wrapper{
+	margin: 0 auto;
+
+}
 
 .fa-4x {
     font-size: 4em;
@@ -53,6 +58,7 @@
 .text-center{
 	text-align: left;
 	font-family: 'Roboto Condensed', sans-serif;
+	background-color: #F4F4F4;
 }
 .col-lg-12 {
     width: 100%;
@@ -76,7 +82,7 @@
 }
 
 .portfolio{
-	background-color: #EDEAEA;
+	background-color: white;
 }
 h3{
 	margin-bottom: 70px;
@@ -121,7 +127,7 @@ p {
 }
 
 .about{
-	background-color: #EDEAEA;
+	background-color:white;
 	margin: 0px 0 -22px 0;
 	padding-bottom: 95px;
 }
@@ -174,11 +180,12 @@ color:  #CECECE;
     margin: 0 auto;
     margin-top: 20px;
 }
-.portfolio{
-	background-color: #F8F8F8;
-}
+
 .realisation{
-	background-color: #EDEAEA;
+
+	background-color:white;
+
+
 }
 .btn-dark {
     border-radius: 0;
