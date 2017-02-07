@@ -51,6 +51,7 @@ $titre = $sql->fetch();
     <link href="front/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Arsenal:700|Roboto+Condensed" rel="stylesheet"> 
+    <link href="http://fonts.googleapis.com/css?family=Fenix" rel="stylesheet" type="text/css"> 
 
     <link rel="stylesheet" type="text/css" href="front/css/advences_barre.css">
     <link rel="stylesheet" type="text/css" href="front/css/style_front.css">
@@ -115,7 +116,7 @@ $titre = $sql->fetch();
                 <div class="col-lg-12 col-lg text-center">
 
         <h2>Compétences numériques</h2>
-        <div>
+        <div class="col-md-<?php echo 2/count($competence); ?> col-sm-6">
             <ul class="skills">
                     <?php 
                     //print_r($competence);
@@ -133,20 +134,36 @@ $titre = $sql->fetch();
                 </div>
         </section>
  <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg">
+
+       <h2 class="parallax1">À propos</h2>
+
+          
+            <div  class="parallax">
+              <i class="fa fa-book fa-5x" aria-hidden="true"></i>
+                <aside class="parallax"> Lectrice assidue ( Biographie et autobiographies )</aside>
+            </div>
+
+        <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
+            <div class="parallax">
+                <aside class="parallax">Passionnée de pâtisserie</aside> 
+            </div>
+
+
+
  </div>
    <!--  A PROPOS -->
     <section id="about" class="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>À propos</h2>
-                    <p class="a_propos">Passionée par les nouvelles technologies, j'ai à coeur de réaliser le travail qui m'est confié avec rigueur mais surtout par plaisir. Dynamique et motivée, je saurais menée à bien vos projets et être une partenaire de choix !</p>
+             
+                    <p class="a_propos">Passionée par les nouvelles technologies, j'ai à coeur de réaliser le travail qui m'est confié avec rigueur mais surtout par plaisir. Dynamique et motivée, je saurais mener à bien vos projets et être une partenaire de choix !</p>
                     <div class="button">
                         <a href="CV_Tibile.pdf" target="blank">Télécharger mon cv</a> 
                     </div>
                      <!-- Expérience -->
-                    <div class="col-md-col-sm-6 text-center">
-                    <h3>Expérience</h3>
+                     <div class="col-lg-12 text-center">
+                    <h3>Expériences professionelles</h3>
                     <?php
                     $i = 0;
                     while( $i< count($experience) ){

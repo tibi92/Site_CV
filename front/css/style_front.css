@@ -21,7 +21,7 @@
     text-align: center;
     font-size: 30px;
     padding-top: 17px;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Neon',serif;
     color: white;
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD00, 0 0 70px #FFDD00, 0 0 80px #FFDD00, 0 0 100px #FFDD00, 0 0 150px #FFDD00;
 }
@@ -37,12 +37,6 @@
 	background: none;
 
 }
-.parallax-window {
-    min-height: 400px;
-    background: rgba(255,255,255,0.5);
-    background: rgba(0,0,0,0.5);
-}
-
 
 /*/// WRAPPER ///*/
 .wrapper{
@@ -98,6 +92,39 @@ h3{
 
 
 /*// A PROPOS //*/
+
+
+.parallax1{
+	text-align: center;
+	color: white;
+	padding-top: 30px;
+	margin-bottom: 30px;
+	font-weight: bold;
+	font-size: 40px;
+}
+
+.parallax{
+	text-align: center;
+	color: white;
+	margin-top: 30px;
+	float: left;
+	padding-left: 150px;
+}
+.fa-5x{
+	color: red;
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.5);
+    padding-bottom: 85px;
+    padding-top: 70px;
+}
+aside.parallax{
+	font-size: 25px;
+	font-weight: bold;
+}
 
 .a_propos{
 	text-align: center;

@@ -17,10 +17,11 @@
 @media only screen and (min-width: 900px) {
   .skills .skill {
     display: inline-block;
-    width: 80%;
+    width: 30%;
     margin: 10px;
     text-align: left; 
     margin-top: 50px;
+    margin-left: 250px;
   }
 
 }
@@ -48,8 +49,8 @@
   bottom: 2px;
   left: 2px;
   -webkit-animation: fill 2s both;
-  -moz-animation: fill 2s both;
-  animation: fill 2s both;
+  -moz-animation: fill 0.5s both;
+  animation: fill 0.5s both;
 }
 .skills .skill:nth-child(1):after {
   -webkit-animation-delay: 0.5s;
