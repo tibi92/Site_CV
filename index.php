@@ -50,8 +50,9 @@ $titre = $sql->fetch();
     <!-- Custom Fonts -->
     <link href="front/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Arsenal:700|Roboto+Condensed" rel="stylesheet"> 
-    <link href="http://fonts.googleapis.com/css?family=Fenix" rel="stylesheet" type="text/css"> 
+    <link href="https://fonts.googleapis.com/css?family=Arsenal:700|Roboto+Condensed" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Fenix" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="front/css/advences_barre.css">
     <link rel="stylesheet" type="text/css" href="front/css/style_front.css">
@@ -99,7 +100,7 @@ $titre = $sql->fetch();
         $utilisateur = $sql->fetch();
         ?>
             <div class="text-vertical-center">
-                <h1><?php echo $utilisateur['prenom'].' '.$utilisateur['nom']; ?></h1>  
+                <h1><?php echo $utilisateur['prenom'].' '.$utilisateur['nom']; ?></h1>
                 <span class="soustitre"><?= $titre['titre_cv'] ?></span>
                 <br>
                 <a href="#about" class="btn btn-dark btn-lg"><i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i></a></br></br></br>
@@ -118,15 +119,15 @@ $titre = $sql->fetch();
         <h2>Compétences numériques</h2>
         <div class="col-md-<?php echo 2/count($competence); ?> col-sm-6">
             <ul class="skills">
-                    <?php 
+                    <?php
                     //print_r($competence);
-                    $i = 0; 
+                    $i = 0;
                     while($i < count($competence)){
                         ?>  <?php echo '<li class="skill" aria-label="'.$competence[$i]['class_c'].'">'.$competence[$i]['competence'].'</li>'.'<br>';?>
-                         <?php 
+                         <?php
                         $i++;
                     } ?>
-                
+
             </ul>
         </div>
         </div>
@@ -137,15 +138,16 @@ $titre = $sql->fetch();
 
        <h2 class="parallax1">À propos</h2>
 
-          
+
             <div  class="parallax">
               <i class="fa fa-book fa-5x" aria-hidden="true"></i>
                 <aside class="parallax"> Lectrice assidue ( Biographie et autobiographies )</aside>
             </div>
 
-        <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
+
             <div class="parallax">
-                <aside class="parallax">Passionnée de pâtisserie</aside> 
+              <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
+                <aside class="parallax">Passionnée de pâtisserie</aside>
             </div>
 
 
@@ -156,28 +158,28 @@ $titre = $sql->fetch();
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-             
+
                     <p class="a_propos">Passionée par les nouvelles technologies, j'ai à coeur de réaliser le travail qui m'est confié avec rigueur mais surtout par plaisir. Dynamique et motivée, je saurais mener à bien vos projets et être une partenaire de choix !</p>
                     <div class="button">
-                        <a href="CV_Tibile.pdf" target="blank">Télécharger mon cv</a> 
+                        <a href="CV_Tibile.pdf" target="blank">Télécharger mon cv</a>
                     </div>
                      <!-- Expérience -->
                      <div class="col-lg-12 text-center">
-                    <h3>Expériences professionelles</h3>
+                    <h3>Expériences professionnelles</h3>
                     <?php
                     $i = 0;
                     while( $i< count($experience) ){
                         $nb = 12%count($experience);
                         ?>
-                        <div class="col-md-<?php echo 12/count($experience); ?> col-sm-6"> 
+                        <div class="col-md-<?php echo 12/count($experience); ?> col-sm-6">
                             <div class="service-item">
                                 <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
-                                
+
                                 <h5>
                                     <strong><?php echo $experience[$i]['titre_e'];?> </strong>
                                 </h5>
                                 <p><?php echo '<span>'.$experience[$i]['date_e'].'<span>'.' ' .$experience[$i]['description_e'] ?></p>
-                            
+
                             </div>
                         </div>
                     <?php $i++;
@@ -188,22 +190,22 @@ $titre = $sql->fetch();
                      <div class="row">
                 <div class="col-lg-12 text-center">
                     <hr class="small">
-                    <h3>Formations</h3>                
+                    <h3>Formations</h3>
                     <div class="row">
                     <?php
                     $i = 0;
                     while( $i< count($formation) ){
                         $nb = 12%count($formation);
                         ?>
-                        <div class="col-md-<?php echo 12/count($formation); ?> col-sm-6"> 
+                        <div class="col-md-<?php echo 12/count($formation); ?> col-sm-6">
                          <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
 
                             <div class="service-item">
 
                                 <h5>
                                     <strong><?php echo $formation[$i]['titre_f'].'<br/>';?> </strong>
-                                </h5>   
-                                
+                                </h5>
+
                                     <span><?php echo $formation[$i]['date_f'] ?></span><br/>
                                     <?php echo '<br/>'.$formation[$i]['description_f'] ?>
                             </div>
@@ -224,12 +226,12 @@ $titre = $sql->fetch();
     <<!-- aside class="callout">
         <div class="text-vertical-center">
             <i class="fa fa-quote-left fa-4x fa-pull-left fa-border" aria-hidden="true"></i><br/><br/>
-            <?php 
-                $i = 0; 
+            <?php
+                $i = 0;
                 while($i < count($loisir)){
                     ?>
                     <?php echo $loisir[$i]['titre_l']. '</br>';?>
-                    <?php 
+                    <?php
                     $i++;
                 } ?>
     </div>
@@ -243,7 +245,7 @@ $titre = $sql->fetch();
             <div class="row">
                 <div class="col-lg-12 col-lg text-center">
                     <h2>Mes réalisations</h2>
-                    
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
@@ -310,7 +312,7 @@ $titre = $sql->fetch();
             <input class="formulaire" type="text" name="nom" placeholder="Nom"><br/><br/>
             <input class="formulaire" type="text" name="prenom" placeholder="Prenom"><br/><br/>
             <input class="formulaire" type="email" name="email" placeholder="Email"><br/><br/>
-            <textarea class="message" placeholder="Votre message"></textarea> <br/><br/>    
+            <textarea class="message" placeholder="Votre message"></textarea> <br/><br/>
             <input type="submit" name="envoyer" class="envoyer" value="M'écrire">
         </form>
 
@@ -319,7 +321,7 @@ $titre = $sql->fetch();
         <small>
             <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
         </small> -->
-    </section> 
+    </section>
     <!-- Footer -->
     <footer >
         <div class="container">
@@ -329,7 +331,7 @@ $titre = $sql->fetch();
                     </h4>
                     <p>Intégratrice / Développeuse Website
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
+                        <li><i class="fa fa-phone fa-fw"></i> 07 78 21 56 33</li>
                         <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">tibile.coulibaly@lepoles.com</a>
                         </li>
                     </ul>
@@ -337,13 +339,13 @@ $titre = $sql->fetch();
                     <ul class="list-inline">
                         <li>
                             <a href="https://www.facebook.com/profile.php?id=100009513039426"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>   
+                        </li>
                         <li>
                             <a href="<i class="fa fa-instagram" aria-hidden="true"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Your Website 2014</p>
+                    <p class="text-muted">Copyright &copy;Tibilé Coulibaly</p>
                 </div>
             </div>
         </div>
