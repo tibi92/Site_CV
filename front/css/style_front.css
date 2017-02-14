@@ -1,339 +1,146 @@
-body{
-	font-family: 'Raleway', sans-serif;
-	}
-
-	/*/// HEADER ///*/
-
-#top .btn{
-	float: right;
-	margin-right: 20px;
-	margin-top: 280px;
-	position: relative;
-}
-
-.text-vertical-center h1{
-	font-size: 6.5em;
-	text-align: center;
-	margin-bottom: 35px;
-	margin-top: 90px;
-	font-family: 'Arsenal', sans-serif;
-	color: #CECECE;
-	text-shadow: 1px 1px 1px #FFDD00;
-}
-.soustitre {
-    border-top: 1px solid white;
-    text-align: center;
-    font-size: 30px;
-    padding-top: 17px;
-    font-family: 'Neon',serif;
-    color: white;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD00, 0 0 70px #FFDD00, 0 0 80px #FFDD00, 0 0 100px #FFDD00, 0 0 150px #FFDD00;
-}
-
-
-/*.header{
-	background-image: url(../img/malteserois.jpeg);
-	position: relative;
-	z-index: 10;
-}*/
-
-.header {
-	background: none;
-
-}
-
-/*/// WRAPPER ///*/
-.wrapper{
-	margin: 0 auto;
-
-}
-
-.fa-4x {
-    font-size: 4em;
-    color: #19114F;
-}
-
-.text-center{
-	text-align: left;
-	font-family: 'Roboto Condensed', sans-serif;
-	background-color: #F4F4F4;
-}
-.col-lg-12 {
-    width: 100%;
-    margin-bottom: 100px;
-    padding-top: 40px;
-}
-.btn-dark:hover, .btn-dark:focus, .btn-dark:active {
-    color: #fff;
-    background-color: #E4E8A4;
-}
-
-/*//COMPETENCES NUMERIQUES //*/
-
-
-.text-center h2 {
-    font-size: 30px;
-    color: #19114F;
-    text-align: center;
-    margin-bottom: 83px;
-    font-family: 'Arsenal', sans-serif;
-}
-
-.portfolio{
-	background-color: white;
-}
-h3{
-	margin-bottom: 70px;
-	text-align: left;
-	border-bottom: 1px solid #D9B600;
-	margin-top: 151px;
-
-}
-.fa-lg{
+/*//SECTION//*/
+h1{
 	margin-top: 20px;
-	text-align: left;
+	margin-bottom: 100px;	
+}
+.column, .columns {
+    position: relative;
+    padding: 0 20px;
+    min-height: 1px;
+    float: left;
+    padding-top: 20px;
+}
+.titre{
+	margin-left: -740px;
 }
 
 
-/*// A PROPOS //*/
 
+/*// Experience et formations//*/
 
-.parallax1{
-	text-align: center;
-	color: white;
-	padding-top: 30px;
-	margin-bottom: 30px;
-	font-weight: bold;
-	font-size: 40px;
-	font-family:'Arsenal', sans-serif;
+section#timeline {
+  width: 80%;
+  margin: 20px auto;
+  position: relative;
 }
-
-.parallax{
-	text-align: center;
-	color: white;
-	margin-top: 30px;
-	float: left;
-	padding-left: 150px;
+section#timeline:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin: 1980px 0 0 -1px;
+  width: 2px;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
 }
-.fa-5x{
-	color: blue	;
-	margin-left: 27px;
+section#timeline article {
+  width: 100%;
+  margin: 0 0 20px 0;
+  position: relative;
 }
-
-.parallax-window {
-    min-height: 400px;
-    background: rgba(255,255,255,0.5);
-    background: rgba(0,0,0,0.5);
-    padding-bottom: 130px;
-    padding-top: 70px;
+section#timeline article:after {
+  content: '';
+  display: block;
+  clear: both;
 }
-aside.parallax{
-	font-size: 25px;
-	font-weight: bold;
-	letter-spacing: 1px;
-
+section#timeline article div.inner {
+  width: 40%;
+  float: left;
+  margin: 5px 0 0 0;
+  border-radius: 6px;
 }
-
-.a_propos{
-	text-align: center;
-	font-size: 15px;
+section#timeline article div.inner span.date {
+  display: block;
+  width: 60px;
+  height: 50px;
+  padding: 5px 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -32px;
+  border-radius: 100%;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: #25303B;
+  color: rgba(255,255,255,0.5);
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 0 7px #25303B;
 }
-.button {
-    width: 200px;
-    margin: 50px auto;
+section#timeline article div.inner span.date span {
+  display: block;
+  text-align: center;
 }
-
-.button a {
-    display: block;
-    height: 50px;
-    width: 200px;
-    color: #19114F;
-    font: 17px/50px sans-serif,Helvetica;
-    text-decoration: none;
-    text-align: center;
-    background: #CECECE;
-    border-radius: 8px;
+section#timeline article div.inner span.date span.day {
+  font-size: 10px;
 }
-
-
-p {
-    margin-top: 15px;
-
+section#timeline article div.inner span.date span.month {
+  font-size: 18px;
 }
-
-.about{
-	background-color:white;
-	margin: 0px 0 -22px 0;
-	padding-bottom: 95px;
+section#timeline article div.inner span.date span.year {
+  font-size: 10px;
 }
-
-h4{
-	margin-bottom: 40px;
+section#timeline article div.inner h2 {
+  padding: 15px;
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  border-radius: 6px 6px 0 0;
+  position: relative;
 }
-
- h5{
-    font-size: 18px;
-    margin-bottom: 10px;
-    margin-top: 20px;
-    font-weight: bold;
+section#timeline article div.inner h2:after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -5px;
+  	width: 10px; 
+	  height: 10px;
+  -webkit-transform: rotate(-45deg);
 }
-
-/*hr.small {
-    max-width: 800px;
-    margin-bottom: 250px;
-    margin-top: 200px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-
-   }*/
-
-  /*// experience //*/
-.text-center span{
-
-	background-color: #19114F;
-	color: white;
-	padding: 5px;
-	margin-bottom: 50px;
+section#timeline article div.inner p {
+  padding: 15px;
+  margin: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #656565;
+  border-radius: 0 0 6px 6px;
 }
-
-	/*// formations //*/
-.btn-light {
-    border-radius: 0;
-    color: #333;
-    background-color: #F8F8F8;
-    border: 1px solid black;
-    margin-top: 10px;
+section#timeline article:nth-child(2n+2) div.inner {
+  float: right;
 }
-.btn-light:hover{
-
-transition-duration: 0.8s;
-background-color: #19114F;
-color:  #CECECE;
+section#timeline article:nth-child(2n+2) div.inner h2:after {
+  left: -5px;
 }
-
-/*// MES REALISATIONS //*/
-.img-portfolio {
-    margin: 0 auto;
-    margin-top: 20px;
+section#timeline article:nth-child(1) div.inner h2 {
+  background: #e74c3c;
 }
-
-.realisation{
-
-	background-color:white;
-
-
+section#timeline article:nth-child(1) div.inner h2:after {
+  background: #e74c3c;
 }
-.btn-dark {
-    border-radius: 0;
-    color: #fff;
-    background-color: rgba(0,0,0,0.4);
-    margin-top: 27px;
+section#timeline article:nth-child(2) div.inner h2 {
+  background: #2ecc71;
 }
-
-/*// CONTACT //*/
-form{
-	text-align: center;
-	margin-right: 393px;
-	margin: 0 auto;
+section#timeline article:nth-child(2) div.inner h2:after {
+  background: #2ecc71;
 }
-.me_contacter{
-	margin-bottom: 40px;
-	margin-top: 60px;
-	text-align: center;
-	color: #19114F;
+section#timeline article:nth-child(3) div.inner h2 {
+  background: #e67e22;
 }
-.formulaire{
-	width: 615px;
-	height: 50px;
-	border-radius: 5px;
-	background-color: #19114F;
-
+section#timeline article:nth-child(3) div.inner h2:after {
+  background: #e67e22;
 }
-.formulaire:focus{
-	width: 615px;
-	height: 50px;
-	border-radius: 5px;
-	background-color: #F8F8F8;
-	border: 1px solid #19114F ;
-
+section#timeline article:nth-child(4) div.inner h2 {
+  background: #1abc9c;
 }
-.message{
-	width: 615px;
-	border-radius: 5px;
-	height: 200px;
-	background-color: #19114F;
+section#timeline article:nth-child(4) div.inner h2:after {
+  background: #1abc9c;
 }
-.message:focus{
-	width: 615px;
-	border-radius: 5px;
-	height: 200px;
-	background-color: #F8F8F8;
-	border: 1px solid #19114F ;
+section#timeline article:nth-child(5) div.inner h2 {
+  background: #9b59b6;
 }
-#contact p{
-	text-align: center;
-	margin-bottom: 40px;
-}
-input[placeholder]{
-	color: yellow;
-	font-weight: bold;
-	padding-left: 5px;
-	padding-top: 3px;
-}
-input[placeholder]:focus{
-	color:#19114F;
-	font-weight: bold;
-	padding-left: 5px;
-	padding-top: 3px;
-}
-textarea[placeholder]{
-	color: yellow;
-	font-weight: bold;
-	padding-left: 5px;
-	padding-top: 5px;
-}
-textarea[placeholder]:focus{
-	color: #19114F;
-	font-weight: bold;
-	padding-left: 5px;
-	padding-top: 5px;
-}
-.envoyer{
-	height: 50px;
-	width: 200px;
-	color: #19114F;
-	font: 17px/50px sans-serif,Helvetica;
-	border: none;
-	text-align: center;
-	text-transform: uppercase;
-	background: #CECECE;
-	border-radius: 8px;
-	margin-top: 10px;
-}
-
-/*// FOOTER ///*/
- footer .container{
- 	text-align: center;
- 	margin-top: 50px;
-
- }
- .fa-3x {
-    font-size: 3em;
-    color: #19114F;
-}
-a {
-    color: #19114F;
-    text-decoration: none;
-}
-.name{
-	color: :#19114F;
-}
-/* // font awesome //*/
-
-.fin {
-    color: #19114F;
-
-}
-.date{
-
-
+section#timeline article:nth-child(5) div.inner h2:after {
+  background: #9b59b6;
 }

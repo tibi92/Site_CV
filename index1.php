@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<?php require("connexion/connexion.php"); ?>
+<DOCTYPE html>
+<?php require("connexion/connexion.php"); 
 
-<?php
 $sql = $pdo->query("SELECT * FROM utilisateur") ;
 $utilisateur = $sql->fetch();
 
@@ -40,7 +39,7 @@ $titre = $sql->fetch();
 
    <!--- Basic Page Needs
    ================================================== -->
-   <meta charset="utf-8">
+  <meta charset="utf-8">
 	<title>Tibilé Coulibaly | Site CV</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -55,6 +54,10 @@ $titre = $sql->fetch();
 	 <link rel="stylesheet" href="front/css/layout.css">
    <link rel="stylesheet" href="front/css/media-queries.css">
    <link rel="stylesheet" href="front/css/magnific-popup.css">
+   <link rel="stylesheet" href="front/css/style_front.css">
+   <link rel="stylesheet" href="front/css/skills.css">
+   <!-- <link rel="stylesheet" href="front/css/style_front.css"> -->
+
 
    <!-- Script
    ================================================== -->
@@ -78,7 +81,7 @@ $titre = $sql->fetch();
 	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
          <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+            <li class="current"><a class="smoothscroll" href="#home">Accueil</a></li>
             <li><a class="smoothscroll" href="#about"> Compétences numériques</a></li>
 	          <li><a class="smoothscroll" href="#resume">Formations</a></li>
             <li><a class="smoothscroll" href="#portfolio">Expériences</a></li>
@@ -91,13 +94,9 @@ $titre = $sql->fetch();
       <div class="row banner">
          <div class="banner-text">
             <h1 class="responsive-headline"><?=  $utilisateur['prenom'].' '. $utilisateur['nom']; ?></h1>
-            <h3>Je suis une jeune  <span> <?= $titre['titre_cv'] ?></span>  Commençons <a class="smoothscroll" href="#about">la découverte du site </a>
+            <h3>Je suis une jeune  <span> <?= $titre['titre_cv'] ?>.<br/></span>  Commençons <a class="smoothscroll" href="#about">la découverte du site </a>
             afin d'en apprendre <a class="smoothscroll" href="#about"> plus sur moi</a>.</h3>
             <hr />
-            <ul class="social">
-               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-               <li><a href="#"><i class="fa fa-skype"></i></a></li>
-            </ul>
          </div>
       </div>
 
@@ -111,27 +110,27 @@ $titre = $sql->fetch();
    <div class="row skill">
 
       <div class="three columns header-col">
-         <h1><span>Skills</span></h1>
+         <h1><span >Compétences numériques</span></h1>
       </div>
 
       <div class="nine columns main-col">
 
-         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-         eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-         voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-         voluptatem sequi nesciunt.
+         <p>
          </p>
 
-     <div class="bars">bar-expand
+     <div class="bars">
 
         <ul class="skills">
-        <li><span class="bar-expand"></span><em>Photoshop</em></li>
-        <li><span class="bar-expand illustrator"></span><em>Illustrator</em></li>
-        <li><span class="bar-expand wordpress"></span><em>Wordpress</em></li>
-        <li><span class="bar-expand css"></span><em>CSS</em></li>
-        <li><span class="bar-expand html5"></span><em>HTML5</em></li>
-        <li><span class="bar-expand jquery"></span><em>jQuery</em></li>
-       </ul>
+                    <?php
+                    //print_r($competence);
+                    $i = 0;
+                    while($i < count($competence)){
+                        ?>  <?php echo '<li class="skill" aria-label="'.$competence[$i]['class_c'].'">'.$competence[$i]['competence'].'</li>'.'<br>';?>
+                         <?php
+                        $i++;
+                    } ?>
+
+            </ul>
 
      </div><!-- end skill-bars -->
 
@@ -141,7 +140,31 @@ $titre = $sql->fetch();
 
 </section> <!-- Resume Section End-->
 
+<!-- //EXPERIENCE ET FORMATIONS --> 
+<h1><span class="titre">Formations</span></h1>
 
+<section id="timeline">
+<?php
+      $i = 0;
+      while( $i< count($formation) ){
+          $nb = 12%count($formation);
+          ?>
+          <article>
+          <div class="col-md-<?php echo 12/count($formation); ?> col-sm-6">
+              <div class="inner">
+                      <span class="date"><?php echo $formation[$i]['date_f'] ?></span>
+                      <h2><?php echo $formation[$i]['titre_f'].'<br/>';?> </h2>
+                      <?php echo '<p>'.$formation[$i]['description_f'].'</p>'?>
+              </div>
+          </div>
+          </article>
+      <?php $i++;
+      }
+                    ?>
+</section>
+
+
+<!--  // FIN experience et formation -->
 
 
 
@@ -154,46 +177,32 @@ $titre = $sql->fetch();
       <div class="row education">
 
          <div class="three columns header-col">
-            <h1><span>Education</span></h1>
+            <h1><span>Formations</span></h1>
          </div>
 
          <div class="nine columns main-col">
 
-            <div class="row item">
+           <?php
+           $i = 0;
+           while( $i< count($formation) ){
+               $nb = 12%count($formation);
+               ?>
+               <div class="col-md-<?php echo 12/count($formation); ?> col-sm-6">
+                <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
 
-               <div class="twelve columns">
+                   <div class="service-item">
 
-                  <h3>University of Life</h3>
-                  <p class="info">Master in Graphic Design <span>&bull;</span> <em class="date">April 2007</em></p>
+                       <h5>
+                           <strong><?php echo $formation[$i]['titre_f'].'<br/>';?> </strong>
+                       </h5>
 
-                  <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-                  ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                  Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
-                  </p>
-
+                           <span><?php echo $formation[$i]['date_f'] ?></span><br/>
+                           <?php echo '<br/>'.$formation[$i]['description_f'] ?>
+                   </div>
                </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>School of Cool Designers</h3>
-                  <p class="info">B.A. Degree in Graphic Design <span>&bull;</span> <em class="date">March 2003</em></p>
-
-                  <p>
-                  This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                  nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-                  ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
+           <?php $i++;
+         }
+         ?>
 
          </div> <!-- main-col end -->
 
@@ -205,46 +214,30 @@ $titre = $sql->fetch();
       <div class="row work">
 
          <div class="three columns header-col">
-            <h1><span>Work</span></h1>
+            <h1><span>Expériences professionnelles</span></h1>
          </div>
 
          <div class="nine columns main-col">
 
-            <div class="row item">
+           <?php
+           $i = 0;
+           while( $i< count($experience) ){
+               $nb = 12%count($experience);
+               ?>
+               <div class="col-md-<?php echo 12/count($experience); ?> col-sm-6">
+                   <div class="service-item">
+                       <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
 
-               <div class="twelve columns">
+                       <h5>
+                           <strong><?php echo $experience[$i]['titre_e'];?> </strong>
+                       </h5>
+                       <p><?php echo '<span>'.$experience[$i]['date_e'].'<span>'.' ' .$experience[$i]['description_e'] ?></p>
 
-                  <h3>Awesome Design Studio</h3>
-                  <p class="info">Senior UX Designer <span>&bull;</span> <em class="date">March 2010 - Present</em></p>
-
-                  <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-                  ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                  Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
-                  </p>
-
+                   </div>
                </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Super Cool Studio</h3>
-                  <p class="info">UX Designer <span>&bull;</span> <em class="date">March 2007 - February 2010</em></p>
-
-                  <p>
-                  This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                  nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-                  ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
+           <?php $i++;
+           }
+           ?> <!-- item end -->
 
          </div> <!-- main-col end -->
 
@@ -265,35 +258,27 @@ $titre = $sql->fetch();
 
           <div class="nine columns main-col">
 
-             <h2>About Me</h2>
+             <h2>À propos</h2>
 
-             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-             eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-             voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-             voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-             sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-             Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
-             </p>
+             <p>Passionée par les nouvelles technologies, j'ai à coeur de réaliser le travail qui m'est confié avec rigueur
+               mais surtout par plaisir. Dynamique et motivée, je saurais mener à bien vos projets et être une partenaire de choix !</p>
 
              <div class="row">
 
                 <div class="columns contact-details">
 
-                   <h2>Contact Details</h2>
+                   <h3>Contact Details</h3>
                    <p class="address">
-                <span>Jonathan Doe</span><br>
-                <span>1600 Amphitheatre Parkway<br>
-                      Mountain View, CA 94043 US
-                      </span><br>
-                <span>(123)456-7890</span><br>
-                      <span>anyone@website.com</span>
+                <span>Passionée de pâtisserie</span><br>
+                <span>Lectrice assidue  <br>
+
               </p>
 
                 </div>
 
                 <div class="columns download">
                    <p>
-                      <a href="#" class="button"><i class="fa fa-download"></i>Download Resume</a>
+                      <a href="#" class="button"><i class="fa fa-download"></i>Télécharger mon CV</a>
                    </p>
                 </div>
 
@@ -314,7 +299,7 @@ $titre = $sql->fetch();
 
          <div class="twelve columns collapsed">
 
-            <h1>Check Out Some of My Works.</h1>
+            <h1>Vous pouvez voir mes réalisations</h1>
 
             <!-- portfolio-wrapper -->
             <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
@@ -340,7 +325,7 @@ $titre = $sql->fetch();
                   <div class="item-wrap">
 
                      <a href="#modal-02" title="">
-                        <img alt="" src="images/portfolio/console.jpg">
+                        <img alt="" src="front/img/portfolio/console.jpg">
                         <div class="overlay">
                            <div class="portfolio-item-meta">
           					      <h5>Console</h5>
@@ -482,7 +467,7 @@ $titre = $sql->fetch();
 
          <div id="modal-02" class="popup-modal mfp-hide">
 
-		      <img class="scale-with-grid" src="images/portfolio/modals/m-console.jpg" alt="" />
+		      <img class="scale-with-grid" src="front/img/portfolio/modals/m-console.jpg" alt="" />
 
 		      <div class="description-box">
 			      <h4>Console</h4>
@@ -607,39 +592,13 @@ $titre = $sql->fetch();
 
    <!-- Call-To-Action Section
    ================================================== -->
-   <section id="call-to-action">
 
-      <div class="row">
-
-         <div class="two columns header-col">
-
-            <h1><span>Get Hosting.</span></h1>
-
-         </div>
-
-         <div class="seven columns">
-
-            <h2><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Host This Template on Dreamhost.</a></h2>
-            <p>Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>.
-					Get <span>$50 off</span> when you sign up with the promocode <span>STYLESHOUT</span>.
-					<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. --></p>
-
-         </div>
-
-         <div class="three columns action">
-
-            <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT" class="button">Sign Up Now</a>
-
-         </div>
-
-      </div>
-
-   </section> <!-- Call-To-Action Section End-->
 
 
    <!-- Testimonials Section
    ================================================== -->
    <section id="testimonials">
+     <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg">
 
       <div class="text-container">
 
@@ -647,13 +606,14 @@ $titre = $sql->fetch();
 
             <div class="two columns header-col">
 
-               <h1><span>Client Testimonials</span></h1>
+               <h1><span>sddfsdcsdvs</span></h1>
 
             </div>
 
             <div class="ten columns flex-container">
 
                <div class="flexslider">
+
 
                   <ul class="slides">
 
@@ -695,18 +655,18 @@ $titre = $sql->fetch();
    <section id="contact">
 
          <div class="row section-head">
+<h2>Contactez moi !</h2>
 
             <div class="two columns header-col">
 
-               <h1><span>Get In Touch.</span></h1>
+               <h1><span>dqdffsd.</span></h1>
 
             </div>
 
             <div class="ten columns">
 
-                  <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                  eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                  voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                  <p class="lead">Une idée de projet, un besoin de conseil, de réponses en terme de production ou de délai ? Je vous invite<br/>
+                     à renseigner les champs ci-dessous et je m'engage à vous répondre dans les plus brefs délais.
                   </p>
 
             </div>
@@ -722,8 +682,13 @@ $titre = $sql->fetch();
 					<fieldset>
 
                   <div>
-						   <label for="contactName">Name <span class="required">*</span></label>
+						   <label for="contactName">Nom <span class="required">*</span></label>
 						   <input type="text" value="" size="35" id="contactName" name="contactName">
+                  </div>
+
+                  <div>
+						   <label for="contactName">Prenom <span class="required">*</span></label>
+						   <input type="text" value="" size="35" id="contactName" name="contacPrenom">
                   </div>
 
                   <div>
@@ -732,17 +697,12 @@ $titre = $sql->fetch();
                   </div>
 
                   <div>
-						   <label for="contactSubject">Subject</label>
-						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
-                  </div>
-
-                  <div>
                      <label for="contactMessage">Message <span class="required">*</span></label>
                      <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
                   </div>
 
                   <div>
-                     <button class="submit">Submit</button>
+                     <button class="submit">Envoyer</button>
                      <span id="image-loader">
                         <img alt="" src="images/loader.gif">
                      </span>
@@ -775,30 +735,7 @@ $titre = $sql->fetch();
 
 				   </div>
 
-               <div class="widget widget_tweets">
 
-                  <h4 class="widget-title">Latest Tweets</h4>
-
-                  <ul id="twitter">
-                     <li>
-                        <span>
-                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
-                        <a href="#">http://t.co/CGIrdxIlI3</a>
-                        </span>
-                        <b><a href="#">2 Days Ago</a></b>
-                     </li>
-                     <li>
-                        <span>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                        eaque ipsa quae ab illo inventore veritatis et quasi
-                        <a href="#">http://t.co/CGIrdxIlI3</a>
-                        </span>
-                        <b><a href="#">3 Days Ago</a></b>
-                     </li>
-                  </ul>
-
-		         </div>
 
             </aside>
 
@@ -817,17 +754,11 @@ $titre = $sql->fetch();
 
             <ul class="social-links">
                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-               <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                <li><a href="#"><i class="fa fa-skype"></i></a></li>
             </ul>
 
             <ul class="copyright">
-               <li>&copy; Copyright 2014 CeeVee</li>
-               <li>Design by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a></li>
+                 <li>&copy; Copyright 2014 Tibilé Coulibaly</li>
             </ul>
 
          </div>
@@ -844,11 +775,12 @@ $titre = $sql->fetch();
    <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 
-   <script src="js/jquery.flexslider.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/init.js"></script>
+   <script src="front/js/jquery.flexslider.js"></script>
+   <script src="front/js/waypoints.js"></script>
+   <script src="front/js/jquery.fittext.js"></script>
+   <script src="front/js/magnific-popup.js"></script>
+   <script src="front/js/init.js"></script>
+   <script src="front/js/formaex.js"></script>
 
 </body>
 
