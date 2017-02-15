@@ -1,7 +1,28 @@
-/*//SECTION//*/
+body{
+
+}
+
+/*//HEADER/*/
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+header {
+    position: relative;
+    height: 800px;
+    min-height: 500px;
+    width: 100%;
+    background: #2B2B2B;
+  /*  background-size: cover !important;
+    -webkit-background-size: cover !important;*/
+    text-align: center;
+    overflow: hidden;
+}
 h1{
 	margin-top: 20px;
 	margin-bottom: 100px;	
+	color: #DEF0FF;
 }
 .column, .columns {
     position: relative;
@@ -11,15 +32,183 @@ h1{
     padding-top: 20px;
 }
 .titre{
-	margin-left: -740px;
+  margin-left: -740px;
+}
+.titre2{
+  margin-left: -401px;
+  margin-top: 100px;
+  text-align: right;
+  margin-right: 476px;
+}
+
+.titre3{
+	margin-left: -985px;
+}
+header .banner-text h1 {
+    font: 90px/1.1em 'opensans-bold', sans-serif;
+    color: #fff;
+    letter-spacing: -2px;
+    margin: 0 auto 18px auto;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
+
+}
+header .banner-text h3 {
+    font: 18px/1.9em 'librebaskerville-regular', serif;
+    color: #A8A8A8;
+    margin: 0 auto;
+    width: 70%;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+    margin-top: 56px;
+}
+ header .banner-text h3 a {
+    color: #C67F7D;
 }
 
 
+/*//NAV//*/
 
-/*// Experience et formations//*/
+ul#nav li.current a {
+    color:#C67F7D;
+}
+/*// PARALLAX //*/
+
+
+/*//ABOUT //*/
+#about{
+	padding-top: 20px;
+	padding-bottom: 50px;
+  background-image: url(front/img/computer.jpg);
+}
+
+
+#about .download .button {
+    margin-top: 400px;
+background: none;
+margin-left: 491px;
+    border: 1px solid #C67F7D;
+    border-top-right-radius: 30px;	
+    border-bottom-left-radius: 30px;
+}
+
+#about .download .button:hover {
+    background:#fff;
+    transition: all .3s ease-in-out;
+    color: #C67F7D;
+}
+#about p {
+    line-height: 30px;
+    color: #7A7A7A;
+    text-align: left;
+    font-size: 17px;
+    margin-bottom: 95px;
+    margin-left: -226px;
+}
+/*// INTERETS //*/
+
+.wrapper {
+  width: 270px;
+  margin: 50px auto;
+  position: Relative;
+}
+.word {
+  display: block;
+  text-align: justify;
+  font-family: "BenchNine";
+  line-height: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+.word1,
+.word2 {
+  color: #6395BB;
+}
+.word3,
+.word4 {
+  color: #90B3C9;
+}
+
+.bubble1 span.the-arrow1 {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 0px solid #99C5DE;
+  border-bottom: 12px solid #99C5DE;
+  position: absolute;
+  top: 63px;
+  left: 75px;
+  transform: rotateY(180deg);
+}
+.bubble2 {
+  height: 150px;
+  width: 170px;
+  padding: 20px;
+  position: absolute;
+  color: white;
+  background-color:none;
+  font-family: "Open Sans Condensed";
+  border: 2px solid #C67F7D;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 0;
+  left: 182%;
+  top: -37px;
+}
+.bubble2 span.the-arrow2 {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 0px solid #99C5DE;
+  border-bottom: 20px solid #C67F7D;
+  position: absolute;
+  top: 128px;
+  left: -21px;
+}
+.bubble3 {
+  height: 200px;
+  width: 250px;
+  padding: 20px;
+  position: absolute;
+  color: white;
+  background-color:none;
+  font-family: "Open Sans Condensed";
+  border: 1px solid #C67F7D;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 0;
+  top: 183px;
+  left: -280px;
+}
+.bubble3 span.the-arrow3 {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 0px solid #90B2CB;
+  border-bottom: 20px solid #C67F7D;
+  position: absolute;
+  top: -1;
+  left: 249px;
+  transform: rotate(180deg);
+
+}
+.word1 {
+  font-size: 6.3em;
+}
+.word2 {
+  font-size: 8.1em;
+}
+.word3 {
+  font-size: 4.8em;
+}
+
+/*// formations//*/
 
 section#timeline {
-  width: 80%;
+  width: 50%;
   margin: 20px auto;
   position: relative;
 }
@@ -29,9 +218,9 @@ section#timeline:before {
   position: absolute;
   left: 50%;
   top: 0;
-  margin: 1980px 0 0 -1px;
+  margin: 0 0 0 -1px;
   width: 2px;
-  height: 100%;
+  height: 78%;
   background: rgba(255,255,255,0.2);
 }
 section#timeline article {
@@ -107,6 +296,7 @@ section#timeline article div.inner p {
   background: #fff;
   color: #656565;
   border-radius: 0 0 6px 6px;
+ 
 }
 section#timeline article:nth-child(2n+2) div.inner {
   float: right;
@@ -115,32 +305,163 @@ section#timeline article:nth-child(2n+2) div.inner h2:after {
   left: -5px;
 }
 section#timeline article:nth-child(1) div.inner h2 {
-  background: #e74c3c;
+  background: #6395BB;
 }
 section#timeline article:nth-child(1) div.inner h2:after {
-  background: #e74c3c;
+  background:#6395BB ;
 }
 section#timeline article:nth-child(2) div.inner h2 {
-  background: #2ecc71;
+  background: #6395BB;
 }
 section#timeline article:nth-child(2) div.inner h2:after {
-  background: #2ecc71;
+  background: #6395BB;
 }
 section#timeline article:nth-child(3) div.inner h2 {
-  background: #e67e22;
+  background: #6395BB;
 }
 section#timeline article:nth-child(3) div.inner h2:after {
-  background: #e67e22;
+  background: #6395BB;
 }
 section#timeline article:nth-child(4) div.inner h2 {
-  background: #1abc9c;
+  background: #6395BB;
 }
 section#timeline article:nth-child(4) div.inner h2:after {
-  background: #1abc9c;
+  background: #6395BB;
 }
 section#timeline article:nth-child(5) div.inner h2 {
+  background: #6395BB;
+}
+section#timelin0A004Ccle:nth-child(5) div.inner h2:after {
   background: #9b59b6;
 }
-section#timeline article:nth-child(5) div.inner h2:after {
+
+
+
+/*// expériences//*/
+section#forma {
+  width: 50%;
+  margin: 20px auto;
+  position: relative;
+}
+section#forma:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin: 0 0 0 -1px;
+  width: 2px;
+  height: 69%;
+  background: rgba(255,255,255,0.2);
+}
+section#forma article {
+  width: 100%;
+  margin: 0 0 20px 0;
+  position: relative;
+}
+section#forma article:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+section#forma article div.inner {
+  width: 40%;
+  float: left;
+  margin: 5px 0 0 0;
+  border-radius: 6px;
+}
+section#forma article div.inner span.date {
+  display: block;
+  width: 60px;
+  height: 50px;
+  padding: 5px 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -32px;
+  border-radius: 100%;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: #25303B;
+  color: rgba(255,255,255,0.5);
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 0 7px #25303B;
+}
+section#forma article div.inner span.date span {
+  display: block;
+  text-align: center;
+}
+section#forma article div.inner span.date span.day {
+  font-size: 10px;
+}
+section#forma article div.inner span.date span.month {
+  font-size: 18px;
+}
+section#forma article div.inner span.date span.year {
+  font-size: 10px;
+}
+section#forma article div.inner h2 {
+  padding: 15px;
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  border-radius: 6px 6px 0 0;
+  position: relative;
+}
+section#forma article div.inner h2:after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -5px;
+    width: 10px; 
+    height: 10px;
+  -webkit-transform: rotate(-45deg);
+}
+section#forma article div.inner p {
+  padding: 15px;
+  margin: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #656565;
+  border-radius: 0 0 6px 6px;
+}
+section#forma article:nth-child(2n+2) div.inner {
+  float: right;
+}
+section#forma article:nth-child(2n+2) div.inner h2:after {
+  left: -5px;
+}
+section#forma article:nth-child(1) div.inner h2 {
+  background: #C67F7D;
+}
+section#forma article:nth-child(1) div.inner h2:after {
+  background:#C67F7D ;
+}
+section#forma article:nth-child(2) div.inner h2 {
+  background: #C67F7D;
+}
+section#forma article:nth-child(2) div.inner h2:after {
+  background: #C67F7D;
+}
+section#forma article:nth-child(3) div.inner h2 {
+  background: #C67F7D;
+}
+section#forma article:nth-child(3) div.inner h2:after {
+  background: #C67F7D;
+}
+section#forma article:nth-child(4) div.inner h2 {
+  background: #C67F7D;
+}
+section#forma article:nth-child(4) div.inner h2:after {
+  background: #C67F7D;
+}
+section#forma article:nth-child(5) div.inner h2 {
+  background: #C67F7D;
+}
+section#timelin0A004Ccle:nth-child(5) div.inner h2:after {
   background: #9b59b6;
 }
+

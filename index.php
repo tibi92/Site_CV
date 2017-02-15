@@ -1,442 +1,752 @@
-<!DOCTYPE html>
-<?php require("connexion/connexion.php"); ?>
+<DOCTYPE html>
+  <?php require("connexion/connexion.php");
 
-<?php
-$sql = $pdo->query("SELECT * FROM utilisateur") ;
-$utilisateur = $sql->fetch();
-
-
-$sql = $pdo->query("SELECT * FROM competence") ;
-$competence = $sql->fetchAll();
+  $sql = $pdo->query("SELECT * FROM utilisateur") ;
+  $utilisateur = $sql->fetch();
 
 
-$sql = $pdo->query("SELECT * FROM experience") ;
-$experience = $sql->fetchAll();
+  $sql = $pdo->query("SELECT * FROM competence") ;
+  $competence = $sql->fetchAll();
 
-$sql = $pdo->query("SELECT * FROM formation") ;
-$formation = $sql->fetchAll();
 
-$sql = $pdo->query("SELECT * FROM loisir") ;
-$loisir = $sql->fetchAll();
+  $sql = $pdo->query("SELECT * FROM experience") ;
+  $experience = $sql->fetchAll();
 
-$sql = $pdo->query("SELECT * FROM titre") ;
-$titre = $sql->fetch();
+  $sql = $pdo->query("SELECT * FROM formation") ;
+  $formation = $sql->fetchAll();
 
-// print_r($utilisateur);
-// print_r($competence);
-// print_r($experience);
-// print_r($formation);
-// print_r($loisir);
-// print_r($titre);
-?>
-<html lang="en">
+  $sql = $pdo->query("SELECT * FROM loisir") ;
+  $loisir = $sql->fetchAll();
 
-<head>
+  $sql = $pdo->query("SELECT * FROM titre") ;
+  $titre = $sql->fetch();
 
+  // print_r($utilisateur);
+  // print_r($competence);
+  // print_r($experience);
+  // print_r($formation);
+  // print_r($loisir);
+  // print_r($titre);
+  ?>
+
+
+
+
+  <!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+  <!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+  <!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="fr"> <!--<![endif]-->
+  <head>
+
+    <!--- Basic Page Needs
+    ================================================== -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tibilé Coulibaly | Site CV</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Site CV <?=  $utilisateur['prenom'].' '. $utilisateur['nom']; ?></title>
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="front/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="front/css/default.css">
+    <link rel="stylesheet" href="front/css/layout.css">
+    <link rel="stylesheet" href="front/css/media-queries.css">
+    <link rel="stylesheet" href="front/css/magnific-popup.css">
+    <link rel="stylesheet" href="front/css/style_front.css">
+    <link rel="stylesheet" href="front/css/skills.css">
+    <!-- <link rel="stylesheet" href="front/css/style_front.css"> -->
 
-    <!-- Custom CSS -->
-    <link href="front/css/stylish-portfolio.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="front/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Arsenal:700|Roboto+Condensed" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Fenix" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!-- Script
+    ================================================== -->
+    <script src="front/js/modernizr.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="front/css/advences_barre.css">
-    <link rel="stylesheet" type="text/css" href="front/css/style_front.css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.png" >
 
-</head>
+  </head>
 
-<body>
+  <body>
 
-    <!-- Navigation -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand">
-                <a href="#top" onclick=$("#menu-close").click();>   <?= $utilisateur['prenom'].' '.$utilisateur['nom'] ?></a>
-            </li>
-            <li>
-                <a href="#top" onclick=$("#menu-close").click();>Accueil</a>
-            </li>
-            <li>
-                <a href="#about" onclick=$("#menu-close").click();>A propos...</a>
-            </li>
-            <li>
-                <a href="#realisation" onclick=$("#menu-close").click();>Réalisations</a>
-            </li>
-            <li>
-                <a href="#portfolio" onclick=$("#menu-close").click();>Compétences</a>
-            </li>
-            <li>
-                <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
-            </li>
-        </ul>
-    </nav>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg">
-    <!-- Header -->
-        <header id="top" class="header">
-        <?php
-        $sql = $pdo->query("SELECT * FROM utilisateur") ;
-        $utilisateur = $sql->fetch();
-        ?>
-            <div class="text-vertical-center">
-                <h1><?php echo $utilisateur['prenom'].' '.$utilisateur['nom']; ?></h1>
-                <span class="soustitre"><?= $titre['titre_cv'] ?></span>
-                <br>
-                <a href="#about" class="btn btn-dark btn-lg"><i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i></a></br></br></br>
+    <!-- Header
+    ================================================== -->
+   <header id="home">
 
-                <!-- <p><?php echo $utilisateur['email'].' '.$utilisateur['adresse'].' '.$utilisateur['age'].' '.$utilisateur['notes']; ?></p> -->
-            </div>
-        </header>
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+        <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#home">Accueil</a></li>
+           <li><a class="smoothscroll" href="#competence"> Compétences numériques</a></li>
+           <li><a class="smoothscroll" href="#timeline">Formations</a></li>
+           <li><a class="smoothscroll" href="#forma">Expériences</a></li>
+           <li><a class="smoothscroll" href="#about">À propos</a></li>
+           <li><a class="smoothscroll" href="#contact">Contact</a></li>
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <div class="row banner">
+         <div class="banner-text">
+            <h1 class="responsive-headline"><?=  $utilisateur['prenom'].' '. $utilisateur['nom']; ?></h1>
+            <h3>Je suis une jeune  <span> <?= $titre['titre_cv'] ?>.<br/></span>  Commençons <a class="smoothscroll" href="#about">la découverte du site </a>
+            afin d'en apprendre <a class="smoothscroll" href="#about"> plus sur moi</a>.</h3>
+            <hr />
+         </div>
+      </div>
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+      </p>
     </div>
-<div class="wrapper">
-    <!-- Compétences -->
-        <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-lg text-center">
-
-        <h2>Compétences numériques</h2>
-        <div class="col-md-<?php echo 2/count($competence); ?> col-sm-6">
-            <ul class="skills">
-                    <?php
-                    //print_r($competence);
-                    $i = 0;
-                    while($i < count($competence)){
-                        ?>  <?php echo '<li class="skill" aria-label="'.$competence[$i]['class_c'].'">'.$competence[$i]['competence'].'</li>'.'<br>';?>
-                         <?php
-                        $i++;
-                    } ?>
-
-            </ul>
-        </div>
-        </div>
-            </div>
-                </div>
-        </section>
- <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg">
-
-       <h2 class="parallax1">À propos</h2>
-
-
-            <div  class="parallax">
-              <i class="fa fa-book fa-5x" aria-hidden="true"></i>
-                <aside class="parallax"> Lectrice assidue ( Biographie et autobiographies )</aside>
-            </div>
-
-
-            <div class="parallax">
-              <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
-                <aside class="parallax">Passionnée de pâtisserie</aside>
-            </div>
-
-
-
- </div>
-   <!--  A PROPOS -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-
-                    <p class="a_propos">Passionée par les nouvelles technologies, j'ai à coeur de réaliser le travail qui m'est confié avec rigueur mais surtout par plaisir. Dynamique et motivée, je saurais mener à bien vos projets et être une partenaire de choix !</p>
-                    <div class="button">
-                        <a href="CV_Tibile.pdf" target="blank">Télécharger mon cv</a>
-                    </div>
-                     <!-- Expérience -->
-                     <div class="col-lg-12 text-center">
-                    <h3>Expériences professionnelles</h3>
-                    <?php
-                    $i = 0;
-                    while( $i< count($experience) ){
-                        $nb = 12%count($experience);
-                        ?>
-                        <div class="col-md-<?php echo 12/count($experience); ?> col-sm-6">
-                            <div class="service-item">
-                                <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
-
-                                <h5>
-                                    <strong><?php echo $experience[$i]['titre_e'];?> </strong>
-                                </h5>
-                                <p><?php echo '<span>'.$experience[$i]['date_e'].'<span>'.' ' .$experience[$i]['description_e'] ?></p>
-
-                            </div>
-                        </div>
-                    <?php $i++;
-                    }
-                    ?>
-                    </div>
-                    <!-- Formations -->
-                     <div class="row">
-                <div class="col-lg-12 text-center">
-                    <hr class="small">
-                    <h3>Formations</h3>
-                    <div class="row">
-                    <?php
-                    $i = 0;
-                    while( $i< count($formation) ){
-                        $nb = 12%count($formation);
-                        ?>
-                        <div class="col-md-<?php echo 12/count($formation); ?> col-sm-6">
-                         <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
-
-                            <div class="service-item">
-
-                                <h5>
-                                    <strong><?php echo $formation[$i]['titre_f'].'<br/>';?> </strong>
-                                </h5>
-
-                                    <span><?php echo $formation[$i]['date_f'] ?></span><br/>
-                                    <?php echo '<br/>'.$formation[$i]['description_f'] ?>
-                            </div>
-                        </div>
-                    <?php $i++;
-                    }
-                    ?>
-                    </div>
-
-                </div>
-                </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
-    <!-- Callout -->
-    <<!-- aside class="callout">
-        <div class="text-vertical-center">
-            <i class="fa fa-quote-left fa-4x fa-pull-left fa-border" aria-hidden="true"></i><br/><br/>
-            <?php
-                $i = 0;
-                while($i < count($loisir)){
-                    ?>
-                    <?php echo $loisir[$i]['titre_l']. '</br>';?>
-                    <?php
-                    $i++;
-                } ?>
-    </div>
-    </aside>
- -->
- <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg">
- </div>
-    <!-- Portfolio -->
-    <section id="realisation" class="realisation">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-lg text-center">
-                    <h2>Mes réalisations</h2>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="front/img/projets.jpg" >
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <!-- <img class="img-portfolio img-responsive" src="front/img/portfolio-2.jpg"> -->
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <!-- <img class="img-portfolio img-responsive" src="front/img/portfolio-3.jpg"> -->
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <!-- <img class="img-portfolio img-responsive" src="front/img/portfolio-4.jpg"> -->
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">Voir plus de réalisations !</a>
-                </div>
-                <!-- /.col-lg-10 -->
-       <!--      </div> -->
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
+   </header> <!-- Header End -->
+  
+ <!--  /séparation/ -->
 </div>
 
-    <!-- Call to Action -->
- <!--    <aside class="call-to-action bg-primary">
+        <!-- Skills
+        ----------------------------------------------- -->
+        <div class="row skill">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3>Aptitudes professionelles</h3>
-                    <p>Rigoureuse, attraits pour les nouveautés,
-                    attentive, motivée, patiente</p>
-                </div>
+          <div class="three columns header-col">
+            <h1><span id="competence">Compétences numériques</span></h1>
+          </div>
+
+          <div class="nine columns main-col">
+
+            <p>
+            </p>
+
+            <div class="bars">
+
+              <section >
+
+                <ul class="skills">
+                  <?php
+                  //print_r($competence);
+                  $i = 0;
+                  while($i < count($competence)){
+                    ?>  <?php echo '<li class="skill" aria-label="'.$competence[$i]['class_c'].'">'.$competence[$i]['competence'].'</li>'.'<br>';?>
+                    <?php
+                    $i++;
+                  } ?>
+
+                </ul>
+              </section>
+
+            </div><!-- end skill-bars -->
+
+          </div> <!-- main-col end -->
+
+        </div> <!-- End skills -->
+
+      </section> <!-- Resume Section End-->
+
+      <!-- //EXPERIENCE ET FORMATIONS -->
+      <h1><span class="titre">Formations</span></h1>
+
+      <section id="timeline">
+        <?php
+        $i = 0;
+        while( $i< count($formation) ){
+          $nb = 12%count($formation);
+          ?>
+          <article>
+            <div class="col-md-<?php echo 12/count($formation); ?> col-sm-6">
+              <div class="inner">
+                <span class="date"><?php echo $formation[$i]['date_f'] ?></span>
+                <h2><?php echo $formation[$i]['titre_f'].'<br/>';?> </h2>
+                <?php echo '<p>'.$formation[$i]['description_f'].'</p>'?>
+              </div>
             </div>
-        </div>
-    </aside> -->
+          </article>
+          <?php $i++;
+        }
+        ?>
+      </section>
 
 
-    <!-- CONTACT -->
-    <section id="contact">
-        <form method="POST" action="utilisateur.php">
-            <h1 class="me_contacter">Me contacter</h1>
-            <p>Une idée de projet, un besoin de conseil, de réponses en terme de production ou de délai ? Je vous invite<br/> à renseigner les champs ci-dessous et je m'engage à vous répondre dans les plus brefs délais.</p>
+      <!--  // FIN experience et formation -->
 
-            <input class="formulaire" type="text" name="nom" placeholder="Nom"><br/><br/>
-            <input class="formulaire" type="text" name="prenom" placeholder="Prenom"><br/><br/>
-            <input class="formulaire" type="email" name="email" placeholder="Email"><br/><br/>
-            <textarea class="message" placeholder="Votre message"></textarea> <br/><br/>
-            <input type="submit" name="envoyer" class="envoyer" value="M'écrire">
-        </form>
 
-        <!-- <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-        <br />
-        <small>
-            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small> -->
-    </section>
-    <!-- Footer -->
-    <footer >
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 container">
-                    <h4><strong class="fin">Tibilé Coulibaly</strong>
-                    </h4>
-                    <p>Intégratrice / Développeuse Website
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> 07 78 21 56 33</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">tibile.coulibaly@lepoles.com</a>
-                        </li>
-                    </ul>
-                    <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="https://www.facebook.com/profile.php?id=100009513039426"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="<i class="fa fa-instagram" aria-hidden="true"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                    <hr class="small">
-                    <p class="text-muted">Copyright &copy;Tibilé Coulibaly</p>
-                </div>
+
+      <!-- Resume Section
+      ================================================== -->
+      <h1 class="titre2"><span>Expériences professionnelles</span></h1>
+
+      <section id="forma">
+        <?php
+        $i = 0;
+        while( $i< count($experience) ){
+          $nb = 12%count($experience);
+          ?>
+          <article>
+            <div class="col-md-<?php echo 12/count($experience); ?> col-sm-6">
+              <div class="inner">
+                <span class="date"><?php echo $experience[$i]['date_e'] ?></span>
+                <h2><?php echo $experience[$i]['titre_e'].'<br/>';?> </h2>
+                <?php echo '<p>'.$experience[$i]['description_e'].'</p>'?>
+              </div>
             </div>
-        </div>
-        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-4x"></i></a>
-    </footer>
-
-
-    <!-- jQuery -->
-    <script src="front/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="front/js/bootstrap.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script>
-    // Closes the sidebar menu
-    $("#menu-close").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-    // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
-    //#to-top button appears after scrolling
-    var fixed = false;
-    $(document).scroll(function() {
-        if ($(this).scrollTop() > 250) {
-            if (!fixed) {
-                fixed = true;
-                // $('#to-top').css({position:'fixed', display:'block'});
-                $('#to-top').show("slow", function() {
-                    $('#to-top').css({
-                        position: 'fixed',
-                        display: 'block'
-                    });
-                });
-            }
-        } else {
-            if (fixed) {
-                fixed = false;
-                $('#to-top').hide("slow", function() {
-                    $('#to-top').css({
-                        display: 'none'
-                    });
-                });
-            }
+          </article>
+          <?php $i++;
         }
-    });
-    // Disable Google Maps scrolling
-    // See http://stackoverflow.com/a/25904582/1607849
-    // Disable scroll zooming and bind back the click event
-    var onMapMouseleaveHandler = function(event) {
-        var that = $(this);
-        that.on('click', onMapClickHandler);
-        that.off('mouseleave', onMapMouseleaveHandler);
-        that.find('iframe').css("pointer-events", "none");
-    }
-    var onMapClickHandler = function(event) {
-            var that = $(this);
-            // Disable the click handler until the user leaves the map area
-            that.off('click', onMapClickHandler);
-            // Enable scrolling zoom
-            that.find('iframe').css("pointer-events", "auto");
-            // Handle the mouse leave event
-            that.on('mouseleave', onMapMouseleaveHandler);
-        }
-        // Enable map zooming with mouse scroll when the user clicks the map
-    $('.map').on('click', onMapClickHandler);
-    </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="front/parallax.js-1.4.2/parallax.js"></script>
-<script src="front/parallax.js-1.4.2/script.js"></script>
-
-</body>
+        ?>
+      </section>
 
 
-</html>
+
+
+
+
+      <!-- About Section
+      ================================================== -->
+      <section id="about">
+        
+        <div class="row">
+
+          <!-- classe three colums -->
+
+          <div class="three columns">
+
+
+          </div>
+          <!-- fin classe three colums -->
+
+
+          <div class="nine columns main-col">
+            <h1><span class="titre3"> À propos</span></h1>
+
+            <p>Passionée par les nouvelles technologies, j'ai à coeur de réaliser le travail qui m'est confié avec rigueur
+              mais surtout par plaisir. Dynamique et motivée, je saurais mener à bien vos projets et être une partenaire de choix !</p>
+
+              <div class="row">
+
+                <div class="columns contact-details">
+
+
+                  <div class="word_split wrapper">
+                    <span class="word word1"> Patissière </span>
+                    <span class="word word2">Lectrice </span>
+                  </div>
+
+
+                  <div class="bubble2">
+                    <span class="the-arrow2"></span> Cuisinez des desserts originaux pour régaler mes convives...
+                  </div>
+
+                  <div class="bubble3">
+                    <span class="the-arrow3"></span>
+                    Comprendre une histoire à travers le narrateur, Faire face à un suspens du début à la fin de chaque page... Mes styles de lectures sont la biographie et l'auto biographie. <br/>
+                  </div>
+
+                </div>
+
+                <div class="columns download">
+                  <p>
+                    <a href="#" class="button"><i class="fa fa-download"></i>Télécharger mon CV</a>
+                  </p>
+                </div>
+
+              </div> <!-- end row -->
+
+            </div>
+
+          </section> <!-- About Section End-->
+</div>
+
+
+          <!-- Portfolio Section
+          ================================================== -->
+          <section id="portfolio">
+
+            <div class="row">
+
+              <div class="twelve columns collapsed">
+
+                <h1>Vous pouvez voir mes réalisations</h1>
+
+                <!-- portfolio-wrapper -->
+                <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+
+                  <div class="columns portfolio-item">
+                    <div class="item-wrap">
+
+                      <a href="#modal-01" title="">
+                        <img alt="" src="images/portfolio/coffee.jpg">
+                        <div class="overlay">
+                          <div class="portfolio-item-meta">
+                            <h5>Coffee</h5>
+                            <p>Illustrration</p>
+                          </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                      </a>
+
+                    </div>
+                  </div> <!-- item end -->
+
+                  <div class="columns portfolio-item">
+                    <div class="item-wrap">
+
+                      <a href="#modal-02" title="">
+                        <img alt="" src="front/img/portfolio/console.jpg">
+                        <div class="overlay">
+                          <div class="portfolio-item-meta">
+                            <h5>Console</h5>
+                            <p>Web Development</p>
+                          </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                      </a>
+
+                    </div>
+                  </div> <!-- item end -->
+
+                  <div class="columns portfolio-item">
+                    <div class="item-wrap">
+
+                      <a href="#modal-03" title="">
+                        <img alt="" src="images/portfolio/judah.jpg">
+                        <div class="overlay">
+                          <div class="portfolio-item-meta">
+                            <h5>Judah</h5>
+                            <p>Webdesign</p>
+                          </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                      </a>
+
+                    </div>
+                  </div> <!-- item end -->
+
+                  <div class="columns portfolio-item">
+                    <div class="item-wrap">
+
+                      <a href="#modal-04" title="">
+                        <img alt="" src="images/portfolio/into-the-light.jpg">
+                        <div class="overlay">
+                          <div class="portfolio-item-meta">
+                            <h5>Into The Light</h5>
+                            <p>Photography</p>
+                          </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                      </a>
+
+                    </div>
+                  </div> <!-- item end -->
+
+                  <div class="columns portfolio-item">
+                    <div class="item-wrap">
+
+                      <a href="#modal-05" title="">
+                        <img alt="" src="images/portfolio/farmerboy.jpg">
+                        <div class="overlay">
+                          <div class="portfolio-item-meta">
+                            <h5>Farmer Boy</h5>
+                            <p>Branding</p>
+                          </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                      </a>
+
+                    </div>
+                  </div> <!-- item end -->
+
+                  <div class="columns portfolio-item">
+                    <div class="item-wrap">
+
+                      <a href="#modal-06" title="">
+                        <img alt="" src="images/portfolio/girl.jpg">
+                        <div class="overlay">
+                          <div class="portfolio-item-meta">
+                            <h5>Girl</h5>
+                            <p>Photography</p>
+                          </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                      </a>
+
+                    </div>
+                  </div> <!-- item end -->
+
+                  <div class="columns portfolio-item">
+                    <div class="item-wrap">
+
+                      <a href="#modal-07" title="">
+                        <img alt="" src="images/portfolio/origami.jpg">
+                        <div class="overlay">
+                          <div class="portfolio-item-meta">
+                            <h5>Origami</h5>
+                            <p>Illustrration</p>
+                          </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                      </a>
+
+                    </div>
+                  </div> <!-- item end -->
+
+                  <div class="columns portfolio-item">
+                    <div class="item-wrap">
+
+                      <a href="#modal-08" title="">
+                        <img alt="" src="images/portfolio/retrocam.jpg">
+                        <div class="overlay">
+                          <div class="portfolio-item-meta">
+                            <h5>Retrocam</h5>
+                            <p>Web Development</p>
+                          </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                      </a>
+
+                    </div>
+                  </div>  <!-- item end -->
+
+                </div> <!-- portfolio-wrapper end -->
+
+              </div> <!-- twelve columns end -->
+
+
+              <!-- Modal Popup
+              --------------------------------------------------------------- -->
+
+              <div id="modal-01" class="popup-modal mfp-hide">
+
+                <img class="scale-with-grid" src="images/portfolio/modals/m-coffee.jpg" alt="" />
+
+                <div class="description-box">
+                  <h4>Coffee Cup</h4>
+                  <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                  <span class="categories"><i class="fa fa-tag"></i>Branding, Webdesign</span>
+                </div>
+
+                <div class="link-box">
+                  <a href="http://www.behance.net">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+                </div>
+
+              </div><!-- modal-01 End -->
+
+              <div id="modal-02" class="popup-modal mfp-hide">
+
+                <img class="scale-with-grid" src="front/img/portfolio/modals/m-console.jpg" alt="" />
+
+                <div class="description-box">
+                  <h4>Console</h4>
+                  <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                  <span class="categories"><i class="fa fa-tag"></i>Branding, Web Development</span>
+                </div>
+
+                <div class="link-box">
+                  <a href="http://www.behance.net">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+                </div>
+
+              </div><!-- modal-02 End -->
+
+              <div id="modal-03" class="popup-modal mfp-hide">
+
+                <img class="scale-with-grid" src="images/portfolio/modals/m-judah.jpg" alt="" />
+
+                <div class="description-box">
+                  <h4>Judah</h4>
+                  <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                  <span class="categories"><i class="fa fa-tag"></i>Branding</span>
+                </div>
+
+                <div class="link-box">
+                  <a href="http://www.behance.net">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+                </div>
+
+              </div><!-- modal-03 End -->
+
+              <div id="modal-04" class="popup-modal mfp-hide">
+
+                <img class="scale-with-grid" src="images/portfolio/modals/m-intothelight.jpg" alt="" />
+
+                <div class="description-box">
+                  <h4>Into the Light</h4>
+                  <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                  <span class="categories"><i class="fa fa-tag"></i>Photography</span>
+                </div>
+
+                <div class="link-box">
+                  <a href="http://www.behance.net">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+                </div>
+
+              </div><!-- modal-04 End -->
+
+              <div id="modal-05" class="popup-modal mfp-hide">
+
+                <img class="scale-with-grid" src="images/portfolio/modals/m-farmerboy.jpg" alt="" />
+
+                <div class="description-box">
+                  <h4>Farmer Boy</h4>
+                  <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                  <span class="categories"><i class="fa fa-tag"></i>Branding, Webdesign</span>
+                </div>
+
+                <div class="link-box">
+                  <a href="http://www.behance.net">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+                </div>
+
+              </div><!-- modal-05 End -->
+
+              <div id="modal-06" class="popup-modal mfp-hide">
+
+                <img class="scale-with-grid" src="images/portfolio/modals/m-girl.jpg" alt="" />
+
+                <div class="description-box">
+                  <h4>Girl</h4>
+                  <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                  <span class="categories"><i class="fa fa-tag"></i>Photography</span>
+                </div>
+
+                <div class="link-box">
+                  <a href="http://www.behance.net">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+                </div>
+
+              </div><!-- modal-06 End -->
+
+              <div id="modal-07" class="popup-modal mfp-hide">
+
+                <img class="scale-with-grid" src="images/portfolio/modals/m-origami.jpg" alt="" />
+
+                <div class="description-box">
+                  <h4>Origami</h4>
+                  <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                  <span class="categories"><i class="fa fa-tag"></i>Branding, Illustration</span>
+                </div>
+
+                <div class="link-box">
+                  <a href="http://www.behance.net">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+                </div>
+
+              </div><!-- modal-07 End -->
+
+              <div id="modal-08" class="popup-modal mfp-hide">
+
+                <img class="scale-with-grid" src="images/portfolio/modals/m-retrocam.jpg" alt="" />
+
+                <div class="description-box">
+                  <h4>Retrocam</h4>
+                  <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                  <span class="categories"><i class="fa fa-tag"></i>Webdesign, Photography</span>
+                </div>
+
+                <div class="link-box">
+                  <a href="http://www.behance.net">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+                </div>
+
+              </div><!-- modal-01 End -->
+
+
+            </div> <!-- row End -->
+
+          </section> <!-- Portfolio Section End-->
+
+
+          <!-- Call-To-Action Section
+          ================================================== -->
+
+
+
+          <!-- Testimonials Section
+          ================================================== -->
+          <section id="testimonials">
+              <div class="text-container">
+
+                <div class="row">
+
+                  <div class="two columns header-col">
+
+                    <h1><span>sddfsdcsdvs</span></h1>
+
+                  </div>
+
+                  <div class="ten columns flex-container">
+
+                    <div class="flexslider">
+
+
+                      <ul class="slides">
+
+                        <li>
+                          <blockquote>
+                            <p>Votre travail va remplir une grande partie de votre vie, et la seule façon d'être vraiment satisfait est de faire ce que vous croyez être un excellent travail. Et la seule façon de faire un grand travail est d'aimer ce que vous faites. Si vous ne l'avez pas encore trouvé, continuez à chercher. Ne pas s'impatienter, comme avec toutes les questions du cœur, vous saurez quand vous le trouverez.
+                            </p>
+                            <cite>Steve Jobs</cite>
+                          </blockquote>
+                        </li> <!-- slide ends -->
+
+                        <li>
+                          <blockquote>
+                            <p>Le travail pense, la paresse songe.
+                            </p>
+                            <cite>Juls Renard</cite>
+                          </blockquote>
+                        </li> <!-- slide ends -->
+
+                      </ul>
+
+                    </div> <!-- div.flexslider ends -->
+
+                  </div> <!-- div.flex-container ends -->
+
+                </div> <!-- row ends -->
+
+              </div>  <!-- text-container ends -->
+
+            </section> <!-- Testimonials Section End-->
+
+
+            <!-- Contact Section
+            ================================================== -->
+            <section id="contact">
+
+              <div class="row section-head">
+                <h2>Contactez moi !</h2>
+
+                <div class="two columns header-col">
+
+                  <h1><span>dqdffsd.</span></h1>
+
+                </div>
+
+                <div class="ten columns">
+
+                  <p class="lead">Une idée de projet, un besoin de conseil, de réponses en terme de production ou de délai ? <br/>Je vous invite à renseigner les champs ci-dessous et je m'engage à vous répondre dans les plus brefs délais.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="eight columns">
+
+                  <!-- form -->
+                  <form action="" method="post" id="contactForm" name="contactForm">
+                    <fieldset>
+
+                      <div>
+                        <label for="contactName">Nom <span class="required">*</span></label>
+                        <input type="text" value="" size="35" id="contactName" name="contactName">
+                      </div>
+
+                      <div>
+                        <label for="contactName">Prenom <span class="required">*</span></label>
+                        <input type="text" value="" size="35" id="contactName" name="contacPrenom">
+                      </div>
+
+                      <div>
+                        <label for="contactEmail">Email <span class="required">*</span></label>
+                        <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+                      </div>
+
+                      <div>
+                        <label for="contactMessage">Message <span class="required">*</span></label>
+                        <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                      </div>
+
+                      <div>
+                        <button class="submit">Envoyer</button>
+                        <span id="image-loader">
+                          <img alt="" src="images/loader.gif">
+                        </span>
+                      </div>
+
+                    </fieldset>
+                  </form> <!-- Form End -->
+
+                  <!-- contact-warning -->
+                  <div id="message-warning"> Error boy</div>
+                  <!-- contact-success -->
+                  <div id="message-success">
+                    <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+                  </div>
+
+                </div>
+
+
+                <aside class="four columns footer-widgets">
+
+                  <div class="widget widget_contact">
+
+
+                    <p class="address">
+                      Tibilé Coulibaly<br>
+                      5 allée saint exupery<br>
+                      92390 Villeneuve la garenne<br>
+                      <span>0778215633</span>
+                    </p>
+
+                  </div>
+
+
+
+                </aside>
+
+              </div>
+
+            </section> <!-- Contact Section End-->
+
+
+            <!-- footer
+            ================================================== -->
+            <footer>
+
+              <div class="row">
+
+                <div class="twelve columns">
+
+                  <ul class="social-links">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                  </ul>
+
+                  <ul class="copyright">
+                    <li>&copy; Copyright 2014 Tibilé Coulibaly</li>
+                  </ul>
+
+                </div>
+
+                <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+              </div>
+
+            </footer> <!-- Footer End-->
+
+            <!-- Java Script
+            ================================================== -->
+
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            <script src="front/js/jquery.flexslider.js"></script>
+            <script src="front/js/waypoints.js"></script>
+            <script src="front/js/jquery.fittext.js"></script>
+            <script src="front/js/magnific-popup.js"></script>
+            <script src="front/js/init.js"></script>
+            <script src="front/js/formaex.js"></script>
+            <script src="front/js/parallax.js"></script>
+            <script src="front/js/mon_parallax.js"></script>
+
+          </body>
+
+          </html>
