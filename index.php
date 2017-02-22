@@ -46,13 +46,15 @@ $titre = $sql->fetch();
 
     <!-- Custom CSS -->
     <link href="front/css/stylish-portfolio.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom Fonts -->
     <link href="front/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Arsenal:700|Roboto+Condensed" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Fenix" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif|Merriweather|Mukta+Vaani|Roboto|Ubuntu" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lato|Oswald|Roboto" rel="stylesheet"> 
 
     <link rel="stylesheet" type="text/css" href="front/css/advences_barre.css">
     <link rel="stylesheet" type="text/css" href="front/css/style_front.css">
@@ -79,20 +81,26 @@ $titre = $sql->fetch();
                 <a href="#top" onclick=$("#menu-close").click();>Accueil</a>
             </li>
             <li>
+                <a href="#portfolio" onclick=$("#menu-close").click();>Compétences</a>
+            </li>
+            <li>
                 <a href="#about" onclick=$("#menu-close").click();>A propos...</a>
             </li>
             <li>
-                <a href="#realisation" onclick=$("#menu-close").click();>Réalisations</a>
+                <a href="#experience" onclick=$("#menu-close").click();>Expérience</a>
             </li>
             <li>
-                <a href="#portfolio" onclick=$("#menu-close").click();>Compétences</a>
+                <a href="#formation" onclick=$("#menu-close").click();>Formations</a>
+            </li>
+            <li>
+                <a href="#realisation" onclick=$("#menu-close").click();>Réalisations</a>
             </li>
             <li>
                 <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
             </li>
         </ul>
     </nav>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg">
+    <!-- <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg"> -->
     <!-- Header -->
         <header id="top" class="header">
         <?php
@@ -103,69 +111,82 @@ $titre = $sql->fetch();
                 <h1><?php echo $utilisateur['prenom'].' '.$utilisateur['nom']; ?></h1>
                 <span class="soustitre"><?= $titre['titre_cv'] ?></span>
                 <br>
+                
                 <a href="#about" class="btn btn-dark btn-lg"><i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i></a></br></br></br>
 
                 <!-- <p><?php echo $utilisateur['email'].' '.$utilisateur['adresse'].' '.$utilisateur['age'].' '.$utilisateur['notes']; ?></p> -->
             </div>
         </header>
-    </div>
+    </div> -->
 <div class="wrapper">
     <!-- Compétences -->
         <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-lg text-center">
-
         <h2>Compétences numériques</h2>
-        <div class="col-md-<?php echo 2/count($competence); ?> col-sm-6">
-            <ul class="skills">
-                    <?php
-                    //print_r($competence);
-                    $i = 0;
-                    while($i < count($competence)){
-                        ?>  <?php echo '<li class="skill" aria-label="'.$competence[$i]['class_c'].'">'.$competence[$i]['competence'].'</li>'.'<br>';?>
-                         <?php
-                        $i++;
-                    } ?>
 
+        <!-- <div class="col-md-<?php echo 2/count($competence); ?> col-sm-6"> -->
+        <div class="skills">
+            <ul>
+                <?php
+                //print_r($competence);
+                $i = 0;
+                while($i < count($competence)){?>
+                     <li> <?php echo '<span class="'.$competence[$i]['class_c'].'" aria-label="'.$competence[$i]['class_c'].'">'.$competence[$i]['competence'].'</span>'.'<br>';?></li>
+                     <?php
+                    $i++;
+                } ?>
             </ul>
         </div>
         </div>
             </div>
                 </div>
         </section>
- <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg">
-
-       <h2 class="parallax1">À propos</h2>
-
-
-            <div  class="parallax">
-              <i class="fa fa-book fa-5x" aria-hidden="true"></i>
-                <aside class="parallax"> Lectrice assidue ( Biographie et autobiographies )</aside>
-            </div>
-
-
-            <div class="parallax">
-              <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
-                <aside class="parallax">Passionnée de pâtisserie</aside>
-            </div>
-
-
-
- </div>
-   <!--  A PROPOS -->
+<!--  A PROPOS -->
     <section id="about" class="about">
+
+<h2 class="parallax1">À propos</h2>
+
+<div class="row">
+                <div class="col-md-12">
+                    <div class="logo-loisir text-center">
+                        <div class="col-md-offset-1 col-md-2">
+                            <img src="front/img/cupcake.png" alt="logo cupcake">
+                            <p>Patisser c'est comme coder: L'un est minitieux l'autre délicieux ! </p>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="front/img/film.png" alt="logo film">
+                            <p>Comique, fantastique ou d'action: je suis une fan de cinéma. </p>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="front/img/book.png" alt="book chat">
+                            <p>Je suis une grande lectrice d'autobiographies et de biographies, principalement</p>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="front/img/langue.png" alt="logo langue">
+                            <p>Grand interet pour la culture subsaharienne</p>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="front/img/association.png" alt="logo association">
+                            <p>On ne peut pas aider tout le monde mais tout le monde peut aider quelqu'un... Le monde associatif est pour moi un moyen de se rendre utile.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+    </section>
+
+ 
+   
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
+                    
 
-                    <p class="a_propos">Passionée par les nouvelles technologies, j'ai à coeur de réaliser le travail qui m'est confié avec rigueur mais surtout par plaisir. Dynamique et motivée, je saurais mener à bien vos projets et être une partenaire de choix !</p>
-                    <div class="button">
-                        <a href="CV_Tibile.pdf" target="blank">Télécharger mon cv</a>
-                    </div>
                      <!-- Expérience -->
                      <div class="col-lg-12 text-center">
-                    <h3>Expériences professionnelles</h3>
+                    <h2 id="experience">Expériences <br>professionnelles</h2>
                     <?php
                     $i = 0;
                     while( $i< count($experience) ){
@@ -173,12 +194,11 @@ $titre = $sql->fetch();
                         ?>
                         <div class="col-md-<?php echo 12/count($experience); ?> col-sm-6">
                             <div class="service-item">
-                                <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
-
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i> 
                                 <h5>
                                     <strong><?php echo $experience[$i]['titre_e'];?> </strong>
                                 </h5>
-                                <p><?php echo '<span>'.$experience[$i]['date_e'].'<span>'.' ' .$experience[$i]['description_e'] ?></p>
+                                <p><?php echo '<span class="span">'.$experience[$i]['date_e'].'<span>'.'<p>'.$experience[$i]['description_e'].'<p>' ?></p>
 
                             </div>
                         </div>
@@ -186,11 +206,13 @@ $titre = $sql->fetch();
                     }
                     ?>
                     </div>
+
+
                     <!-- Formations -->
                      <div class="row">
                 <div class="col-lg-12 text-center">
                     <hr class="small">
-                    <h3>Formations</h3>
+                    <h2 id="formation">Formations</h2>
                     <div class="row">
                     <?php
                     $i = 0;
@@ -206,8 +228,8 @@ $titre = $sql->fetch();
                                     <strong><?php echo $formation[$i]['titre_f'].'<br/>';?> </strong>
                                 </h5>
 
-                                    <span><?php echo $formation[$i]['date_f'] ?></span><br/>
-                                    <?php echo '<br/>'.$formation[$i]['description_f'] ?>
+                                    <span class="span"><?php echo $formation[$i]['date_f'] ?></span><br/>
+                                    <?php echo '<br/>'.'<p>'.$formation[$i]['description_f'].'</p>'?>
                             </div>
                         </div>
                     <?php $i++;
@@ -220,8 +242,11 @@ $titre = $sql->fetch();
             </div>
             <!-- /.row -->
         </div>
+        <div class="button">
+                        <a href="CV_Tibile.pdf" target="blank">Télécharger mon cv</a>
+                    </div>
         <!-- /.container -->
-    </section>
+    
     <!-- Callout -->
     <<!-- aside class="callout">
         <div class="text-vertical-center">
@@ -237,14 +262,14 @@ $titre = $sql->fetch();
     </div>
     </aside>
  -->
- <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg">
+
  </div>
     <!-- Portfolio -->
     <section id="realisation" class="realisation">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-lg text-center">
-                    <h2>Mes réalisations</h2>
+                    <h2 class="mes_rea">Mes réalisations</h2>
 
                     <div class="row">
                         <div class="col-md-6">
@@ -349,7 +374,7 @@ $titre = $sql->fetch();
                 </div>
             </div>
         </div>
-        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-4x"></i></a>
+       
     </footer>
 
 

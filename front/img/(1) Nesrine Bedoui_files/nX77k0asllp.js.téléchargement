@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["9kCmc"]); }
+
+__d('SearchTypeaheadLegacyBootloader',['JSCC','SearchDataSource','SearchTypeaheadCore','SearchTypeaheadRenderer','SearchTypeaheadView','Typeahead','TypeaheadSearchRecorderBasic','TypeaheadShowLoadingIndicator'],(function a(b,c,d,e,f,g){var h={init:function i(){b.JSCC=c('JSCC');if(!b.TypeaheadBehaviors)b.TypeaheadBehaviors={};b.TypeaheadBehaviors.showLoadingIndicator=function(j){j.enableBehavior(c('TypeaheadShowLoadingIndicator'));};b.TypeaheadBehaviors.searchRecorderBasic=function(j){j.enableBehavior(c('TypeaheadSearchRecorderBasic'));};}};f.exports=h;}),null);

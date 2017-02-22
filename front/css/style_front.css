@@ -1,146 +1,576 @@
-/*//SECTION//*/
-h1{
-	margin-top: 20px;
-	margin-bottom: 100px;	
-}
-.column, .columns {
-    position: relative;
-    padding: 0 20px;
-    min-height: 1px;
-    float: left;
-    padding-top: 20px;
-}
-.titre{
-	margin-left: -740px;
+body{
+	font-family: 'Raleway', sans-serif;
+	background-color: #efefef;
+	}
+
+	/*/// HEADER ///*/
+
+#top .btn{
+	float: right;
+	margin-right: 20px;
+	margin-top: 280px;
+	position: relative;
 }
 
+.text-vertical-center h1 {
+    font-size: 6.5em;
+    text-align: center;
+    margin-bottom: 35px;
+    margin-top: 90px;
+    color: #fff;
+    /*text-shadow: 1px 1px 1px#228DFF;*/
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.soustitre {
+    border-top: 1px solid #998956;
+    text-align: center;
+    font-size: 34px;
+    padding-top: 17px;
+    color: white;
+    font-family: 'Indie Flower', cursive;
+}
+
+/*.soustitre {
+    border-top: 1px solid white;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 17px;
+    font-family: 'Neon',serif;
+    color: white;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px#228DFF, 0 0 70px#228DFF, 0 0 80px#228DFF, 0 0 100px#228DFF, 0 0 150px#228DFF;
+    font-family: 'Monoton', cursive;
+}*/
+.soustitre:hover {
+  color:#8c6f13;
+  transition: 0.5s;
+}
 
 
-/*// Experience et formations//*/
+/*.header{
+	background-image: url(../img/malteserois.jpeg);
+	position: relative;
+	z-index: 10;
+}*/
 
-section#timeline {
-  width: 80%;
-  margin: 20px auto;
+.header {
+	background: #636b78;
+
+
+}
+/*// NAV //*/
+
+.sidebar-brand{
+
+}
+
+
+/*/// WRAPPER ///*/
+.wrapper {
+    margin: 0 auto;
+    background-color: #efefef;
+}
+
+.fa-4x {
+    font-size: 4em;
+    color: #19114F;
+}
+
+.text-center{
+	text-align: left;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+.col-lg-12 {
+    width: 100%;
+    margin-bottom: 100px;
+    padding-top: 40px;
+}
+.btn-dark{
+	background-color: white;
+}
+.btn-dark:hover, .btn-dark:focus, .btn-dark:active {
+    color: #fff;
+    background-color: white;
+}
+
+/*//COMPETENCES NUMERIQUES //*/
+@import url(http://fonts.googleapis.com/css?family=Exo);
+
+
+.skills {
+  width: inherit;
   position: relative;
-}
-section#timeline:before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  margin: 1980px 0 0 -1px;
-  width: 2px;
-  height: 100%;
-  background: rgba(255,255,255,0.2);
-}
-section#timeline article {
-  width: 100%;
-  margin: 0 0 20px 0;
-  position: relative;
-}
-section#timeline article:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-section#timeline article div.inner {
-  width: 40%;
   float: left;
-  margin: 5px 0 0 0;
-  border-radius: 6px;
+  padding: 30px 0;
 }
-section#timeline article div.inner span.date {
-  display: block;
-  width: 60px;
-  height: 50px;
-  padding: 5px 0;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin: 0 0 0 -32px;
-  border-radius: 100%;
-  font-size: 12px;
-  font-weight: 900;
-  text-transform: uppercase;
-  background: #25303B;
-  color: rgba(255,255,255,0.5);
-  border: 2px solid rgba(255,255,255,0.2);
-  box-shadow: 0 0 0 7px #25303B;
+h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+    font-family: 'Droid Sans', sans-serif;
+    color: #fff;
+    font-weight: bold;
+    background-color: #9bbbb6;
+    width: 315px;
+    padding: 5px;
+    border-radius: 6px;
+    padding-left: 8px;
+    letter-spacing: 5px;
+    font-family: 'Lato', sans-serif;
+
 }
-section#timeline article div.inner span.date span {
-  display: block;
-  text-align: center;
+ul {
+    padding-top: 50px;
+    color: #9bbbb6;
+    list-style: none;
+    padding-top: 0;
+    font-family: 'Indie Flower', cursive;
 }
-section#timeline article div.inner span.date span.day {
-  font-size: 10px;
+ul > li {
+  margin-bottom: 70px;
+  background: #000;
+  height: 5px;
+  border-radius: 3px;
+  border-left: 1px solid #111;
+  border-top: 1px solid #111;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
 }
-section#timeline article div.inner span.date span.month {
+ul > li em {
+  font-family: 'Exo', sans-serif;
   font-size: 18px;
-}
-section#timeline article div.inner span.date span.year {
-  font-size: 10px;
-}
-section#timeline article div.inner h2 {
-  padding: 15px;
-  margin: 0;
-  color: #fff;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  border-radius: 6px 6px 0 0;
   position: relative;
+  top: -30px;
 }
-section#timeline article div.inner h2:after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  right: -5px;
-  	width: 10px; 
-	  height: 10px;
-  -webkit-transform: rotate(-45deg);
+ul > li span {
+    height: 1px;
+    margin: 2px 0;
+    background: #096A09;
+    position: absolute;
+    box-shadow: 0px 0px 10px 1px rgba(9, 106, 9, 0.9);
 }
-section#timeline article div.inner p {
-  padding: 15px;
-  margin: 0;
-  font-size: 14px;
-  background: #fff;
-  color: #656565;
-  border-radius: 0 0 6px 6px;
+.html5 {
+  width: 70%;
+  animation: html5 2s ease-out;
 }
-section#timeline article:nth-child(2n+2) div.inner {
-  float: right;
+.css3 {
+  width: 90%;
+  animation: css3 2s ease-out;
 }
-section#timeline article:nth-child(2n+2) div.inner h2:after {
-  left: -5px;
+.php {
+  width: 50%;
+  animation: jquery 2s ease-out;
 }
-section#timeline article:nth-child(1) div.inner h2 {
-  background: #e74c3c;
+.photoshop {
+  width: 60%;
+  animation: photoshop 2s ease-out;
 }
-section#timeline article:nth-child(1) div.inner h2:after {
-  background: #e74c3c;
+.indesign {
+  width: 60%;
+  animation: photoshop 2s ease-out;
 }
-section#timeline article:nth-child(2) div.inner h2 {
-  background: #2ecc71;
+.github {
+  width: 60%;
+  animation: photoshop 2s ease-out;
 }
-section#timeline article:nth-child(2) div.inner h2:after {
-  background: #2ecc71;
+.sql {
+  width: 60%;
+  animation: photoshop 2s ease-out;
 }
-section#timeline article:nth-child(3) div.inner h2 {
-  background: #e67e22;
+@keyframes html5 {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 70%;
+  }
 }
-section#timeline article:nth-child(3) div.inner h2:after {
-  background: #e67e22;
+@keyframes css3 {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 90%;
+  }
 }
-section#timeline article:nth-child(4) div.inner h2 {
-  background: #1abc9c;
+@keyframes php {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 50%;
+  }
 }
-section#timeline article:nth-child(4) div.inner h2:after {
-  background: #1abc9c;
+@keyframes photoshop {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 60%;
+  }
 }
-section#timeline article:nth-child(5) div.inner h2 {
-  background: #9b59b6;
+@keyframes indesign {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 60%;
+  }
 }
-section#timeline article:nth-child(5) div.inner h2:after {
-  background: #9b59b6;
+@keyframes github {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 60%;
+  }
 }
+@keyframes sql {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 60%;
+  }
+}
+
+
+/*.text-center h2 {
+    font-size: 30px;
+    color: #19114F;
+    text-align: center;
+    margin-bottom: 83px;
+    font-family: 'Arsenal', sans-serif;
+}
+
+h3{
+	margin-bottom: 70px;
+	text-align: left;
+	border-bottom: 1px solid #D9B600;
+	margin-top: 151px;
+
+}
+.fa-lg{
+	margin-top: 20px;
+	text-align: left;
+}
+*/
+.portfolio{
+	background-color:#efefef;
+}
+
+/*// A PROPOS //*/
+
+
+.parallax1 {
+    text-align: center;
+    color: white;
+    padding-top: 30px;
+    margin-bottom: 63px;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Arsenal', sans-serif;
+    padding-bottom: 19px;
+    padding-top: 13px;
+    padding-right: 88px;
+    width: 302px;
+    letter-spacing: 2px;
+}
+
+.parallax{
+	text-align: center;
+	color: white;
+	margin-top: 30px;
+	float: left;
+	padding-left: 150px;
+}
+.fa-5x{
+	color: blue	;
+	margin-left: 27px;
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.5);
+   
+ 
+}
+aside.parallax{
+	font-size: 25px;
+	font-weight: bold;
+	letter-spacing: 1px;
+
+}
+
+.a_propos{
+	text-align: center;
+	font-size: 15px;
+	color: #313B3A;
+}
+.button {
+    width: 200px;
+    margin: 50px auto;
+    margin-top: 20px;
+
+}
+
+.button a {
+    display: block;
+    height: 50px;
+    width: 200px;
+    font: 17px/50px sans-serif,Helvetica;
+    text-decoration: none;
+    text-align: center;
+    color: #9bbbb6;
+    background-color: rgba(255,255,255,0.5);
+    font-weight: bold;
+    border-radius: 4px;
+    border: 1px solid #9bbbb6 ;
+}
+.button a:hover{
+	  background-color: #9bbbb6;
+    color:white;
+    transition: 0.5s;
+}
+
+p {
+    margin-top: 15px;
+    color: #9bbbb6;
+    font-size: 16px;
+}
+
+.about{
+	background-color:#E5E5E5;
+	margin: 0px 0 -22px 0;
+	padding-bottom: 285px;
+}
+
+h4{
+	margin-bottom: 40px;
+}
+
+ h5{
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #BCBCBC;
+}
+img {
+    vertical-align: middle;
+    margin-left: 56px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    padding-top: 33px;
+}
+.col-md-12 {
+    width: 100%;
+    margin-top: 90px;
+}
+
+
+
+/*/ FORMATIONS /*/
+
+
+#formation{
+    width: 277px;
+    padding: 11px;
+}
+  /*// EXPERIENCE //*/
+
+  #experience{
+  	margin-left: -16px;
+  	width: 396px;
+  }
+
+.text-center .span{
+
+	/*background-color: #CECECE;*/
+	color:#BCBCBC;
+	/*padding: 5px;*/
+	margin-bottom: 50px;
+}
+
+	/*// formations //*/
+.btn-light {
+    border-radius: 0;
+    color: #333;
+    background-color: #0A0106;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+.btn-light:hover{
+
+transition-duration: 0.8s;
+background-color: #19114F;
+color:  #CECECE;
+}
+
+/*// MES REALISATIONS //*/
+.img-portfolio {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.mes_rea{
+	width: 293px;
+	padding: 11px;
+
+}
+
+.realisation{
+
+	background-color:#F2F2F2;
+
+
+}
+.btn-dark {
+    color: #9bbbb6;
+    background-color: rgba(255,255,255,0.5);
+    font-weight: bold;
+    border-radius: 4px;
+    border: 1px solid #9bbbb6 ;
+    margin-top: 27px;
+    padding: 15px;
+}
+
+.btn-dark:hover{
+    background-color: #9bbbb6;
+    color:white;
+    transition: 0.5s;
+}
+
+/*// CONTACT //*/
+form{
+	text-align: center;
+	margin-right: 393px;
+	margin: 0 auto;
+}
+.me_contacter{
+	margin-bottom: 40px;
+	margin-top: 60px;
+	text-align: center;
+	color: #8c6f13;
+}
+.formulaire{
+	width: 615px;
+	height: 50px;
+	border-radius: 5px;
+	background: rgba(155,187,182,0.5);
+
+}
+.formulaire:focus{
+	width: 615px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: #F8F8F8;
+	border: 1px solid #9bbbb6;
+
+}
+.message{
+	width: 615px;
+	border-radius: 5px;
+	height: 200px;
+	background: rgba(155,187,182,0.5);
+}
+.message:focus{
+	width: 615px;
+	border-radius: 5px;
+	height: 200px;
+	background-color: #F8F8F8;
+	border: 1px solid #9bbbb6;
+}
+#contact p{
+	text-align: center;
+	margin-bottom: 40px;
+}
+input[placeholder]{
+	color: #8c6f13;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-top: 3px;
+}
+input[placeholder]:focus{
+	color :#9bbbb6;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-top: 3px;
+}
+textarea[placeholder]{
+	color: #8c6f13;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+textarea[placeholder]:focus{
+	color: #9bbbb6;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+.envoyer{
+	height: 50px;
+	width: 200px;
+	color: #9bbbb6;
+	font: 17px/50px sans-serif,Helvetica;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 10px;
+    background-color: rgba(255,255,255,0.5);
+    font-weight: bold;
+    border-radius: 4px;
+    border: 1px solid #9bbbb6 ;
+}
+.envoyer:hover{
+	background-color: #9bbbb6;
+    color:white;
+    transition: 0.5s;
+}
+
+/*// FOOTER ///*/
+ footer .container{
+ 	text-align: center;
+ 	margin-top: 50px;
+
+ }
+ .fa-3x {
+    font-size: 3em;
+    color: #19114F;
+}
+a {
+    text-decoration: none;
+}
+.name{
+	color: :#19114F;
+}
+/* // font awesome //*/
+
+.fin {
+    color: #19114F;
+
+}
+.date{
+
+
+}
+
+#container {
+  width: 500px;
+  margin: auto;
+}
+
+/*Neon*/	
+
+.soustitre a {
+  color: #fff;
+  font-family: Monoton;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+
+
