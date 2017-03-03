@@ -1,11 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Lato);
-body {
-  font-family: 'Lato', Arial, sans-serif;
-  background: #13171b;
-  color: white;
-  text-align: center;
-  height: auto;
-}
+
 
 .h1 {
   font-size: 30px;
@@ -48,8 +42,8 @@ body {
   background: #eeeeee;
 }
 .skills .skill:after {
-  background-color: #2ea994;
-  background: repeating-linear-gradient(-45deg, #2ea994, #2ea994 10px, #31b59f 10px, #31b59f 20px);
+  background-color: #6395BB;
+  background: repeating-linear-gradient(-45deg, #6395BB, #6395BB 10px, #A0D6FF 10px, #A0D6FF 20px);
   height: 32px;
   top: 2px;
   right: 95%;

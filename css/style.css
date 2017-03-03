@@ -44,10 +44,12 @@ table {
 
 
 /************** FIN RESET *************/
+
+
 body{
 	background-color:white;
-	color: #4F113A;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Roboto', sans-serif;	
+	color: #354342;
 }
 .wrapper{
 	background-color: #BBA3B3;
@@ -56,15 +58,15 @@ body{
 	padding-bottom: 20px;
 	padding-top: 40px;
 	margin-top: 20px;
-	border: 1px solid #4F113A;
 	border-radius: 0px 0px 7px 7px;
+	background-color: #CDDDDA;
 
 }
 nav{
 	width: 100%;
 	margin-top: 20px;
 	margin-bottom: -20px;
-	background-color: #4F113A;
+	background-color: #9bbbb6;
 	text-align: center;
 }
 
@@ -78,21 +80,25 @@ nav ul li a{
 	display: block;
 	text-decoration: none;
 	width: 300px;
-	background-color: #4F113A;
+	background-color: #9bbbb6;
 	margin-left: 0px;
 	color: white;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	font-size: 20px;
-	font-family: 'Indie Flower', cursive;
+	font-family: 'Sansita', sans-serif;
 }
 
 nav ul li a:hover{
-	background-color: white;
-	color: #4F113A;
+	background-color:#E5E5E5;
+	color:#354342;
 }
 
 .hello{
 	color: black;
+	text-align: center;	
+	margin-bottom: 150px;
+	margin-top: 50px;
+	font-size: 60px;
 }
 
 .clearfix{
@@ -115,7 +121,7 @@ nav ul li a:hover{
 }
 
 table {
-border: 2px solid #5E2F4D;
+border: 2px solid #9C8445;
 border-collapse: collapse;
 width: 750px;
 margin: 0 auto;	
@@ -123,13 +129,13 @@ margin: 0 auto;
 }
 
 th {
-border: 2px solid #5E2F4D;
+border: 2px solid #9C8445;
 width: 50%;
 padding: 5px;
 
 }
 td {
-border: 2px solid #5E2F4D;
+border: 2px solid #9C8445;
 width: 50%;
 padding: 5px;
 text-align: center;
@@ -165,18 +171,19 @@ font-family: sans-serif;
 	padding-top: 20px;
 	margin-left: 30px;	
 	margin-top: 50px;	
+	font-family: 'Sansita', sans-serif;	
 }
 h1{
 	font-size: 40px;
 	padding-left: 20px;
 	padding-top: 10px;
 	margin-bottom: 40px;
-	font-family: 'Indie Flower', cursive;
+	font-family: 'Sansita', sans-serif;
 }
 input[type=submit]{
 	/*border-radius: 25px;*/
 	background-color: #4C4C4C;
-	font-family: 'Ubuntu', sans-serif;	
+	font-family: 'Sansita', sans-serif;	
 	color: white;
 	margin-top: 5px;
 	margin-bottom: 5px;

@@ -69,6 +69,7 @@ if(isset($_GET['id_experience'])){
 		<!-- Ck editor -->
 		<script src="../ckeditor/ckeditor.js"></script>
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet"> 
 	</head>
 
 	<body>

@@ -68,6 +68,7 @@ if(isset($_GET['id_formation'])){
 
 		<title > <?php echo 'Formations | ' . $ligne['nom'].' '.$ligne['prenom']; ?></title>
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet"> 
 	</head>
 
 	<body>

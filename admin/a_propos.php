@@ -31,6 +31,7 @@ if(isset($_GET['id_loisir'])){
 		?>
 		<title ><?php echo 'Loisirs | ' . $ligne['nom'].''.$ligne['prenom']; ?></title>
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet"> 
 	</head>
 
 	<body>

@@ -22,6 +22,8 @@ $loisir = $sql->fetchAll();
 $sql = $pdo->query("SELECT * FROM titre") ;
 $titre = $sql->fetch();
 
+
+
 // print_r($utilisateur);
 // print_r($competence);
 // print_r($experience);
@@ -55,6 +57,7 @@ $titre = $sql->fetch();
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lato|Oswald|Roboto" rel="stylesheet"> 
+   <script src="https://use.fontawesome.com/30a190e011.js"></script>
 
     <link rel="stylesheet" type="text/css" href="front/css/advences_barre.css">
     <link rel="stylesheet" type="text/css" href="front/css/style_front.css">
@@ -107,17 +110,20 @@ $titre = $sql->fetch();
         $sql = $pdo->query("SELECT * FROM utilisateur") ;
         $utilisateur = $sql->fetch();
         ?>
-            <div class="text-vertical-center">
-                <h1><?php echo $utilisateur['prenom'].' '.$utilisateur['nom']; ?></h1>
-                <span class="soustitre"><?= $titre['titre_cv'] ?></span>
-                <br>
-                
-                <a href="#about" class="btn btn-dark btn-lg"><i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i></a></br></br></br>
+        <div class="text-vertical-center">
+            <h1><?php echo $utilisateur['prenom'].' '.$utilisateur['nom']; ?></h1>
+            <span class="soustitre"><?= $titre['titre_cv'] ?></span>
+            <br>
 
-                <!-- <p><?php echo $utilisateur['email'].' '.$utilisateur['adresse'].' '.$utilisateur['age'].' '.$utilisateur['notes']; ?></p> -->
-            </div>
+            <img src="front/img/logo-cv_dev.png " class="logo">
+            
+            <a href="#portfolio" class="btn btn-dark btn-lg"><i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i></a></br></br></br>
+
+           
+
+        </div>
         </header>
-    </div> -->
+    </div> 
 <div class="wrapper">
     <!-- Compétences -->
         <section id="portfolio" class="portfolio">
@@ -192,9 +198,9 @@ $titre = $sql->fetch();
                     while( $i< count($experience) ){
                         $nb = 12%count($experience);
                         ?>
-                        <div class="col-md-<?php echo 12/count($experience); ?> col-sm-6">
+                        <div class="col-md-<?php echo 12/count($experience); ?> col-sm-6" id="div">
                             <div class="service-item">
-                                <i class="fa fa-graduation-cap" aria-hidden="true"></i> 
+                                <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i> 
                                 <h5>
                                     <strong><?php echo $experience[$i]['titre_e'];?> </strong>
                                 </h5>
@@ -248,7 +254,7 @@ $titre = $sql->fetch();
         <!-- /.container -->
     
     <!-- Callout -->
-    <<!-- aside class="callout">
+    <!-- aside class="callout">
         <div class="text-vertical-center">
             <i class="fa fa-quote-left fa-4x fa-pull-left fa-border" aria-hidden="true"></i><br/><br/>
             <?php
@@ -282,7 +288,7 @@ $titre = $sql->fetch();
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <!-- <img class="img-portfolio img-responsive" src="front/img/portfolio-2.jpg"> -->
+                                    <img class="img-portfolio img-responsive" src="front/img/projets2.jpg">
                                 </a>
                             </div>
                         </div>
@@ -318,7 +324,7 @@ $titre = $sql->fetch();
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                    <div class="col-lg-12 text-center">
                     <h3>Aptitudes professionelles</h3>
                     <p>Rigoureuse, attraits pour les nouveautés,
                     attentive, motivée, patiente</p>
@@ -330,15 +336,17 @@ $titre = $sql->fetch();
 
     <!-- CONTACT -->
     <section id="contact">
-        <form method="POST" action="utilisateur.php">
             <h1 class="me_contacter">Me contacter</h1>
             <p>Une idée de projet, un besoin de conseil, de réponses en terme de production ou de délai ? Je vous invite<br/> à renseigner les champs ci-dessous et je m'engage à vous répondre dans les plus brefs délais.</p>
+   
+        <form method="POST">
 
-            <input class="formulaire" type="text" name="nom" placeholder="Nom"><br/><br/>
-            <input class="formulaire" type="text" name="prenom" placeholder="Prenom"><br/><br/>
-            <input class="formulaire" type="email" name="email" placeholder="Email"><br/><br/>
-            <textarea class="message" placeholder="Votre message"></textarea> <br/><br/>
-            <input type="submit" name="envoyer" class="envoyer" value="M'écrire">
+            <div id="result"></div>
+            <input class="formulaire" type="email" name="email" placeholder="Email" id="email"><br/><br/>
+            <input class="formulaire" type="text" name="objet" placeholder="Objet" id="objet"><br/><br/>
+            <textarea class="message" placeholder="Votre message" name="message" id="message"></textarea> <br/><br/>
+
+           <input type="submit" class="envoyer">
         </form>
 
         <!-- <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
@@ -355,20 +363,13 @@ $titre = $sql->fetch();
                     <h4><strong class="fin">Tibilé Coulibaly</strong>
                     </h4>
                     <p>Intégratrice / Développeuse Website
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> 07 78 21 56 33</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">tibile.coulibaly@lepoles.com</a>
+                  
+                        <li class="list"><i class="fa fa-phone fa-fw"></i> 07 78 21 56 33</li>
+                        <li class="list"><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">tibile.coulibaly@lepoles.com</a>
                         </li>
-                    </ul>
+                 
                     <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="https://www.facebook.com/profile.php?id=100009513039426"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="<i class="fa fa-instagram" aria-hidden="true"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
+                    
                     <hr class="small">
                     <p class="text-muted">Copyright &copy;Tibilé Coulibaly</p>
                 </div>
@@ -379,10 +380,14 @@ $titre = $sql->fetch();
 
 
     <!-- jQuery -->
-    <script src="front/js/jquery.js"></script>
-
+     
     <!-- Bootstrap Core JavaScript -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="front/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="front/js/form.js"></script>
+    <script src="front/parallax.js-1.4.2/parallax.js"></script>
+    <script src="front/parallax.js-1.4.2/script.js"></script>
+   
 
     <!-- Custom Theme JavaScript -->
     <script>
@@ -397,20 +402,7 @@ $titre = $sql->fetch();
         $("#sidebar-wrapper").toggleClass("active");
     });
     // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
+
     //#to-top button appears after scrolling
     var fixed = false;
     $(document).scroll(function() {
@@ -457,9 +449,6 @@ $titre = $sql->fetch();
         // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
     </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="front/parallax.js-1.4.2/parallax.js"></script>
-<script src="front/parallax.js-1.4.2/script.js"></script>
 
 </body>
 

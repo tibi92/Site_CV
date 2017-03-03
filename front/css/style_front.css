@@ -8,8 +8,10 @@ body{
 #top .btn{
 	float: right;
 	margin-right: 20px;
-	margin-top: 280px;
+	margin-top: 443px;
 	position: relative;
+
+
 }
 
 .text-vertical-center h1 {
@@ -47,7 +49,6 @@ body{
   transition: 0.5s;
 }
 
-
 /*.header{
 	background-image: url(../img/malteserois.jpeg);
 	position: relative;
@@ -58,6 +59,11 @@ body{
 	background: #636b78;
 
 
+}
+
+.logo{
+	margin-left: 122px;
+    padding-top: 53px;
 }
 /*// NAV //*/
 
@@ -74,7 +80,7 @@ body{
 
 .fa-4x {
     font-size: 4em;
-    color: #19114F;
+    color: #a28c51;
 }
 
 .text-center{
@@ -83,8 +89,7 @@ body{
 }
 .col-lg-12 {
     width: 100%;
-    margin-bottom: 100px;
-    padding-top: 40px;
+    margin-bottom: 100px;	
 }
 .btn-dark{
 	background-color: white;
@@ -318,7 +323,7 @@ aside.parallax{
 .button a {
     display: block;
     height: 50px;
-    width: 200px;
+    width: 200	px;
     font: 17px/50px sans-serif,Helvetica;
     text-decoration: none;
     text-align: center;
@@ -395,8 +400,18 @@ img {
 	/*padding: 5px;*/
 	margin-bottom: 50px;
 }
+.col-md-6 {
+    width: 50%;
+    margin-top: 37px;
+    
+}
 
-	/*// formations //*/
+#div{
+	border-bottom: 1px solid #8b6f25;	
+    padding-bottom: 106px;
+}
+
+	/*// FORMATIONS //*/
 .btn-light {
     border-radius: 0;
     color: #333;
@@ -411,10 +426,19 @@ background-color: #19114F;
 color:  #CECECE;
 }
 
-/*// MES REALISATIONS //*/
+/*// REALISATIONS //*/
 .img-portfolio {
     margin: 0 auto;
     margin-top: 20px;
+}
+.img-portfolio:hover {
+    opacity: 0.8;
+    background-color: red;
+}
+
+.img-responsive:hover{
+	 opacity: 0.8;
+    background-color: blue;
 }
 .mes_rea{
 	width: 293px;
@@ -443,6 +467,7 @@ color:  #CECECE;
     color:white;
     transition: 0.5s;
 }
+
 
 /*// CONTACT //*/
 form{
@@ -543,6 +568,7 @@ textarea[placeholder]:focus{
 }
 a {
     text-decoration: none;
+    color: #8b6f25;
 }
 .name{
 	color: :#19114F;
@@ -550,7 +576,7 @@ a {
 /* // font awesome //*/
 
 .fin {
-    color: #19114F;
+    color: #8b6f25;
 
 }
 .date{
@@ -572,5 +598,8 @@ a {
   animation: neon1 1.5s ease-in-out infinite alternate;
 }
 
-
+.list{
+	list-style: none;
+	color: #8b6f25;
+}
 

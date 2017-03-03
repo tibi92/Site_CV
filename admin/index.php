@@ -1,71 +1,69 @@
-	
 <?php require("../connexion/connexion.php"); ?>
-<?php
-
-session_start();
-
-if(isset($_SESSION['connexion']) && $_SESSION['connexion'] == 'connecté'){//Si la personne est connecté et la valeur est bien celle de la page d'authentification
-	$id_utilisateur = $_SESSION['id_utilisateur'];
-	$prenom = $_SESSION['prenom'];
-	$nom = $_SESSION['nom'];
-}else{// l'utilisateur n'est pas connecté 
-	header('location:authentification.php');
-}
-
-if(isset($_GET['deconnect'])){
-	
-	$_SESSION['connexion']= ''; // on vide les variables de session
-	$_SESSION['id_utilisateur']= ''; 
-	$_SESSION['prenom']= ''; 
-	$_SESSION['nom']= ''; 
-
-	unset($_SESSION['connexion']);// on supprime cette variable
-
-	session_destroy();// on détruit la session
-	header('location:../index.php');
-}
-?>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<?php
-	$sql = $pdo->query("SELECT nom, prenom, ville, avatar FROM utilisateur") ;
-	$ligne = $sql->fetch();
-?>
-	<title >Bienvenue <?php echo $_SESSION['nom'].''.$_SESSION['prenom']; ?></title>
+	<title class="bienvenue">Tibilé Currulum </title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
-<body> 
-	<header>
-		<?php require("../admin/admin_menu.php"); ?>
-	</header>
-	<div class="maincontent">	
+	<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
 
-		<h1 >Espace administratif du site CV</h1>
-		<sidebar></sidebar>
+
+</head>
+
+<body>
+<header> <?php require("../admin/admin_menu.php"); ?> </header>
+	<div class="wrapper">
+		<?php require("../connexion/connexion.php"); ?>
+
 
 		<?php 
-			  $date = date("d-m-Y");
-			  $heure = date("H:i");
-			  echo '<strong style="color:purple"> Nous sommes le '. $date.' , il est '. $heure .'</strong>';
-			  echo '<div >
-			  <p>Hola  '.$ligne['prenom'].' '.$ligne['nom'].' de '.$ligne['ville'].'<br></p>
-			  </div>';
-			  echo '<img src ="../img/'.$ligne['avatar'].'" alt=""><br>';
-		 ?>
+		$sql = $pdo->query("SELECT * FROM utilisateur") ;
+			$utilisateur = $sql->fetch();
+		?>
+
+		<h1 class="hello">Bonjour <?php echo $utilisateur['nom'].' '.$utilisateur['prenom']; ?></h1>
+
+		<!-- <?php
+			echo $utilisateur['nom'].'<br>';
+			echo $utilisateur['prenom'].'<br>';
+			echo $utilisateur['email'].'<br>';
+			echo $utilisateur['tel'].'<br>';
+			echo $utilisateur['mdp'].'<br>';
+			echo $utilisateur['pseudo'].'<br>';
+			echo $utilisateur['age'].'<br>';
+			echo $utilisateur['sexe'].'<br>';
+			echo $utilisateur['adresse'].'<br>';
+			echo $utilisateur['code_postal'].'<br>';
+			echo $utilisateur['ville'].'<br>';
+			echo $utilisateur['pays'].'<br>';
+			echo $utilisateur['etat_civil'].'<br>';
+			echo $utilisateur['avatar'].'<br>';
+			echo $utilisateur['notes'].'<br>';
+			echo $utilisateur['statut'].'<br>';
+			echo $utilisateur['date_de_naissance'].'<br>';
+			echo $utilisateur['civilite'].'<br>';
+
+		?> -->
+
+		<table width="500px" border="1">
+			<thead> 
+				<th>Nom, prénom, etc...</th>
+				<th>Etat civil</th>
+			</thead>
+			<tr>
+				<td><?php echo '<img src ="../img/'.$utilisateur['avatar'].'" alt="" style="width:100px" class="image"><br>'.
+				'<div class="identite">'.'<br>'.$utilisateur['etat_civil'].' '.$utilisateur['nom'].' '.$utilisateur['prenom'].'<br>'.$utilisateur['adresse'].'<br>'.$utilisateur['code_postal'].' '.$utilisateur['ville'].'<br><br>'.$utilisateur['email'].'<br><br>	'.'Pseudo: '.$utilisateur['pseudo'].'<br>'.'Mot de passe: '.$utilisateur['mdp'].'<br> 
+				</div>'; ?></td>
+				<td><?php echo '<div class="etat_civil">Age: '.$utilisateur['age'].'<br>'.'Date de naissance: '.$utilisateur['date_de_naissance'].'<br>'.$utilisateur['civilite'].'<br>'.$utilisateur['notes'].'<br></div>' ?></td>
+			</tr>
+		
+		</table>
 
 
-<?php echo $ligne['prenom'].'<br><br>'; ?>
+	</div>	
 
-
-</div>
-
-<footer style="border: 1px solid purple">Pied de page
-<a href="index.php?deconnect">Déconnexion</a>
-</footer>
-
-	</body>
-
+</body>
 </html>
+
+
