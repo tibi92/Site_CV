@@ -50,8 +50,9 @@ if(isset($_GET['id_competence'])){
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+<meta charset="UTF-8">
 	<title ><?php echo 'Compétences | ' . $utilisateur['nom'].''.$utilisateur['prenom']; ?></title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Raleway:300i,400,500|Ubuntu" rel="stylesheet"> 

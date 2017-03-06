@@ -22,7 +22,7 @@ if(isset($_GET['deconnect'])){
 	unset($_SESSION['connexion']);// on supprime cette variable
 
 	session_destroy();// on détruit la session
-	header('location:../index.php');
+	header('location:../accueil.php');
 }
 ?>
 
@@ -59,8 +59,9 @@ if(isset($_GET['id_experience'])){
 
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
+	<meta charset="UTF-8">
 		<?php
 		$sql = $pdo->query("SELECT * FROM utilisateur") ;
 		$ligne = $sql->fetch();

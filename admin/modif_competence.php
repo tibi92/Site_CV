@@ -23,6 +23,7 @@ $ligne_competence = $sql->fetch();
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 	<?php
 	$sql = $pdo->query("SELECT * FROM utilisateur") ;
 	$ligne = $sql->fetch();

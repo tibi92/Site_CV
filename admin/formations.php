@@ -4,7 +4,7 @@
 
 session_start();
 
-if(isset($_SESSION['connexion']) && $_SESSION['connexion'] == 'connecté'){//Si la personne est connecté et la valeur est bien celle de la page d'authentification
+if(isset($_SESSION['connexion'])){//Si la personne est connecté et la valeur est bien celle de la page d'authentification
 	$id_utilisateur = $_SESSION['id_utilisateur'];
 	$prenom = $_SESSION['prenom'];
 	$nom = $_SESSION['nom'];
@@ -59,8 +59,9 @@ if(isset($_GET['id_formation'])){
 
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
+	<meta charset="UTF-8">
 		<?php
 		$sql = $pdo->query("SELECT * FROM utilisateur") ;
 		$ligne = $sql->fetch();

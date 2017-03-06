@@ -3,7 +3,7 @@
 <header>
 	<nav>
 		<ul>
-			<li><a href="index.php">Accueil</a></li>
+			<li><a href="accueil.php">Accueil</a></li>
 			<li><a href="experiences.php">Expériences</a></li>
 			<li><a href="formations.php">Formations</a></li>
 			<li><a href="competences.php">Compétences</a></li>

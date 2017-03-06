@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html >
 <?php require("connexion/connexion.php"); ?>
 
 <?php
@@ -31,7 +31,7 @@ $titre = $sql->fetch();
 // print_r($loisir);
 // print_r($titre);
 ?>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -106,16 +106,17 @@ $titre = $sql->fetch();
     <!-- <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/ordi.jpg"> -->
     <!-- Header -->
         <header id="top" class="header">
+        <a href="http://tibilec.ma6tvacoder.org/admin" target="blank"><i class="fa fa-key fa-2x" aria-hidden="true"></i></a>
         <?php
         $sql = $pdo->query("SELECT * FROM utilisateur") ;
         $utilisateur = $sql->fetch();
         ?>
         <div class="text-vertical-center">
-            <h1><?php echo $utilisateur['prenom'].' '.$utilisateur['nom']; ?></h1>
+            <h1><?php echo $utilisateur['prenom'].' '.$utilisateur['nom']; ?></a></h1>
             <span class="soustitre"><?= $titre['titre_cv'] ?></span>
             <br>
 
-            <img src="front/img/logo-cv_dev.png " class="logo">
+           <!--  <img src="front/img/logo-cv_dev.png " class="logo"> -->
             
             <a href="#portfolio" class="btn btn-dark btn-lg"><i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i></a></br></br></br>
 
@@ -157,25 +158,17 @@ $titre = $sql->fetch();
 <div class="row">
                 <div class="col-md-12">
                     <div class="logo-loisir text-center">
-                        <div class="col-md-offset-1 col-md-2">
+                        <div class="col-md-offset-2 col-md-3">
                             <img src="front/img/cupcake.png" alt="logo cupcake">
-                            <p>Patisser c'est comme coder: L'un est minitieux l'autre délicieux ! </p>
+                            <p class="app">Patisser c'est comme coder: L'un est minitieux l'autre délicieux ! </p>
                         </div>
-                        <div class="col-md-2">
-                            <img src="front/img/film.png" alt="logo film">
-                            <p>Comique, fantastique ou d'action: je suis une fan de cinéma. </p>
-                        </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <img src="front/img/book.png" alt="book chat">
-                            <p>Je suis une grande lectrice d'autobiographies et de biographies, principalement</p>
+                            <p class="app">Je suis une grande lectrice d'autobiographies et de biographies, principalement</p>
                         </div>
-                        <div class="col-md-2">
-                            <img src="front/img/langue.png" alt="logo langue">
-                            <p>Grand interet pour la culture subsaharienne</p>
-                        </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <img src="front/img/association.png" alt="logo association">
-                            <p>On ne peut pas aider tout le monde mais tout le monde peut aider quelqu'un... Le monde associatif est pour moi un moyen de se rendre utile.</p>
+                            <p class="app">On ne peut pas aider tout le monde mais tout le monde peut aider quelqu'un... Le monde associatif est pour moi un moyen de se rendre utile.</p>
                         </div>
                     </div>
                 </div>
@@ -192,7 +185,7 @@ $titre = $sql->fetch();
 
                      <!-- Expérience -->
                      <div class="col-lg-12 text-center">
-                    <h2 id="experience">Expériences <br>professionnelles</h2>
+                    <h2 id="experience">Expériences professionnelles</h2>
                     <?php
                     $i = 0;
                     while( $i< count($experience) ){
@@ -287,7 +280,7 @@ $titre = $sql->fetch();
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
+                                <a href="https://newsite.metropop.org/" target="blank">
                                     <img class="img-portfolio img-responsive" src="front/img/projets2.jpg">
                                 </a>
                             </div>
@@ -376,6 +369,7 @@ $titre = $sql->fetch();
             </div>
         </div>
        
+
     </footer>
 
 

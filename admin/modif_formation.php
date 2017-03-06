@@ -26,6 +26,7 @@ if(isset($_POST['titre_f'])){
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 	<?php
 	$sql = $pdo->query("SELECT * FROM utilisateur") ;
 	$ligne = $sql->fetch();

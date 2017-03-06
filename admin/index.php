@@ -1,69 +1,55 @@
-<?php require("../connexion/connexion.php"); ?>
+<?php require '../connexion/connexion.php'; ?>
+<?php     
+session_start();//à mettre dans toutes les pages SESSION et identification
+if(isset($_POST['connexion'])){//['connexion'] du name du submit du form ci dessous
 
+    $email=addslashes($_POST['email']);
+    $mdp=addslashes($_POST['mdp']);
+
+    $sql = $pdo->prepare("SELECT * FROM utilisateur WHERE email='$email' AND mdp='$mdp'");//On vérifie le courriel et le mdp
+    $sql-> execute();
+    $nbr_utilisateur=$sql->rowCount();//on compte et s'il y est, le compte répond 1 sinon le compte répond 0 (est-ce le vra admin ou pas)
+
+        if($nbr_utilisateur==0){//on ne le trouve pas
+        $msg_connexion_err="Erreur d'authentification !";
+        }else{//on trouve l'email et le mdp c'estbien il est bien inscrit
+            $ligne = $sql->fetch();//pour retrouver son nom et prenom	
+
+        $_SESSION['connexion'] = 'connecté';
+        $_SESSION['id_utilisateur'] = $ligne['id_utilisateur'];
+        $_SESSION['prenom'] = $ligne['prenom'];
+        $_SESSION['nom'] = $ligne['nom'];
+
+        header('location:accueil.php');//vers la page d'accueil de l'admin
+    }
+} 
+	
+	
+?>
 <!DOCTYPE html>
-<html>
-<head>
-	<title class="bienvenue">Tibilé Currulum </title>
+<html lang="fr">
+	<head>
+	<meta charset="UTF-8">
+	<title >Bienvenue</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Source+Sans+Pro" rel="stylesheet"> 
+	</head>
+	<body> 
+		<header>
+ 
+		</header>
+		<div class="wrapper">
+		<h1 class="h1">Connexion</h1>
+			<form class="formulaire0" action="accueil.php" method="POST">
+				<fieldset>
+					<input class="formulaire1" type="email" name="email" placeholder="Email" required ></br></br>
 
-
-</head>
-
-<body>
-<header> <?php require("../admin/admin_menu.php"); ?> </header>
-	<div class="wrapper">
-		<?php require("../connexion/connexion.php"); ?>
-
-
-		<?php 
-		$sql = $pdo->query("SELECT * FROM utilisateur") ;
-			$utilisateur = $sql->fetch();
-		?>
-
-		<h1 class="hello">Bonjour <?php echo $utilisateur['nom'].' '.$utilisateur['prenom']; ?></h1>
-
-		<!-- <?php
-			echo $utilisateur['nom'].'<br>';
-			echo $utilisateur['prenom'].'<br>';
-			echo $utilisateur['email'].'<br>';
-			echo $utilisateur['tel'].'<br>';
-			echo $utilisateur['mdp'].'<br>';
-			echo $utilisateur['pseudo'].'<br>';
-			echo $utilisateur['age'].'<br>';
-			echo $utilisateur['sexe'].'<br>';
-			echo $utilisateur['adresse'].'<br>';
-			echo $utilisateur['code_postal'].'<br>';
-			echo $utilisateur['ville'].'<br>';
-			echo $utilisateur['pays'].'<br>';
-			echo $utilisateur['etat_civil'].'<br>';
-			echo $utilisateur['avatar'].'<br>';
-			echo $utilisateur['notes'].'<br>';
-			echo $utilisateur['statut'].'<br>';
-			echo $utilisateur['date_de_naissance'].'<br>';
-			echo $utilisateur['civilite'].'<br>';
-
-		?> -->
-
-		<table width="500px" border="1">
-			<thead> 
-				<th>Nom, prénom, etc...</th>
-				<th>Etat civil</th>
-			</thead>
-			<tr>
-				<td><?php echo '<img src ="../img/'.$utilisateur['avatar'].'" alt="" style="width:100px" class="image"><br>'.
-				'<div class="identite">'.'<br>'.$utilisateur['etat_civil'].' '.$utilisateur['nom'].' '.$utilisateur['prenom'].'<br>'.$utilisateur['adresse'].'<br>'.$utilisateur['code_postal'].' '.$utilisateur['ville'].'<br><br>'.$utilisateur['email'].'<br><br>	'.'Pseudo: '.$utilisateur['pseudo'].'<br>'.'Mot de passe: '.$utilisateur['mdp'].'<br> 
-				</div>'; ?></td>
-				<td><?php echo '<div class="etat_civil">Age: '.$utilisateur['age'].'<br>'.'Date de naissance: '.$utilisateur['date_de_naissance'].'<br>'.$utilisateur['civilite'].'<br>'.$utilisateur['notes'].'<br></div>' ?></td>
-			</tr>
-		
-		</table>
-
-
-	</div>	
-
-</body>
+					<input class="formulaire2" placeholder="Mot de passe" type="password" name="mdp" required></br></br>					
+				</fieldset>
+				<input class="bouton" name="connexion" type="submit" tabindex="4" value="C'est parti !"></br></br>
+				<input class="bouton" type="reset" tabindex="3" value="Effacer">
+				<p><a href="#" class="bouton" onClick="montrerform()">Mot de passe oublié ?</a></p>
+			</form>
+		</div>
+	</body>
 </html>
-
-

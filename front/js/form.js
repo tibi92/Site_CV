@@ -7,7 +7,7 @@
 			var message = $('#message').val();
 		$.ajax({    
 
-			url:'httpdocs/form.php',
+			url:'form.php',
 			type:'POST',
 			data:{email:email,objet:objet,message:message},
 			dataType:'json',
